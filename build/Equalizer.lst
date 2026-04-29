@@ -1,0 +1,3239 @@
+ARM GAS  /var/folders/5f/72p4brfx5932kssh4q_5ly0m0000gn/T//ccJ60apv.s 			page 1
+
+
+   1              		.cpu cortex-m7
+   2              		.arch armv7e-m
+   3              		.fpu fpv5-d16
+   4              		.eabi_attribute 28, 1
+   5              		.eabi_attribute 20, 1
+   6              		.eabi_attribute 21, 1
+   7              		.eabi_attribute 23, 3
+   8              		.eabi_attribute 24, 1
+   9              		.eabi_attribute 25, 1
+  10              		.eabi_attribute 26, 1
+  11              		.eabi_attribute 30, 2
+  12              		.eabi_attribute 34, 1
+  13              		.eabi_attribute 18, 4
+  14              		.file	"Equalizer.cpp"
+  15              		.text
+  16              	.Ltext0:
+  17              		.cfi_sections	.debug_frame
+  18              		.section	.text._ZN9EqualizerD2Ev,"ax",%progbits
+  19              		.align	1
+  20              		.p2align 2,,3
+  21              		.global	_ZN9EqualizerD2Ev
+  22              		.syntax unified
+  23              		.thumb
+  24              		.thumb_func
+  26              	_ZN9EqualizerD2Ev:
+  27              	.LVL0:
+  28              	.LFB569:
+  29              		.file 1 "Equalizer.cpp"
+   1:Equalizer.cpp **** ///////////////////////////////////////////////////////////
+   2:Equalizer.cpp **** //  Equalizer.cpp
+   3:Equalizer.cpp **** //  Implementation of the Class Equalizer
+   4:Equalizer.cpp **** //  Created on:      06-aug-2014 09:31:01
+   5:Equalizer.cpp **** //  Modified:        28-feb-2018 09:32:00
+   6:Equalizer.cpp **** //  Modified:        27-nov-2025 20:01:00
+   7:Equalizer.cpp **** //  Original author: kbe
+   8:Equalizer.cpp **** ///////////////////////////////////////////////////////////
+   9:Equalizer.cpp **** #include "Equalizer.h"
+  10:Equalizer.cpp **** 
+  11:Equalizer.cpp **** #include <stdio.h>
+  12:Equalizer.cpp **** #include <string.h>
+  13:Equalizer.cpp **** //#include <stdfix.h>
+  14:Equalizer.cpp **** 
+  15:Equalizer.cpp **** 
+  16:Equalizer.cpp **** Equalizer::Equalizer()
+  17:Equalizer.cpp **** {
+  18:Equalizer.cpp **** 
+  19:Equalizer.cpp **** 	filterOn_ = true;
+  20:Equalizer.cpp **** }
+  21:Equalizer.cpp **** 
+  22:Equalizer.cpp **** Equalizer::~Equalizer()
+  30              		.loc 1 22 1 view -0
+  31              		.cfi_startproc
+  32              		@ args = 0, pretend = 0, frame = 0
+  33              		@ frame_needed = 0, uses_anonymous_args = 0
+  34              		@ link register save eliminated.
+  35              	.LBB45:
+  36              	.LBI45:
+ARM GAS  /var/folders/5f/72p4brfx5932kssh4q_5ly0m0000gn/T//ccJ60apv.s 			page 2
+
+
+  37              		.file 2 "Algorithm.h"
+   1:Algorithm.h   **** ///////////////////////////////////////////////////////////
+   2:Algorithm.h   **** //  Algorithm.h
+   3:Algorithm.h   **** //  Implementation of the virtual Class Algorithm
+   4:Algorithm.h   **** //  Created on:      10-march-2026 09:31:01
+   5:Algorithm.h   **** //  Original author: JSW
+   6:Algorithm.h   **** ///////////////////////////////////////////////////////////
+   7:Algorithm.h   **** 
+   8:Algorithm.h   **** class Algorithm {
+   9:Algorithm.h   ****     public:
+  10:Algorithm.h   ****     virtual ~Algorithm() = default;
+  38              		.loc 2 10 13 view .LVU1
+  39              		.loc 2 10 13 is_stmt 0 view .LVU2
+  40              	.LBE45:
+  23:Equalizer.cpp **** {
+  24:Equalizer.cpp **** 
+  25:Equalizer.cpp **** }
+  41              		.loc 1 25 1 view .LVU3
+  42 0000 7047     		bx	lr
+  43              		.cfi_endproc
+  44              	.LFE569:
+  46              		.global	_ZN9EqualizerD1Ev
+  47              		.thumb_set _ZN9EqualizerD1Ev,_ZN9EqualizerD2Ev
+  48 0002 00BF     		.section	.text._ZN9EqualizerD0Ev,"ax",%progbits
+  49              		.align	1
+  50              		.p2align 2,,3
+  51              		.global	_ZN9EqualizerD0Ev
+  52              		.syntax unified
+  53              		.thumb
+  54              		.thumb_func
+  56              	_ZN9EqualizerD0Ev:
+  57              	.LVL1:
+  58              	.LFB571:
+  22:Equalizer.cpp **** {
+  59              		.loc 1 22 1 is_stmt 1 view -0
+  60              		.cfi_startproc
+  61              		@ args = 0, pretend = 0, frame = 0
+  62              		@ frame_needed = 0, uses_anonymous_args = 0
+  22:Equalizer.cpp **** {
+  63              		.loc 1 22 1 is_stmt 0 view .LVU5
+  64 0000 10B5     		push	{r4, lr}
+  65              		.cfi_def_cfa_offset 8
+  66              		.cfi_offset 4, -8
+  67              		.cfi_offset 14, -4
+  22:Equalizer.cpp **** {
+  68              		.loc 1 22 1 view .LVU6
+  69 0002 0446     		mov	r4, r0
+  70              	.LVL2:
+  71              	.LBB46:
+  72              	.LBI46:
+  22:Equalizer.cpp **** {
+  73              		.loc 1 22 1 is_stmt 1 view .LVU7
+  74              	.LBB47:
+  75              	.LBI47:
+  76              		.loc 2 10 13 view .LVU8
+  77              		.loc 2 10 13 is_stmt 0 view .LVU9
+  78              	.LBE47:
+ARM GAS  /var/folders/5f/72p4brfx5932kssh4q_5ly0m0000gn/T//ccJ60apv.s 			page 3
+
+
+  79              	.LBE46:
+  80              		.loc 1 25 1 view .LVU10
+  81 0004 4FF4A271 		mov	r1, #324
+  82 0008 FFF7FEFF 		bl	_ZdlPvj
+  83              	.LVL3:
+  84              		.loc 1 25 1 view .LVU11
+  85 000c 2046     		mov	r0, r4
+  86 000e 10BD     		pop	{r4, pc}
+  87              		.loc 1 25 1 view .LVU12
+  88              		.cfi_endproc
+  89              	.LFE571:
+  91              		.section	.text._ZN9Equalizer7ProcessEf,"ax",%progbits
+  92              		.align	1
+  93              		.p2align 2,,3
+  94              		.global	_ZN9Equalizer7ProcessEf
+  95              		.syntax unified
+  96              		.thumb
+  97              		.thumb_func
+  99              	_ZN9Equalizer7ProcessEf:
+ 100              	.LVL4:
+ 101              	.LFB572:
+  26:Equalizer.cpp **** 
+  27:Equalizer.cpp **** float Equalizer::Process(float input)
+  28:Equalizer.cpp **** {
+ 102              		.loc 1 28 1 is_stmt 1 view -0
+ 103              		.cfi_startproc
+ 104              		@ args = 0, pretend = 0, frame = 0
+ 105              		@ frame_needed = 0, uses_anonymous_args = 0
+ 106              		@ link register save eliminated.
+  29:Equalizer.cpp **** 	float output;
+ 107              		.loc 1 29 2 view .LVU14
+  30:Equalizer.cpp **** 	float tmp; 
+ 108              		.loc 1 30 2 view .LVU15
+  31:Equalizer.cpp **** 	output = input;
+ 109              		.loc 1 31 2 view .LVU16
+  32:Equalizer.cpp **** 	
+  33:Equalizer.cpp **** 	if (filterOn_) {
+ 110              		.loc 1 33 2 view .LVU17
+ 111              	.LBB56:
+ 112 0000 037A     		ldrb	r3, [r0, #8]	@ zero_extendqisi2
+ 113 0002 53B3     		cbz	r3, .L6
+ 114 0004 00F1F003 		add	r3, r0, #240
+ 115              	.LVL5:
+ 116              	.L7:
+ 117              		.loc 1 33 2 is_stmt 0 view .LVU18
+ 118              	.LBE56:
+ 119              	.LBB57:
+ 120              	.LBB58:
+ 121              	.LBB59:
+  34:Equalizer.cpp **** 		for (int i = 0; i < NUM_EQ_BANDS; i++){
+  35:Equalizer.cpp **** 			output = m_IIRfilter[i].Process(output);
+ 122              		.loc 1 35 4 is_stmt 1 view .LVU19
+ 123              	.LBB60:
+ 124              	.LBI60:
+ 125              		.file 3 "IIRFilter.h"
+   1:IIRFilter.h   **** ///////////////////////////////////////////////////////////
+   2:IIRFilter.h   **** //  IIRFilter.h
+ARM GAS  /var/folders/5f/72p4brfx5932kssh4q_5ly0m0000gn/T//ccJ60apv.s 			page 4
+
+
+   3:IIRFilter.h   **** //  Implementation of the Class IIRFilter
+   4:IIRFilter.h   **** //  Created on:      27-nov-2025 09:31:01
+   5:IIRFilter.h   **** //  Modified:        27-nov-2025 20:01:00
+   6:IIRFilter.h   **** //  Original author: kbe
+   7:IIRFilter.h   **** ///////////////////////////////////////////////////////////
+   8:IIRFilter.h   **** #define float_PI 3.14159265359
+   9:IIRFilter.h   **** #define NUM_IIR_COEFFS 3
+  10:IIRFilter.h   **** #include <cmath>
+  11:IIRFilter.h   **** 
+  12:IIRFilter.h   **** class IIRFilter {
+  13:IIRFilter.h   **** 
+  14:IIRFilter.h   **** 	public:
+  15:IIRFilter.h   **** 		IIRFilter() {}
+  16:IIRFilter.h   **** 		~IIRFilter() {}
+  17:IIRFilter.h   **** 
+  18:IIRFilter.h   **** 		void Init() 
+  19:IIRFilter.h   **** 		{
+  20:IIRFilter.h   **** 			for (int i = 0; i < NUM_IIR_COEFFS; i++) 
+  21:IIRFilter.h   **** 			{
+  22:IIRFilter.h   **** 				a[i] = 0;
+  23:IIRFilter.h   **** 				b[i] = 0;
+  24:IIRFilter.h   **** 			}
+  25:IIRFilter.h   **** 			a[0] = 1.0;
+  26:IIRFilter.h   **** 			b[0] = 1.0;
+  27:IIRFilter.h   **** 			x1_ = x2_ = y1_ = y2_ = 0.0;
+  28:IIRFilter.h   **** 		}
+  29:IIRFilter.h   **** 
+  30:IIRFilter.h   **** 		void Init(float* a_coeffs, float* b_coeffs) 
+  31:IIRFilter.h   **** 		{
+  32:IIRFilter.h   **** 			for (int i = 0; i < NUM_IIR_COEFFS; i++) 
+  33:IIRFilter.h   **** 			{
+  34:IIRFilter.h   **** 				a[i] = a_coeffs[i];
+  35:IIRFilter.h   **** 				b[i] = b_coeffs[i];
+  36:IIRFilter.h   **** 			}
+  37:IIRFilter.h   **** 			x1_ = x2_ = y1_ = y2_ = 0.0;
+  38:IIRFilter.h   **** 		}
+  39:IIRFilter.h   **** 
+  40:IIRFilter.h   **** 		inline float Process(float x) 
+ 126              		.loc 3 40 16 view .LVU20
+ 127              	.LBB61:
+  41:IIRFilter.h   **** 		{
+  42:IIRFilter.h   **** 			float res = b[0]*x + b[1]*x1_ + b[2]*x2_ - a[1]*y1_ - a[2]*y2_;
+ 128              		.loc 3 42 4 view .LVU21
+ 129              		.loc 3 42 30 is_stmt 0 view .LVU22
+ 130 0008 D0ED1B6A 		vldr.32	s13, [r0, #108]
+ 131              	.LBE61:
+ 132              	.LBE60:
+  34:Equalizer.cpp **** 			output = m_IIRfilter[i].Process(output);
+ 133              		.loc 1 34 21 view .LVU23
+ 134 000c 2830     		adds	r0, r0, #40
+ 135              	.LBB64:
+ 136              	.LBB62:
+ 137              		.loc 3 42 29 view .LVU24
+ 138 000e D0ED0F7A 		vldr.32	s15, [r0, #60]
+ 139              		.loc 3 42 23 view .LVU25
+ 140 0012 D0ED0E3A 		vldr.32	s7, [r0, #56]
+ 141              		.loc 3 42 29 view .LVU26
+ARM GAS  /var/folders/5f/72p4brfx5932kssh4q_5ly0m0000gn/T//ccJ60apv.s 			page 5
+
+
+ 142 0016 66EEA77A 		vmul.f32	s15, s13, s15
+ 143              		.loc 3 42 34 view .LVU27
+ 144 001a D0ED124A 		vldr.32	s9, [r0, #72]
+ 145 001e 90ED104A 		vldr.32	s8, [r0, #64]
+  43:IIRFilter.h   **** 
+  44:IIRFilter.h   **** 			y2_ = y1_;
+  45:IIRFilter.h   **** 			y1_ = res;
+  46:IIRFilter.h   **** 			x2_ = x1_;
+  47:IIRFilter.h   **** 			x1_ = x;
+ 146              		.loc 3 47 8 view .LVU28
+ 147 0022 80ED110A 		vstr.32	s0, [r0, #68]
+  42:IIRFilter.h   **** 
+ 148              		.loc 3 42 23 view .LVU29
+ 149 0026 E3EE807A 		vfma.f32	s15, s7, s0
+  42:IIRFilter.h   **** 
+ 150              		.loc 3 42 52 view .LVU30
+ 151 002a 90ED137A 		vldr.32	s14, [r0, #76]
+  42:IIRFilter.h   **** 
+ 152              		.loc 3 42 45 view .LVU31
+ 153 002e 90ED0C5A 		vldr.32	s10, [r0, #48]
+  42:IIRFilter.h   **** 
+ 154              		.loc 3 42 10 view .LVU32
+ 155 0032 90ED146A 		vldr.32	s12, [r0, #80]
+ 156 0036 D0ED0D5A 		vldr.32	s11, [r0, #52]
+  44:IIRFilter.h   **** 			y1_ = res;
+ 157              		.loc 3 44 8 view .LVU33
+ 158 003a 80ED147A 		vstr.32	s14, [r0, #80]
+  46:IIRFilter.h   **** 			x1_ = x;
+ 159              		.loc 3 46 8 view .LVU34
+ 160 003e C0ED126A 		vstr.32	s13, [r0, #72]
+ 161              	.LBE62:
+ 162              	.LBE64:
+  34:Equalizer.cpp **** 			output = m_IIRfilter[i].Process(output);
+ 163              		.loc 1 34 21 view .LVU35
+ 164 0042 9842     		cmp	r0, r3
+ 165              	.LBB65:
+ 166              	.LBB63:
+  42:IIRFilter.h   **** 
+ 167              		.loc 3 42 34 view .LVU36
+ 168 0044 E4EE247A 		vfma.f32	s15, s8, s9
+ 169 0048 B0EE670A 		vmov.f32	s0, s15
+ 170              	.LVL6:
+  42:IIRFilter.h   **** 
+ 171              		.loc 3 42 45 view .LVU37
+ 172 004c A5EE470A 		vfms.f32	s0, s10, s14
+  42:IIRFilter.h   **** 
+ 173              		.loc 3 42 10 view .LVU38
+ 174 0050 A5EEC60A 		vfms.f32	s0, s11, s12
+ 175              	.LVL7:
+  44:IIRFilter.h   **** 			y1_ = res;
+ 176              		.loc 3 44 4 is_stmt 1 view .LVU39
+  45:IIRFilter.h   **** 			x2_ = x1_;
+ 177              		.loc 3 45 4 view .LVU40
+  45:IIRFilter.h   **** 			x2_ = x1_;
+ 178              		.loc 3 45 8 is_stmt 0 view .LVU41
+ 179 0054 80ED130A 		vstr.32	s0, [r0, #76]
+  46:IIRFilter.h   **** 			x1_ = x;
+ARM GAS  /var/folders/5f/72p4brfx5932kssh4q_5ly0m0000gn/T//ccJ60apv.s 			page 6
+
+
+ 180              		.loc 3 46 4 is_stmt 1 view .LVU42
+ 181              		.loc 3 47 4 view .LVU43
+  48:IIRFilter.h   **** 
+  49:IIRFilter.h   **** 			return res;
+ 182              		.loc 3 49 4 view .LVU44
+ 183              	.LVL8:
+ 184              		.loc 3 49 4 is_stmt 0 view .LVU45
+ 185              	.LBE63:
+ 186              	.LBE65:
+  34:Equalizer.cpp **** 			output = m_IIRfilter[i].Process(output);
+ 187              		.loc 1 34 3 is_stmt 1 view .LVU46
+  34:Equalizer.cpp **** 			output = m_IIRfilter[i].Process(output);
+ 188              		.loc 1 34 21 view .LVU47
+ 189 0058 D6D1     		bne	.L7
+ 190              	.LVL9:
+ 191              	.L6:
+  34:Equalizer.cpp **** 			output = m_IIRfilter[i].Process(output);
+ 192              		.loc 1 34 21 is_stmt 0 view .LVU48
+ 193              	.LBE59:
+ 194              	.LBE58:
+ 195              	.LBE57:
+  36:Equalizer.cpp **** 		}
+  37:Equalizer.cpp **** 	}		
+  38:Equalizer.cpp **** 	return output;
+ 196              		.loc 1 38 2 is_stmt 1 view .LVU49
+  39:Equalizer.cpp **** }
+ 197              		.loc 1 39 1 is_stmt 0 view .LVU50
+ 198 005a 7047     		bx	lr
+ 199              		.cfi_endproc
+ 200              	.LFE572:
+ 202              		.section	.text._ZN9EqualizerC2Ev,"ax",%progbits
+ 203              		.align	1
+ 204              		.p2align 2,,3
+ 205              		.global	_ZN9EqualizerC2Ev
+ 206              		.syntax unified
+ 207              		.thumb
+ 208              		.thumb_func
+ 210              	_ZN9EqualizerC2Ev:
+ 211              	.LVL10:
+ 212              	.LFB566:
+  16:Equalizer.cpp **** {
+ 213              		.loc 1 16 1 is_stmt 1 view -0
+ 214              		.cfi_startproc
+ 215              		@ args = 0, pretend = 0, frame = 0
+ 216              		@ frame_needed = 0, uses_anonymous_args = 0
+ 217              		@ link register save eliminated.
+ 218              	.LBB66:
+  16:Equalizer.cpp **** {
+ 219              		.loc 1 16 22 is_stmt 0 view .LVU52
+ 220 0000 0249     		ldr	r1, .L13
+  19:Equalizer.cpp **** }
+ 221              		.loc 1 19 12 view .LVU53
+ 222 0002 0122     		movs	r2, #1
+ 223              	.LVL11:
+ 224              	.LBB67:
+ 225              	.LBI67:
+   8:Algorithm.h   ****     public:
+ARM GAS  /var/folders/5f/72p4brfx5932kssh4q_5ly0m0000gn/T//ccJ60apv.s 			page 7
+
+
+ 226              		.loc 2 8 7 is_stmt 1 view .LVU54
+   8:Algorithm.h   ****     public:
+ 227              		.loc 2 8 7 is_stmt 0 view .LVU55
+ 228              	.LBE67:
+  16:Equalizer.cpp **** {
+ 229              		.loc 1 16 22 view .LVU56
+ 230 0004 0160     		str	r1, [r0]
+  16:Equalizer.cpp **** {
+ 231              		.loc 1 16 22 is_stmt 1 view .LVU57
+  19:Equalizer.cpp **** }
+ 232              		.loc 1 19 2 view .LVU58
+  19:Equalizer.cpp **** }
+ 233              		.loc 1 19 12 is_stmt 0 view .LVU59
+ 234 0006 0272     		strb	r2, [r0, #8]
+ 235              	.LBE66:
+  20:Equalizer.cpp **** 
+ 236              		.loc 1 20 1 view .LVU60
+ 237 0008 7047     		bx	lr
+ 238              	.L14:
+ 239 000a 00BF     		.align	2
+ 240              	.L13:
+ 241 000c 08000000 		.word	.LANCHOR0+8
+ 242              		.cfi_endproc
+ 243              	.LFE566:
+ 245              		.global	_ZN9EqualizerC1Ev
+ 246              		.thumb_set _ZN9EqualizerC1Ev,_ZN9EqualizerC2Ev
+ 247              		.section	.text._ZN9Equalizer18updateEQParametersEs,"ax",%progbits
+ 248              		.align	1
+ 249              		.p2align 2,,3
+ 250              		.global	_ZN9Equalizer18updateEQParametersEs
+ 251              		.syntax unified
+ 252              		.thumb
+ 253              		.thumb_func
+ 255              	_ZN9Equalizer18updateEQParametersEs:
+ 256              	.LVL12:
+ 257              	.LFB578:
+  40:Equalizer.cpp **** 
+  41:Equalizer.cpp **** void Equalizer::Init(int sampleRate)
+  42:Equalizer.cpp **** {
+  43:Equalizer.cpp **** 	sampleRate_ = sampleRate;
+  44:Equalizer.cpp **** 
+  45:Equalizer.cpp **** 	// KBE changed to update filters
+  46:Equalizer.cpp **** 	// Setting default peak bands center frequency
+  47:Equalizer.cpp **** 	m_EQParams[0].fc = 100.0;
+  48:Equalizer.cpp **** 	m_EQParams[0].gain = 0.0;
+  49:Equalizer.cpp **** 	m_EQParams[1].fc = 400.0;
+  50:Equalizer.cpp **** 	m_EQParams[1].gain = 0.0; 
+  51:Equalizer.cpp **** 	m_EQParams[2].fc = 1000.0;
+  52:Equalizer.cpp **** 	m_EQParams[2].gain = 0.0; 
+  53:Equalizer.cpp **** 	m_EQParams[3].fc = 2000.0;
+  54:Equalizer.cpp **** 	m_EQParams[3].gain = 0.0;
+  55:Equalizer.cpp **** 	m_EQParams[4].fc = 4000.0;
+  56:Equalizer.cpp **** 	m_EQParams[4].gain = 0.0;
+  57:Equalizer.cpp **** 	m_EQParams[5].fc = 8000.0;
+  58:Equalizer.cpp **** 	m_EQParams[5].gain = 0.0; 
+  59:Equalizer.cpp **** 
+  60:Equalizer.cpp **** 
+ARM GAS  /var/folders/5f/72p4brfx5932kssh4q_5ly0m0000gn/T//ccJ60apv.s 			page 8
+
+
+  61:Equalizer.cpp **** 	for (short band = 0; band < NUM_EQ_BANDS; band++)
+  62:Equalizer.cpp **** 	{
+  63:Equalizer.cpp **** 		m_IIRfilter[band].Init();
+  64:Equalizer.cpp **** 	    //m_EQParams[band].gain = 1.0; // Default gain
+  65:Equalizer.cpp **** 		m_EQParams[band].Q = 2.0; // Default Q
+  66:Equalizer.cpp **** 		updateEQParameters(band);
+  67:Equalizer.cpp **** 	}
+  68:Equalizer.cpp **** }
+  69:Equalizer.cpp **** 
+  70:Equalizer.cpp **** float Equalizer::incParameter(short band, PARAMETER param, float delta)
+  71:Equalizer.cpp **** {
+  72:Equalizer.cpp ****     //m_filterOn = true; // For test only
+  73:Equalizer.cpp ****     if(param == PM_GAIN){
+  74:Equalizer.cpp **** 		setParameter(band, param, m_EQParams[band].gain + delta);
+  75:Equalizer.cpp **** 		updateEQParameters(band);
+  76:Equalizer.cpp **** 		return m_EQParams[band].gain;
+  77:Equalizer.cpp **** 	}
+  78:Equalizer.cpp **** 	// Frekvensparameter vokser med en ratio. Skal evt være delta multipliceret med en konstant (her 
+  79:Equalizer.cpp **** 	if(param == PM_FREQ){
+  80:Equalizer.cpp **** 		setParameter(band, param, m_EQParams[band].fc * pow(2, 1.0/12.0));
+  81:Equalizer.cpp **** 		updateEQParameters(band); 
+  82:Equalizer.cpp **** 		return m_EQParams[band].fc;
+  83:Equalizer.cpp **** 	}	
+  84:Equalizer.cpp **** }
+  85:Equalizer.cpp **** 
+  86:Equalizer.cpp **** float Equalizer::decParameter(short band, PARAMETER param, float delta)
+  87:Equalizer.cpp **** {
+  88:Equalizer.cpp **** 	    //m_filterOn = true; // For test only
+  89:Equalizer.cpp ****     if(param == PM_GAIN){
+  90:Equalizer.cpp **** 		setParameter(band, param, m_EQParams[band].gain - delta);
+  91:Equalizer.cpp **** 		updateEQParameters(band);
+  92:Equalizer.cpp **** 		return m_EQParams[band].gain;
+  93:Equalizer.cpp **** 	}
+  94:Equalizer.cpp **** 	// Frekvensparameter vokser med en ratio. Skal evt være delta multipliceret med en konstant (her 
+  95:Equalizer.cpp **** 	if(param == PM_FREQ){
+  96:Equalizer.cpp **** 		setParameter(band, param, m_EQParams[band].fc / pow(2, 1.0/12.0));
+  97:Equalizer.cpp **** 		updateEQParameters(band); 
+  98:Equalizer.cpp **** 		return m_EQParams[band].fc;
+  99:Equalizer.cpp **** 	}
+ 100:Equalizer.cpp **** }
+ 101:Equalizer.cpp **** 
+ 102:Equalizer.cpp **** void Equalizer::setParameter(short band, PARAMETER param, float value)
+ 103:Equalizer.cpp **** {
+ 104:Equalizer.cpp ****     bool update = false;
+ 105:Equalizer.cpp **** 	// float value_dB = pow(10.0,(value/20.0)); // Converting to dB
+ 106:Equalizer.cpp **** 	if (band < NUM_EQ_BANDS)
+ 107:Equalizer.cpp **** 	{
+ 108:Equalizer.cpp **** 		switch (param)
+ 109:Equalizer.cpp **** 		{
+ 110:Equalizer.cpp **** 			case PM_GAIN:
+ 111:Equalizer.cpp **** 				if (m_EQParams[band].gain != value) {
+ 112:Equalizer.cpp **** 					m_EQParams[band].gain = value;
+ 113:Equalizer.cpp **** 					update = true;
+ 114:Equalizer.cpp **** 				}
+ 115:Equalizer.cpp **** 			  break;
+ 116:Equalizer.cpp **** 			case PM_FREQ:
+ 117:Equalizer.cpp **** 				if (m_EQParams[band].fc != value) {
+ARM GAS  /var/folders/5f/72p4brfx5932kssh4q_5ly0m0000gn/T//ccJ60apv.s 			page 9
+
+
+ 118:Equalizer.cpp **** 					m_EQParams[band].fc = value;
+ 119:Equalizer.cpp **** 					update = true;
+ 120:Equalizer.cpp **** 				}
+ 121:Equalizer.cpp **** 			  break;
+ 122:Equalizer.cpp **** 			case PM_Q:
+ 123:Equalizer.cpp **** 				if (m_EQParams[band].Q != value) {
+ 124:Equalizer.cpp **** 					m_EQParams[band].Q = value;
+ 125:Equalizer.cpp **** 					update = true;
+ 126:Equalizer.cpp **** 				}
+ 127:Equalizer.cpp **** 			  break;
+ 128:Equalizer.cpp **** 		}
+ 129:Equalizer.cpp **** 		if (update) updateEQParameters(band);
+ 130:Equalizer.cpp **** 	}
+ 131:Equalizer.cpp **** }
+ 132:Equalizer.cpp **** 
+ 133:Equalizer.cpp **** void Equalizer::updateEQParameters(short band)
+ 134:Equalizer.cpp **** {
+ 258              		.loc 1 134 1 is_stmt 1 view -0
+ 259              		.cfi_startproc
+ 260              		@ args = 0, pretend = 0, frame = 0
+ 261              		@ frame_needed = 0, uses_anonymous_args = 0
+ 135:Equalizer.cpp **** 	// Parameter limitations
+ 136:Equalizer.cpp **** 	if (m_EQParams[band].gain > MAX_GAIN)
+ 262              		.loc 1 136 2 view .LVU62
+ 263              		.loc 1 136 23 is_stmt 0 view .LVU63
+ 264 0000 01EB4103 		add	r3, r1, r1, lsl #1
+ 265              		.loc 1 136 2 view .LVU64
+ 266 0004 B3EE027A 		vmov.f32	s14, #1.8e+1
+ 267              		.loc 1 136 23 view .LVU65
+ 268 0008 4A00     		lsls	r2, r1, #1
+ 269 000a 00EB8303 		add	r3, r0, r3, lsl #2
+ 270 000e D3ED037A 		vldr.32	s15, [r3, #12]
+ 271              		.loc 1 136 2 view .LVU66
+ 272 0012 F4EEC77A 		vcmpe.f32	s15, s14
+ 134:Equalizer.cpp **** 	// Parameter limitations
+ 273              		.loc 1 134 1 view .LVU67
+ 274 0016 70B5     		push	{r4, r5, r6, lr}
+ 275              		.cfi_def_cfa_offset 16
+ 276              		.cfi_offset 4, -16
+ 277              		.cfi_offset 5, -12
+ 278              		.cfi_offset 6, -8
+ 279              		.cfi_offset 14, -4
+ 280              		.loc 1 136 2 view .LVU68
+ 281 0018 F1EE10FA 		vmrs	APSR_nzcv, FPSCR
+ 134:Equalizer.cpp **** 	// Parameter limitations
+ 282              		.loc 1 134 1 view .LVU69
+ 283 001c 0D46     		mov	r5, r1
+ 284 001e 0446     		mov	r4, r0
+ 285 0020 2DED048B 		vpush.64	{d8, d9}
+ 286              		.cfi_def_cfa_offset 32
+ 287              		.cfi_offset 80, -32
+ 288              		.cfi_offset 81, -28
+ 289              		.cfi_offset 82, -24
+ 290              		.cfi_offset 83, -20
+ 291              		.loc 1 136 2 view .LVU70
+ 292 0024 06DC     		bgt	.L52
+ 137:Equalizer.cpp **** 		m_EQParams[band].gain = MAX_GAIN;
+ARM GAS  /var/folders/5f/72p4brfx5932kssh4q_5ly0m0000gn/T//ccJ60apv.s 			page 10
+
+
+ 138:Equalizer.cpp **** 	if (m_EQParams[band].gain < MIN_GAIN)
+ 293              		.loc 1 138 2 is_stmt 1 view .LVU71
+ 294 0026 BBEE027A 		vmov.f32	s14, #-1.8e+1
+ 295 002a F4EEC77A 		vcmpe.f32	s15, s14
+ 296 002e F1EE10FA 		vmrs	APSR_nzcv, FPSCR
+ 297 0032 01D5     		bpl	.L18
+ 298              	.L52:
+ 139:Equalizer.cpp **** 		m_EQParams[band].gain = MIN_GAIN;
+ 299              		.loc 1 139 3 view .LVU72
+ 300              		.loc 1 139 25 is_stmt 0 view .LVU73
+ 301 0034 83ED037A 		vstr.32	s14, [r3, #12]
+ 302              	.L18:
+ 140:Equalizer.cpp **** 	if (m_EQParams[band].fc > MAX_FREQ)
+ 303              		.loc 1 140 2 is_stmt 1 view .LVU74
+ 304              		.loc 1 140 23 is_stmt 0 view .LVU75
+ 305 0038 5319     		adds	r3, r2, r5
+ 306              		.loc 1 140 2 view .LVU76
+ 307 003a 9FEDE57A 		vldr.32	s14, .L57+16
+ 308              		.loc 1 140 23 view .LVU77
+ 309 003e 04EB8303 		add	r3, r4, r3, lsl #2
+ 310 0042 D3ED047A 		vldr.32	s15, [r3, #16]
+ 311              		.loc 1 140 2 view .LVU78
+ 312 0046 F4EEC77A 		vcmpe.f32	s15, s14
+ 313 004a F1EE10FA 		vmrs	APSR_nzcv, FPSCR
+ 314 004e 06DC     		bgt	.L53
+ 141:Equalizer.cpp **** 		m_EQParams[band].fc = MAX_FREQ;
+ 142:Equalizer.cpp **** 	if (m_EQParams[band].fc < MIN_FREQ)
+ 315              		.loc 1 142 2 is_stmt 1 view .LVU79
+ 316 0050 B0EE007A 		vmov.f32	s14, #2.0e+0
+ 317 0054 F4EEC77A 		vcmpe.f32	s15, s14
+ 318 0058 F1EE10FA 		vmrs	APSR_nzcv, FPSCR
+ 319 005c 01D5     		bpl	.L22
+ 320              	.L53:
+ 143:Equalizer.cpp **** 		m_EQParams[band].fc = MIN_FREQ;
+ 321              		.loc 1 143 3 view .LVU80
+ 322              		.loc 1 143 23 is_stmt 0 view .LVU81
+ 323 005e 83ED047A 		vstr.32	s14, [r3, #16]
+ 324              	.L22:
+ 144:Equalizer.cpp **** 	if (m_EQParams[band].Q > MAX_Q)
+ 325              		.loc 1 144 2 is_stmt 1 view .LVU82
+ 326              		.loc 1 144 23 is_stmt 0 view .LVU83
+ 327 0062 5319     		adds	r3, r2, r5
+ 328              		.loc 1 144 2 view .LVU84
+ 329 0064 B3EE047A 		vmov.f32	s14, #2.0e+1
+ 330              		.loc 1 144 23 view .LVU85
+ 331 0068 04EB8303 		add	r3, r4, r3, lsl #2
+ 332 006c D3ED057A 		vldr.32	s15, [r3, #20]
+ 333              		.loc 1 144 2 view .LVU86
+ 334 0070 F4EEC77A 		vcmpe.f32	s15, s14
+ 335 0074 F1EE10FA 		vmrs	APSR_nzcv, FPSCR
+ 336 0078 06DC     		bgt	.L54
+ 145:Equalizer.cpp **** 		m_EQParams[band].Q = MAX_Q;
+ 146:Equalizer.cpp **** 	if (m_EQParams[band].Q < MIN_Q)
+ 337              		.loc 1 146 2 is_stmt 1 view .LVU87
+ 338 007a B7EE007A 		vmov.f32	s14, #1.0e+0
+ 339 007e F4EEC77A 		vcmpe.f32	s15, s14
+ 340 0082 F1EE10FA 		vmrs	APSR_nzcv, FPSCR
+ARM GAS  /var/folders/5f/72p4brfx5932kssh4q_5ly0m0000gn/T//ccJ60apv.s 			page 11
+
+
+ 341 0086 01D5     		bpl	.L26
+ 342              	.L54:
+ 147:Equalizer.cpp **** 		m_EQParams[band].Q = MIN_Q;
+ 343              		.loc 1 147 3 view .LVU88
+ 344              		.loc 1 147 22 is_stmt 0 view .LVU89
+ 345 0088 83ED057A 		vstr.32	s14, [r3, #20]
+ 346              	.L26:
+ 148:Equalizer.cpp **** 
+ 149:Equalizer.cpp **** 	if (band == 0){
+ 347              		.loc 1 149 2 is_stmt 1 view .LVU90
+ 348 008c 002D     		cmp	r5, #0
+ 349 008e 00F0FF80 		beq	.L55
+ 150:Equalizer.cpp **** 		m_IIRfilter[band].makeLowShelvingEQ(sampleRate_,
+ 151:Equalizer.cpp **** 							      m_EQParams[band].fc,
+ 152:Equalizer.cpp **** 								  m_EQParams[band].Q,
+ 153:Equalizer.cpp **** 								  m_EQParams[band].gain);
+ 154:Equalizer.cpp **** 	}
+ 155:Equalizer.cpp **** 	else if (band == 5){
+ 350              		.loc 1 155 7 view .LVU91
+ 351 0092 052D     		cmp	r5, #5
+ 352 0094 71D0     		beq	.L56
+ 156:Equalizer.cpp **** 		m_IIRfilter[band].makeHighShelvingEQ(sampleRate_,
+ 157:Equalizer.cpp **** 							      m_EQParams[band].fc,
+ 158:Equalizer.cpp **** 								  m_EQParams[band].Q,
+ 159:Equalizer.cpp **** 								  m_EQParams[band].gain);
+ 160:Equalizer.cpp **** 	}
+ 161:Equalizer.cpp **** 	else{
+ 162:Equalizer.cpp **** 		m_IIRfilter[band].makePeakEQ(sampleRate_,
+ 353              		.loc 1 162 3 view .LVU92
+ 354              		.loc 1 162 31 is_stmt 0 view .LVU93
+ 355 0096 2A44     		add	r2, r2, r5
+ 356 0098 D4ED017A 		vldr.32	s15, [r4, #4]	@ int
+ 357              	.LBB81:
+ 358              	.LBB82:
+  50:IIRFilter.h   **** 		}
+  51:IIRFilter.h   **** 
+  52:IIRFilter.h   **** 		void makePeakEQ (const float fs,
+  53:IIRFilter.h   ****                          const float fc,
+  54:IIRFilter.h   ****                          const float Q,
+  55:IIRFilter.h   ****                          const float Gain_dB)
+  56:IIRFilter.h   **** 		{
+  57:IIRFilter.h   **** 			float A = pow(10.0,(Gain_dB/40.0)); // Converting from dB to gain factor
+ 359              		.loc 3 57 17 view .LVU94
+ 360 009c B2EE040B 		vmov.f64	d0, #1.0e+1
+  58:IIRFilter.h   **** 			float omega =  2.0 * float_PI * (fc / fs);
+  59:IIRFilter.h   **** 			float alpha = sinf (omega) / (2.0 * Q);
+  60:IIRFilter.h   **** 
+  61:IIRFilter.h   **** 			b[0] = 1.0 + alpha * A;
+ 361              		.loc 3 61 9 view .LVU95
+ 362 00a0 05EB8505 		add	r5, r5, r5, lsl #2
+ 363              	.LBE82:
+ 364              	.LBE81:
+ 365              		.loc 1 162 31 view .LVU96
+ 366 00a4 04EB8202 		add	r2, r4, r2, lsl #2
+ 367 00a8 B8EEE78A 		vcvt.f32.s32	s16, s15
+ 368              	.LBB87:
+ 369              	.LBB84:
+ARM GAS  /var/folders/5f/72p4brfx5932kssh4q_5ly0m0000gn/T//ccJ60apv.s 			page 12
+
+
+ 370              		.loc 3 61 15 view .LVU97
+ 371 00ac F7EE009A 		vmov.f32	s19, #1.0e+0
+ 372              		.loc 3 61 9 view .LVU98
+ 373 00b0 04EBC506 		add	r6, r4, r5, lsl #3
+  57:IIRFilter.h   **** 			float omega =  2.0 * float_PI * (fc / fs);
+ 374              		.loc 3 57 24 view .LVU99
+ 375 00b4 92ED037A 		vldr.32	s14, [r2, #12]
+ 376              		.loc 3 61 9 view .LVU100
+ 377 00b8 ED00     		lsls	r5, r5, #3
+ 378              	.LBE84:
+ 379              	.LBE87:
+ 380              		.loc 1 162 31 view .LVU101
+ 381 00ba 92ED049A 		vldr.32	s18, [r2, #16]
+ 382              	.LBB88:
+ 383              	.LBB85:
+  57:IIRFilter.h   **** 			float omega =  2.0 * float_PI * (fc / fs);
+ 384              		.loc 3 57 24 view .LVU102
+ 385 00be B7EEC77A 		vcvt.f64.f32	d7, s14
+ 386              	.LBE85:
+ 387              	.LBE88:
+ 388              		.loc 1 162 31 view .LVU103
+ 389 00c2 D2ED058A 		vldr.32	s17, [r2, #20]
+ 390              	.LVL13:
+ 391              	.LBB89:
+ 392              	.LBI81:
+  52:IIRFilter.h   ****                          const float fc,
+ 393              		.loc 3 52 8 is_stmt 1 view .LVU104
+ 394              	.LBB86:
+  57:IIRFilter.h   **** 			float omega =  2.0 * float_PI * (fc / fs);
+ 395              		.loc 3 57 4 view .LVU105
+  57:IIRFilter.h   **** 			float omega =  2.0 * float_PI * (fc / fs);
+ 396              		.loc 3 57 17 is_stmt 0 view .LVU106
+ 397 00c6 9FEDBE1B 		vldr.64	d1, .L57
+ 398 00ca 87EE011B 		vdiv.f64	d1, d7, d1
+ 399 00ce FFF7FEFF 		bl	pow
+ 400              	.LVL14:
+  58:IIRFilter.h   **** 			float omega =  2.0 * float_PI * (fc / fs);
+ 401              		.loc 3 58 40 view .LVU107
+ 402 00d2 89EE087A 		vdiv.f32	s14, s18, s16
+  57:IIRFilter.h   **** 			float omega =  2.0 * float_PI * (fc / fs);
+ 403              		.loc 3 57 37 view .LVU108
+ 404 00d6 B7EEC09B 		vcvt.f32.f64	s18, d0
+ 405              	.LVL15:
+  58:IIRFilter.h   **** 			float omega =  2.0 * float_PI * (fc / fs);
+ 406              		.loc 3 58 4 is_stmt 1 view .LVU109
+  58:IIRFilter.h   **** 			float omega =  2.0 * float_PI * (fc / fs);
+ 407              		.loc 3 58 34 is_stmt 0 view .LVU110
+ 408 00da 9FEDBB6B 		vldr.64	d6, .L57+8
+  58:IIRFilter.h   **** 			float omega =  2.0 * float_PI * (fc / fs);
+ 409              		.loc 3 58 40 view .LVU111
+ 410 00de B7EEC77A 		vcvt.f64.f32	d7, s14
+  58:IIRFilter.h   **** 			float omega =  2.0 * float_PI * (fc / fs);
+ 411              		.loc 3 58 34 view .LVU112
+ 412 00e2 27EE067B 		vmul.f64	d7, d7, d6
+  58:IIRFilter.h   **** 			float omega =  2.0 * float_PI * (fc / fs);
+ 413              		.loc 3 58 10 view .LVU113
+ 414 00e6 B7EEC78B 		vcvt.f32.f64	s16, d7
+ARM GAS  /var/folders/5f/72p4brfx5932kssh4q_5ly0m0000gn/T//ccJ60apv.s 			page 13
+
+
+ 415              	.LVL16:
+  59:IIRFilter.h   **** 
+ 416              		.loc 3 59 4 is_stmt 1 view .LVU114
+  59:IIRFilter.h   **** 
+ 417              		.loc 3 59 23 is_stmt 0 view .LVU115
+ 418 00ea B0EE480A 		vmov.f32	s0, s16
+ 419 00ee FFF7FEFF 		bl	sinf
+ 420              	.LVL17:
+  59:IIRFilter.h   **** 
+ 421              		.loc 3 59 40 view .LVU116
+ 422 00f2 B7EEE86A 		vcvt.f64.f32	d6, s17
+  59:IIRFilter.h   **** 
+ 423              		.loc 3 59 23 view .LVU117
+ 424 00f6 B0EE407A 		vmov.f32	s14, s0
+  62:IIRFilter.h   **** 			b[1] = -2.0 * cosf (omega);
+ 425              		.loc 3 62 23 view .LVU118
+ 426 00fa B0EE480A 		vmov.f32	s0, s16
+  59:IIRFilter.h   **** 
+ 427              		.loc 3 59 38 view .LVU119
+ 428 00fe 36EE066B 		vadd.f64	d6, d6, d6
+  59:IIRFilter.h   **** 
+ 429              		.loc 3 59 23 view .LVU120
+ 430 0102 B7EEC77A 		vcvt.f64.f32	d7, s14
+  59:IIRFilter.h   **** 
+ 431              		.loc 3 59 31 view .LVU121
+ 432 0106 87EE068B 		vdiv.f64	d8, d7, d6
+ 433              	.LVL18:
+  61:IIRFilter.h   **** 			b[1] = -2.0 * cosf (omega);
+ 434              		.loc 3 61 15 view .LVU122
+ 435 010a F0EE697A 		vmov.f32	s15, s19
+  59:IIRFilter.h   **** 
+ 436              		.loc 3 59 10 view .LVU123
+ 437 010e B7EEC88B 		vcvt.f32.f64	s16, d8
+ 438              	.LVL19:
+  61:IIRFilter.h   **** 			b[1] = -2.0 * cosf (omega);
+ 439              		.loc 3 61 4 is_stmt 1 view .LVU124
+  61:IIRFilter.h   **** 			b[1] = -2.0 * cosf (omega);
+ 440              		.loc 3 61 15 is_stmt 0 view .LVU125
+ 441 0112 E9EE087A 		vfma.f32	s15, s18, s16
+  61:IIRFilter.h   **** 			b[1] = -2.0 * cosf (omega);
+ 442              		.loc 3 61 9 view .LVU126
+ 443 0116 C6ED187A 		vstr.32	s15, [r6, #96]
+ 444              		.loc 3 62 4 is_stmt 1 view .LVU127
+ 445              		.loc 3 62 23 is_stmt 0 view .LVU128
+ 446 011a FFF7FEFF 		bl	cosf
+ 447              	.LVL20:
+  63:IIRFilter.h   **** 			b[2] = 1.0 - alpha * A;
+  64:IIRFilter.h   **** 			a[0] = 1.0 + alpha / A;
+ 448              		.loc 3 64 23 view .LVU129
+ 449 011e 88EE097A 		vdiv.f32	s14, s16, s18
+ 450 0122 05F15403 		add	r3, r5, #84
+ 451 0126 2344     		add	r3, r3, r4
+ 452 0128 6034     		adds	r4, r4, #96
+ 453              	.LVL21:
+  63:IIRFilter.h   **** 			b[2] = 1.0 - alpha * A;
+ 454              		.loc 3 63 15 view .LVU130
+ 455 012a F0EE697A 		vmov.f32	s15, s19
+ARM GAS  /var/folders/5f/72p4brfx5932kssh4q_5ly0m0000gn/T//ccJ60apv.s 			page 14
+
+
+ 456 012e 2C44     		add	r4, r4, r5
+ 457              	.LVL22:
+  62:IIRFilter.h   **** 			b[2] = 1.0 - alpha * A;
+ 458              		.loc 3 62 16 view .LVU131
+ 459 0130 F8EE006A 		vmov.f32	s13, #-2.0e+0
+  63:IIRFilter.h   **** 			b[2] = 1.0 - alpha * A;
+ 460              		.loc 3 63 15 view .LVU132
+ 461 0134 E9EE487A 		vfms.f32	s15, s18, s16
+  62:IIRFilter.h   **** 			b[2] = 1.0 - alpha * A;
+ 462              		.loc 3 62 16 view .LVU133
+ 463 0138 20EE260A 		vmul.f32	s0, s0, s13
+  62:IIRFilter.h   **** 			b[2] = 1.0 - alpha * A;
+ 464              		.loc 3 62 9 view .LVU134
+ 465 013c 86ED190A 		vstr.32	s0, [r6, #100]
+  63:IIRFilter.h   **** 			b[2] = 1.0 - alpha * A;
+ 466              		.loc 3 63 4 is_stmt 1 view .LVU135
+ 467              		.loc 3 64 4 view .LVU136
+  65:IIRFilter.h   **** 			a[1] = -2.0 * cosf (omega);
+ 468              		.loc 3 65 9 is_stmt 0 view .LVU137
+ 469 0140 86ED160A 		vstr.32	s0, [r6, #88]
+  63:IIRFilter.h   **** 			b[2] = 1.0 - alpha * A;
+ 470              		.loc 3 63 9 view .LVU138
+ 471 0144 C6ED1A7A 		vstr.32	s15, [r6, #104]
+  64:IIRFilter.h   **** 			a[1] = -2.0 * cosf (omega);
+ 472              		.loc 3 64 15 view .LVU139
+ 473 0148 77EE297A 		vadd.f32	s15, s14, s19
+  66:IIRFilter.h   **** 			a[2] = 1.0 - alpha / A;
+ 474              		.loc 3 66 15 view .LVU140
+ 475 014c 39EEC77A 		vsub.f32	s14, s19, s14
+  64:IIRFilter.h   **** 			a[1] = -2.0 * cosf (omega);
+ 476              		.loc 3 64 9 view .LVU141
+ 477 0150 C6ED157A 		vstr.32	s15, [r6, #84]
+  65:IIRFilter.h   **** 			a[1] = -2.0 * cosf (omega);
+ 478              		.loc 3 65 4 is_stmt 1 view .LVU142
+ 479              		.loc 3 66 4 view .LVU143
+ 480              		.loc 3 66 9 is_stmt 0 view .LVU144
+ 481 0154 86ED177A 		vstr.32	s14, [r6, #92]
+  67:IIRFilter.h   **** 
+  68:IIRFilter.h   **** 			// Normalize the coefficients
+  69:IIRFilter.h   **** 			float a0 = a[0];
+ 482              		.loc 3 69 4 is_stmt 1 view .LVU145
+ 483              	.LVL23:
+  70:IIRFilter.h   **** 			for (int i = 0; i < NUM_IIR_COEFFS; i++) {
+ 484              		.loc 3 70 4 view .LVU146
+ 485              	.LBB83:
+ 486              		.loc 3 70 22 view .LVU147
+ 487              	.L37:
+  71:IIRFilter.h   **** 				a[i] = a[i]/a0;
+ 488              		.loc 3 71 5 view .LVU148
+ 489              		.loc 3 71 15 is_stmt 0 view .LVU149
+ 490 0158 D3ED006A 		vldr.32	s13, [r3]
+ 491              		.loc 3 71 16 view .LVU150
+ 492 015c 86EEA77A 		vdiv.f32	s14, s13, s15
+ 493              		.loc 3 71 10 view .LVU151
+ 494 0160 A3EC017A 		vstmia.32	r3!, {s14}
+  72:IIRFilter.h   **** 				b[i] = b[i]/a0;
+ 495              		.loc 3 72 5 is_stmt 1 view .LVU152
+ARM GAS  /var/folders/5f/72p4brfx5932kssh4q_5ly0m0000gn/T//ccJ60apv.s 			page 15
+
+
+  70:IIRFilter.h   **** 			for (int i = 0; i < NUM_IIR_COEFFS; i++) {
+ 496              		.loc 3 70 22 is_stmt 0 view .LVU153
+ 497 0164 9C42     		cmp	r4, r3
+ 498              		.loc 3 72 16 view .LVU154
+ 499 0166 D3ED026A 		vldr.32	s13, [r3, #8]
+ 500 016a 86EEA77A 		vdiv.f32	s14, s13, s15
+ 501              		.loc 3 72 10 view .LVU155
+ 502 016e 83ED027A 		vstr.32	s14, [r3, #8]
+  70:IIRFilter.h   **** 			for (int i = 0; i < NUM_IIR_COEFFS; i++) {
+ 503              		.loc 3 70 4 is_stmt 1 view .LVU156
+  70:IIRFilter.h   **** 			for (int i = 0; i < NUM_IIR_COEFFS; i++) {
+ 504              		.loc 3 70 22 view .LVU157
+ 505 0172 F1D1     		bne	.L37
+ 506              	.LBE83:
+ 507              	.LBE86:
+ 508              	.LBE89:
+ 163:Equalizer.cpp **** 							      m_EQParams[band].fc,
+ 164:Equalizer.cpp **** 								  m_EQParams[band].Q,
+ 165:Equalizer.cpp **** 								  m_EQParams[band].gain);
+ 166:Equalizer.cpp **** 	}
+ 167:Equalizer.cpp **** }
+ 509              		.loc 1 167 1 is_stmt 0 view .LVU158
+ 510 0174 BDEC048B 		vldm	sp!, {d8-d9}
+ 511              		.cfi_remember_state
+ 512              		.cfi_restore 82
+ 513              		.cfi_restore 83
+ 514              		.cfi_restore 80
+ 515              		.cfi_restore 81
+ 516              		.cfi_def_cfa_offset 16
+ 517              	.LVL24:
+ 518              		.loc 1 167 1 view .LVU159
+ 519 0178 70BD     		pop	{r4, r5, r6, pc}
+ 520              	.LVL25:
+ 521              	.L56:
+ 522              		.cfi_restore_state
+ 156:Equalizer.cpp **** 							      m_EQParams[band].fc,
+ 523              		.loc 1 156 3 is_stmt 1 view .LVU160
+ 524              	.LBB90:
+ 525              	.LBB91:
+  73:IIRFilter.h   **** 			}
+  74:IIRFilter.h   **** 
+  75:IIRFilter.h   **** 		}
+  76:IIRFilter.h   **** 		void makeLowShelvingEQ (const float fs,
+  77:IIRFilter.h   ****                          const float fc,
+  78:IIRFilter.h   ****                          float Q,
+  79:IIRFilter.h   ****                          const float Gain_dB)
+  80:IIRFilter.h   **** 		{
+  81:IIRFilter.h   **** 			Q = 1; //overrule Q set for the peak filters
+  82:IIRFilter.h   **** 			float A = pow(10.0,(Gain_dB/40.0)); // Converting from dB to gain factor
+  83:IIRFilter.h   **** 			float omega =  2.0 * float_PI * (fc / fs);
+  84:IIRFilter.h   **** 			float alpha = sinf (omega) / (2.0 * Q);
+  85:IIRFilter.h   **** 			float twoSqrtAalpha = 2*sqrt(A)*alpha;
+  86:IIRFilter.h   **** 			float cosOmega = cosf(omega);
+  87:IIRFilter.h   **** 
+  88:IIRFilter.h   **** 			b[0] = A * ((A + 1.0) - (A - 1.0) * cosOmega + twoSqrtAalpha);
+  89:IIRFilter.h   **** 			b[1] = 2.0 * A * ((A - 1.0) - (A + 1.0) * cosOmega);
+  90:IIRFilter.h   **** 			b[2] = A * ((A + 1.0) - (A - 1.0) * cosOmega - twoSqrtAalpha);
+ARM GAS  /var/folders/5f/72p4brfx5932kssh4q_5ly0m0000gn/T//ccJ60apv.s 			page 16
+
+
+  91:IIRFilter.h   **** 			a[0] = (A + 1.0) + (A - 1.0) * cosOmega + twoSqrtAalpha;
+  92:IIRFilter.h   **** 			a[1] = -2.0 * ((A - 1.0) + (A + 1.0) * cosOmega);
+  93:IIRFilter.h   **** 			a[2] = (A + 1.0) + (A - 1.0) * cosOmega - twoSqrtAalpha;
+  94:IIRFilter.h   **** 
+  95:IIRFilter.h   **** 			// Normalize the coefficients
+  96:IIRFilter.h   **** 			float a0 = a[0];
+  97:IIRFilter.h   **** 			for (int i = 0; i < NUM_IIR_COEFFS; i++) {
+  98:IIRFilter.h   **** 				a[i] = a[i]/a0;
+  99:IIRFilter.h   **** 				b[i] = b[i]/a0;
+ 100:IIRFilter.h   **** 			}
+ 101:IIRFilter.h   **** 
+ 102:IIRFilter.h   **** 		}
+ 103:IIRFilter.h   **** 		void makeHighShelvingEQ (const float fs,
+ 104:IIRFilter.h   ****                          const float fc,
+ 105:IIRFilter.h   ****                          float Q,
+ 106:IIRFilter.h   ****                          const float Gain_dB)
+ 107:IIRFilter.h   **** 		{
+ 108:IIRFilter.h   **** 			Q = 1; //overrule Q set for the peak filters
+ 109:IIRFilter.h   **** 			float A = pow(10.0,(Gain_dB/40.0)); // Converting from dB to gain factor
+ 526              		.loc 3 109 24 is_stmt 0 view .LVU161
+ 527 017a 94ED127A 		vldr.32	s14, [r4, #72]
+ 528              		.loc 3 109 17 view .LVU162
+ 529 017e B2EE040B 		vmov.f64	d0, #1.0e+1
+ 530              	.LBE91:
+ 531              	.LBE90:
+ 156:Equalizer.cpp **** 							      m_EQParams[band].fc,
+ 532              		.loc 1 156 39 view .LVU163
+ 533 0182 D4ED016A 		vldr.32	s13, [r4, #4]	@ int
+ 534 0186 B6EE009A 		vmov.f32	s18, #5.0e-1
+ 535              	.LBB102:
+ 536              	.LBB98:
+ 537              		.loc 3 109 24 view .LVU164
+ 538 018a B7EEC77A 		vcvt.f64.f32	d7, s14
+ 539              	.LBE98:
+ 540              	.LBE102:
+ 156:Equalizer.cpp **** 							      m_EQParams[band].fc,
+ 541              		.loc 1 156 39 view .LVU165
+ 542 018e D4ED138A 		vldr.32	s17, [r4, #76]
+ 543              	.LVL26:
+ 156:Equalizer.cpp **** 							      m_EQParams[band].fc,
+ 544              		.loc 1 156 39 view .LVU166
+ 545 0192 B8EEE68A 		vcvt.f32.s32	s16, s13
+ 546              	.LVL27:
+ 547              	.LBB103:
+ 548              	.LBI90:
+ 103:IIRFilter.h   ****                          const float fc,
+ 549              		.loc 3 103 8 is_stmt 1 view .LVU167
+ 550              	.LBB99:
+ 108:IIRFilter.h   **** 			float A = pow(10.0,(Gain_dB/40.0)); // Converting from dB to gain factor
+ 551              		.loc 3 108 4 view .LVU168
+ 552              		.loc 3 109 4 view .LVU169
+ 553              		.loc 3 109 17 is_stmt 0 view .LVU170
+ 554 0196 9FED8A1B 		vldr.64	d1, .L57
+ 555 019a 87EE011B 		vdiv.f64	d1, d7, d1
+ 556 019e FFF7FEFF 		bl	pow
+ 557              	.LVL28:
+ 110:IIRFilter.h   **** 			float omega =  2.0 * float_PI * (fc / fs);
+ARM GAS  /var/folders/5f/72p4brfx5932kssh4q_5ly0m0000gn/T//ccJ60apv.s 			page 17
+
+
+ 558              		.loc 3 110 40 view .LVU171
+ 559 01a2 88EE887A 		vdiv.f32	s14, s17, s16
+ 109:IIRFilter.h   **** 			float omega =  2.0 * float_PI * (fc / fs);
+ 560              		.loc 3 109 37 view .LVU172
+ 561 01a6 F7EEC08B 		vcvt.f32.f64	s17, d0
+ 562              	.LVL29:
+ 563              		.loc 3 110 4 is_stmt 1 view .LVU173
+ 564              		.loc 3 110 34 is_stmt 0 view .LVU174
+ 565 01aa 9FED874B 		vldr.64	d4, .L57+8
+ 566              		.loc 3 110 40 view .LVU175
+ 567 01ae B7EEC77A 		vcvt.f64.f32	d7, s14
+ 568              		.loc 3 110 34 view .LVU176
+ 569 01b2 27EE047B 		vmul.f64	d7, d7, d4
+ 570              		.loc 3 110 10 view .LVU177
+ 571 01b6 B7EEC78B 		vcvt.f32.f64	s16, d7
+ 572              	.LVL30:
+ 111:IIRFilter.h   **** 			float alpha = sinf (omega) / (2.0 * Q);
+ 573              		.loc 3 111 4 is_stmt 1 view .LVU178
+ 574              		.loc 3 111 23 is_stmt 0 view .LVU179
+ 575 01ba B0EE480A 		vmov.f32	s0, s16
+ 576 01be FFF7FEFF 		bl	sinf
+ 577              	.LVL31:
+ 578 01c2 F5EE408A 		vcmp.f32	s17, #0
+ 579 01c6 20EE099A 		vmul.f32	s18, s0, s18
+ 580              	.LVL32:
+ 112:IIRFilter.h   **** 			float twoSqrtAalpha = 2*sqrt(A)*alpha;
+ 581              		.loc 3 112 4 is_stmt 1 view .LVU180
+ 582              	.LBB92:
+ 583              	.LBI92:
+ 584              		.file 4 "/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath"
+   1:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath **** // -*- C++ -*- C forwarding header.
+   2:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath **** 
+   3:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath **** // Copyright (C) 1997-2020 Free Software Foundation, Inc.
+   4:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath **** //
+   5:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath **** // This file is part of the GNU ISO C++ Library.  This library is free
+   6:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath **** // software; you can redistribute it and/or modify it under the
+   7:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath **** // terms of the GNU General Public License as published by the
+   8:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath **** // Free Software Foundation; either version 3, or (at your option)
+   9:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath **** // any later version.
+  10:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath **** 
+  11:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath **** // This library is distributed in the hope that it will be useful,
+  12:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath **** // but WITHOUT ANY WARRANTY; without even the implied warranty of
+  13:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath **** // MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  14:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath **** // GNU General Public License for more details.
+  15:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath **** 
+  16:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath **** // Under Section 7 of GPL version 3, you are granted additional
+  17:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath **** // permissions described in the GCC Runtime Library Exception, version
+  18:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath **** // 3.1, as published by the Free Software Foundation.
+  19:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath **** 
+  20:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath **** // You should have received a copy of the GNU General Public License and
+  21:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath **** // a copy of the GCC Runtime Library Exception along with this program;
+  22:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath **** // see the files COPYING3 and COPYING.RUNTIME respectively.  If not, see
+  23:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath **** // <http://www.gnu.org/licenses/>.
+  24:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath **** 
+  25:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath **** /** @file include/cmath
+  26:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****  *  This is a Standard C++ Library file.  You should @c \#include this file
+  27:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****  *  in your programs, rather than any of the @a *.h implementation files.
+ARM GAS  /var/folders/5f/72p4brfx5932kssh4q_5ly0m0000gn/T//ccJ60apv.s 			page 18
+
+
+  28:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****  *
+  29:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****  *  This is the C++ version of the Standard C Library header @c math.h,
+  30:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****  *  and its contents are (mostly) the same as that header, but are all
+  31:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****  *  contained in the namespace @c std (except for names which are defined
+  32:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****  *  as macros in C).
+  33:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****  */
+  34:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath **** 
+  35:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath **** //
+  36:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath **** // ISO C++ 14882: 26.5  C library
+  37:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath **** //
+  38:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath **** 
+  39:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath **** #pragma GCC system_header
+  40:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath **** 
+  41:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath **** #include <bits/c++config.h>
+  42:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath **** #include <bits/cpp_type_traits.h>
+  43:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath **** #include <ext/type_traits.h>
+  44:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath **** #define _GLIBCXX_INCLUDE_NEXT_C_HEADERS
+  45:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath **** #include_next <math.h>
+  46:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath **** #undef _GLIBCXX_INCLUDE_NEXT_C_HEADERS
+  47:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath **** #include <bits/std_abs.h>
+  48:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath **** 
+  49:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath **** #ifndef _GLIBCXX_CMATH
+  50:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath **** #define _GLIBCXX_CMATH 1
+  51:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath **** 
+  52:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath **** // Get rid of those macros defined in <math.h> in lieu of real functions.
+  53:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath **** #undef div
+  54:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath **** #undef acos
+  55:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath **** #undef asin
+  56:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath **** #undef atan
+  57:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath **** #undef atan2
+  58:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath **** #undef ceil
+  59:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath **** #undef cos
+  60:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath **** #undef cosh
+  61:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath **** #undef exp
+  62:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath **** #undef fabs
+  63:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath **** #undef floor
+  64:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath **** #undef fmod
+  65:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath **** #undef frexp
+  66:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath **** #undef ldexp
+  67:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath **** #undef log
+  68:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath **** #undef log10
+  69:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath **** #undef modf
+  70:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath **** #undef pow
+  71:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath **** #undef sin
+  72:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath **** #undef sinh
+  73:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath **** #undef sqrt
+  74:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath **** #undef tan
+  75:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath **** #undef tanh
+  76:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath **** 
+  77:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath **** extern "C++"
+  78:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath **** {
+  79:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath **** namespace std _GLIBCXX_VISIBILITY(default)
+  80:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath **** {
+  81:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath **** _GLIBCXX_BEGIN_NAMESPACE_VERSION
+  82:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath **** 
+  83:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****   using ::acos;
+  84:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath **** 
+ARM GAS  /var/folders/5f/72p4brfx5932kssh4q_5ly0m0000gn/T//ccJ60apv.s 			page 19
+
+
+  85:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath **** #ifndef __CORRECT_ISO_CPP_MATH_H_PROTO
+  86:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****   inline _GLIBCXX_CONSTEXPR float
+  87:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****   acos(float __x)
+  88:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****   { return __builtin_acosf(__x); }
+  89:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath **** 
+  90:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****   inline _GLIBCXX_CONSTEXPR long double
+  91:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****   acos(long double __x)
+  92:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****   { return __builtin_acosl(__x); }
+  93:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath **** #endif
+  94:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath **** 
+  95:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****   template<typename _Tp>
+  96:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****     inline _GLIBCXX_CONSTEXPR
+  97:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****     typename __gnu_cxx::__enable_if<__is_integer<_Tp>::__value, 
+  98:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****                                     double>::__type
+  99:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****     acos(_Tp __x)
+ 100:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****     { return __builtin_acos(__x); }
+ 101:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath **** 
+ 102:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****   using ::asin;
+ 103:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath **** 
+ 104:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath **** #ifndef __CORRECT_ISO_CPP_MATH_H_PROTO
+ 105:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****   inline _GLIBCXX_CONSTEXPR float
+ 106:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****   asin(float __x)
+ 107:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****   { return __builtin_asinf(__x); }
+ 108:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath **** 
+ 109:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****   inline _GLIBCXX_CONSTEXPR long double
+ 110:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****   asin(long double __x)
+ 111:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****   { return __builtin_asinl(__x); }
+ 112:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath **** #endif
+ 113:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath **** 
+ 114:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****   template<typename _Tp>
+ 115:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****     inline _GLIBCXX_CONSTEXPR
+ 116:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****     typename __gnu_cxx::__enable_if<__is_integer<_Tp>::__value,
+ 117:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****                                     double>::__type
+ 118:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****     asin(_Tp __x)
+ 119:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****     { return __builtin_asin(__x); }
+ 120:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath **** 
+ 121:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****   using ::atan;
+ 122:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath **** 
+ 123:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath **** #ifndef __CORRECT_ISO_CPP_MATH_H_PROTO
+ 124:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****   inline _GLIBCXX_CONSTEXPR float
+ 125:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****   atan(float __x)
+ 126:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****   { return __builtin_atanf(__x); }
+ 127:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath **** 
+ 128:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****   inline _GLIBCXX_CONSTEXPR long double
+ 129:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****   atan(long double __x)
+ 130:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****   { return __builtin_atanl(__x); }
+ 131:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath **** #endif
+ 132:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath **** 
+ 133:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****   template<typename _Tp>
+ 134:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****     inline _GLIBCXX_CONSTEXPR
+ 135:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****     typename __gnu_cxx::__enable_if<__is_integer<_Tp>::__value,
+ 136:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****                                     double>::__type
+ 137:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****     atan(_Tp __x)
+ 138:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****     { return __builtin_atan(__x); }
+ 139:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath **** 
+ 140:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****   using ::atan2;
+ 141:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath **** 
+ARM GAS  /var/folders/5f/72p4brfx5932kssh4q_5ly0m0000gn/T//ccJ60apv.s 			page 20
+
+
+ 142:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath **** #ifndef __CORRECT_ISO_CPP_MATH_H_PROTO
+ 143:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****   inline _GLIBCXX_CONSTEXPR float
+ 144:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****   atan2(float __y, float __x)
+ 145:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****   { return __builtin_atan2f(__y, __x); }
+ 146:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath **** 
+ 147:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****   inline _GLIBCXX_CONSTEXPR long double
+ 148:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****   atan2(long double __y, long double __x)
+ 149:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****   { return __builtin_atan2l(__y, __x); }
+ 150:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath **** #endif
+ 151:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath **** 
+ 152:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****   template<typename _Tp, typename _Up>
+ 153:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****     inline _GLIBCXX_CONSTEXPR
+ 154:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****     typename __gnu_cxx::__promote_2<_Tp, _Up>::__type
+ 155:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****     atan2(_Tp __y, _Up __x)
+ 156:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****     {
+ 157:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****       typedef typename __gnu_cxx::__promote_2<_Tp, _Up>::__type __type;
+ 158:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****       return atan2(__type(__y), __type(__x));
+ 159:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****     }
+ 160:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath **** 
+ 161:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****   using ::ceil;
+ 162:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath **** 
+ 163:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath **** #ifndef __CORRECT_ISO_CPP_MATH_H_PROTO
+ 164:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****   inline _GLIBCXX_CONSTEXPR float
+ 165:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****   ceil(float __x)
+ 166:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****   { return __builtin_ceilf(__x); }
+ 167:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath **** 
+ 168:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****   inline _GLIBCXX_CONSTEXPR long double
+ 169:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****   ceil(long double __x)
+ 170:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****   { return __builtin_ceill(__x); }
+ 171:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath **** #endif
+ 172:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath **** 
+ 173:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****   template<typename _Tp>
+ 174:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****     inline _GLIBCXX_CONSTEXPR
+ 175:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****     typename __gnu_cxx::__enable_if<__is_integer<_Tp>::__value, 
+ 176:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****                                     double>::__type
+ 177:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****     ceil(_Tp __x)
+ 178:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****     { return __builtin_ceil(__x); }
+ 179:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath **** 
+ 180:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****   using ::cos;
+ 181:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath **** 
+ 182:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath **** #ifndef __CORRECT_ISO_CPP_MATH_H_PROTO
+ 183:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****   inline _GLIBCXX_CONSTEXPR float
+ 184:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****   cos(float __x)
+ 185:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****   { return __builtin_cosf(__x); }
+ 186:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath **** 
+ 187:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****   inline _GLIBCXX_CONSTEXPR long double
+ 188:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****   cos(long double __x)
+ 189:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****   { return __builtin_cosl(__x); }
+ 190:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath **** #endif
+ 191:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath **** 
+ 192:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****   template<typename _Tp>
+ 193:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****     inline _GLIBCXX_CONSTEXPR
+ 194:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****     typename __gnu_cxx::__enable_if<__is_integer<_Tp>::__value,
+ 195:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****                                     double>::__type
+ 196:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****     cos(_Tp __x)
+ 197:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****     { return __builtin_cos(__x); }
+ 198:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath **** 
+ARM GAS  /var/folders/5f/72p4brfx5932kssh4q_5ly0m0000gn/T//ccJ60apv.s 			page 21
+
+
+ 199:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****   using ::cosh;
+ 200:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath **** 
+ 201:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath **** #ifndef __CORRECT_ISO_CPP_MATH_H_PROTO
+ 202:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****   inline _GLIBCXX_CONSTEXPR float
+ 203:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****   cosh(float __x)
+ 204:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****   { return __builtin_coshf(__x); }
+ 205:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath **** 
+ 206:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****   inline _GLIBCXX_CONSTEXPR long double
+ 207:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****   cosh(long double __x)
+ 208:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****   { return __builtin_coshl(__x); }
+ 209:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath **** #endif
+ 210:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath **** 
+ 211:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****   template<typename _Tp>
+ 212:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****     inline _GLIBCXX_CONSTEXPR
+ 213:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****     typename __gnu_cxx::__enable_if<__is_integer<_Tp>::__value,
+ 214:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****                                     double>::__type
+ 215:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****     cosh(_Tp __x)
+ 216:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****     { return __builtin_cosh(__x); }
+ 217:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath **** 
+ 218:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****   using ::exp;
+ 219:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath **** 
+ 220:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath **** #ifndef __CORRECT_ISO_CPP_MATH_H_PROTO
+ 221:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****   inline _GLIBCXX_CONSTEXPR float
+ 222:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****   exp(float __x)
+ 223:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****   { return __builtin_expf(__x); }
+ 224:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath **** 
+ 225:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****   inline _GLIBCXX_CONSTEXPR long double
+ 226:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****   exp(long double __x)
+ 227:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****   { return __builtin_expl(__x); }
+ 228:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath **** #endif
+ 229:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath **** 
+ 230:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****   template<typename _Tp>
+ 231:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****     inline _GLIBCXX_CONSTEXPR
+ 232:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****     typename __gnu_cxx::__enable_if<__is_integer<_Tp>::__value,
+ 233:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****                                     double>::__type
+ 234:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****     exp(_Tp __x)
+ 235:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****     { return __builtin_exp(__x); }
+ 236:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath **** 
+ 237:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****   using ::fabs;
+ 238:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath **** 
+ 239:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath **** #ifndef __CORRECT_ISO_CPP_MATH_H_PROTO
+ 240:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****   inline _GLIBCXX_CONSTEXPR float
+ 241:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****   fabs(float __x)
+ 242:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****   { return __builtin_fabsf(__x); }
+ 243:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath **** 
+ 244:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****   inline _GLIBCXX_CONSTEXPR long double
+ 245:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****   fabs(long double __x)
+ 246:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****   { return __builtin_fabsl(__x); }
+ 247:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath **** #endif
+ 248:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath **** 
+ 249:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****   template<typename _Tp>
+ 250:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****     inline _GLIBCXX_CONSTEXPR
+ 251:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****     typename __gnu_cxx::__enable_if<__is_integer<_Tp>::__value,
+ 252:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****                                     double>::__type
+ 253:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****     fabs(_Tp __x)
+ 254:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****     { return __builtin_fabs(__x); }
+ 255:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath **** 
+ARM GAS  /var/folders/5f/72p4brfx5932kssh4q_5ly0m0000gn/T//ccJ60apv.s 			page 22
+
+
+ 256:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****   using ::floor;
+ 257:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath **** 
+ 258:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath **** #ifndef __CORRECT_ISO_CPP_MATH_H_PROTO
+ 259:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****   inline _GLIBCXX_CONSTEXPR float
+ 260:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****   floor(float __x)
+ 261:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****   { return __builtin_floorf(__x); }
+ 262:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath **** 
+ 263:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****   inline _GLIBCXX_CONSTEXPR long double
+ 264:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****   floor(long double __x)
+ 265:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****   { return __builtin_floorl(__x); }
+ 266:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath **** #endif
+ 267:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath **** 
+ 268:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****   template<typename _Tp>
+ 269:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****     inline _GLIBCXX_CONSTEXPR
+ 270:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****     typename __gnu_cxx::__enable_if<__is_integer<_Tp>::__value,
+ 271:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****                                     double>::__type
+ 272:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****     floor(_Tp __x)
+ 273:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****     { return __builtin_floor(__x); }
+ 274:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath **** 
+ 275:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****   using ::fmod;
+ 276:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath **** 
+ 277:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath **** #ifndef __CORRECT_ISO_CPP_MATH_H_PROTO
+ 278:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****   inline _GLIBCXX_CONSTEXPR float
+ 279:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****   fmod(float __x, float __y)
+ 280:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****   { return __builtin_fmodf(__x, __y); }
+ 281:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath **** 
+ 282:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****   inline _GLIBCXX_CONSTEXPR long double
+ 283:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****   fmod(long double __x, long double __y)
+ 284:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****   { return __builtin_fmodl(__x, __y); }
+ 285:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath **** #endif
+ 286:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath **** 
+ 287:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****   template<typename _Tp, typename _Up>
+ 288:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****     inline _GLIBCXX_CONSTEXPR
+ 289:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****     typename __gnu_cxx::__promote_2<_Tp, _Up>::__type
+ 290:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****     fmod(_Tp __x, _Up __y)
+ 291:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****     {
+ 292:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****       typedef typename __gnu_cxx::__promote_2<_Tp, _Up>::__type __type;
+ 293:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****       return fmod(__type(__x), __type(__y));
+ 294:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****     }
+ 295:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath **** 
+ 296:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****   using ::frexp;
+ 297:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath **** 
+ 298:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath **** #ifndef __CORRECT_ISO_CPP_MATH_H_PROTO
+ 299:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****   inline float
+ 300:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****   frexp(float __x, int* __exp)
+ 301:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****   { return __builtin_frexpf(__x, __exp); }
+ 302:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath **** 
+ 303:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****   inline long double
+ 304:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****   frexp(long double __x, int* __exp)
+ 305:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****   { return __builtin_frexpl(__x, __exp); }
+ 306:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath **** #endif
+ 307:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath **** 
+ 308:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****   template<typename _Tp>
+ 309:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****     inline _GLIBCXX_CONSTEXPR
+ 310:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****     typename __gnu_cxx::__enable_if<__is_integer<_Tp>::__value, 
+ 311:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****                                     double>::__type
+ 312:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****     frexp(_Tp __x, int* __exp)
+ARM GAS  /var/folders/5f/72p4brfx5932kssh4q_5ly0m0000gn/T//ccJ60apv.s 			page 23
+
+
+ 313:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****     { return __builtin_frexp(__x, __exp); }
+ 314:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath **** 
+ 315:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****   using ::ldexp;
+ 316:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath **** 
+ 317:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath **** #ifndef __CORRECT_ISO_CPP_MATH_H_PROTO
+ 318:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****   inline _GLIBCXX_CONSTEXPR float
+ 319:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****   ldexp(float __x, int __exp)
+ 320:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****   { return __builtin_ldexpf(__x, __exp); }
+ 321:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath **** 
+ 322:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****   inline _GLIBCXX_CONSTEXPR long double
+ 323:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****   ldexp(long double __x, int __exp)
+ 324:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****   { return __builtin_ldexpl(__x, __exp); }
+ 325:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath **** #endif
+ 326:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath **** 
+ 327:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****   template<typename _Tp>
+ 328:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****     inline _GLIBCXX_CONSTEXPR
+ 329:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****     typename __gnu_cxx::__enable_if<__is_integer<_Tp>::__value, 
+ 330:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****                                     double>::__type
+ 331:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****     ldexp(_Tp __x, int __exp)
+ 332:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****     { return __builtin_ldexp(__x, __exp); }
+ 333:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath **** 
+ 334:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****   using ::log;
+ 335:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath **** 
+ 336:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath **** #ifndef __CORRECT_ISO_CPP_MATH_H_PROTO
+ 337:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****   inline _GLIBCXX_CONSTEXPR float
+ 338:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****   log(float __x)
+ 339:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****   { return __builtin_logf(__x); }
+ 340:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath **** 
+ 341:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****   inline _GLIBCXX_CONSTEXPR long double
+ 342:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****   log(long double __x)
+ 343:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****   { return __builtin_logl(__x); }
+ 344:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath **** #endif
+ 345:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath **** 
+ 346:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****   template<typename _Tp>
+ 347:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****     inline _GLIBCXX_CONSTEXPR
+ 348:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****     typename __gnu_cxx::__enable_if<__is_integer<_Tp>::__value, 
+ 349:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****                                     double>::__type
+ 350:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****     log(_Tp __x)
+ 351:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****     { return __builtin_log(__x); }
+ 352:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath **** 
+ 353:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****   using ::log10;
+ 354:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath **** 
+ 355:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath **** #ifndef __CORRECT_ISO_CPP_MATH_H_PROTO
+ 356:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****   inline _GLIBCXX_CONSTEXPR float
+ 357:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****   log10(float __x)
+ 358:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****   { return __builtin_log10f(__x); }
+ 359:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath **** 
+ 360:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****   inline _GLIBCXX_CONSTEXPR long double
+ 361:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****   log10(long double __x)
+ 362:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****   { return __builtin_log10l(__x); }
+ 363:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath **** #endif
+ 364:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath **** 
+ 365:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****   template<typename _Tp>
+ 366:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****     inline _GLIBCXX_CONSTEXPR
+ 367:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****     typename __gnu_cxx::__enable_if<__is_integer<_Tp>::__value,
+ 368:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****                                     double>::__type
+ 369:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****     log10(_Tp __x)
+ARM GAS  /var/folders/5f/72p4brfx5932kssh4q_5ly0m0000gn/T//ccJ60apv.s 			page 24
+
+
+ 370:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****     { return __builtin_log10(__x); }
+ 371:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath **** 
+ 372:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****   using ::modf;
+ 373:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath **** 
+ 374:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath **** #ifndef __CORRECT_ISO_CPP_MATH_H_PROTO
+ 375:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****   inline float
+ 376:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****   modf(float __x, float* __iptr)
+ 377:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****   { return __builtin_modff(__x, __iptr); }
+ 378:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath **** 
+ 379:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****   inline long double
+ 380:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****   modf(long double __x, long double* __iptr)
+ 381:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****   { return __builtin_modfl(__x, __iptr); }
+ 382:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath **** #endif
+ 383:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath **** 
+ 384:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****   using ::pow;
+ 385:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath **** 
+ 386:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath **** #ifndef __CORRECT_ISO_CPP_MATH_H_PROTO
+ 387:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****   inline _GLIBCXX_CONSTEXPR float
+ 388:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****   pow(float __x, float __y)
+ 389:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****   { return __builtin_powf(__x, __y); }
+ 390:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath **** 
+ 391:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****   inline _GLIBCXX_CONSTEXPR long double
+ 392:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****   pow(long double __x, long double __y)
+ 393:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****   { return __builtin_powl(__x, __y); }
+ 394:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath **** 
+ 395:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath **** #if __cplusplus < 201103L
+ 396:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****   // _GLIBCXX_RESOLVE_LIB_DEFECTS
+ 397:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****   // DR 550. What should the return type of pow(float,int) be?
+ 398:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****   inline double
+ 399:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****   pow(double __x, int __i)
+ 400:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****   { return __builtin_powi(__x, __i); }
+ 401:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath **** 
+ 402:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****   inline float
+ 403:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****   pow(float __x, int __n)
+ 404:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****   { return __builtin_powif(__x, __n); }
+ 405:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath **** 
+ 406:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****   inline long double
+ 407:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****   pow(long double __x, int __n)
+ 408:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****   { return __builtin_powil(__x, __n); }
+ 409:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath **** #endif
+ 410:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath **** #endif
+ 411:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath **** 
+ 412:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****   template<typename _Tp, typename _Up>
+ 413:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****     inline _GLIBCXX_CONSTEXPR
+ 414:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****     typename __gnu_cxx::__promote_2<_Tp, _Up>::__type
+ 415:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****     pow(_Tp __x, _Up __y)
+ 416:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****     {
+ 417:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****       typedef typename __gnu_cxx::__promote_2<_Tp, _Up>::__type __type;
+ 418:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****       return pow(__type(__x), __type(__y));
+ 419:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****     }
+ 420:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath **** 
+ 421:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****   using ::sin;
+ 422:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath **** 
+ 423:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath **** #ifndef __CORRECT_ISO_CPP_MATH_H_PROTO
+ 424:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****   inline _GLIBCXX_CONSTEXPR float
+ 425:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****   sin(float __x)
+ 426:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****   { return __builtin_sinf(__x); }
+ARM GAS  /var/folders/5f/72p4brfx5932kssh4q_5ly0m0000gn/T//ccJ60apv.s 			page 25
+
+
+ 427:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath **** 
+ 428:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****   inline _GLIBCXX_CONSTEXPR long double
+ 429:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****   sin(long double __x)
+ 430:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****   { return __builtin_sinl(__x); }
+ 431:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath **** #endif
+ 432:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath **** 
+ 433:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****   template<typename _Tp>
+ 434:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****     inline _GLIBCXX_CONSTEXPR
+ 435:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****     typename __gnu_cxx::__enable_if<__is_integer<_Tp>::__value, 
+ 436:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****                                     double>::__type
+ 437:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****     sin(_Tp __x)
+ 438:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****     { return __builtin_sin(__x); }
+ 439:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath **** 
+ 440:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****   using ::sinh;
+ 441:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath **** 
+ 442:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath **** #ifndef __CORRECT_ISO_CPP_MATH_H_PROTO
+ 443:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****   inline _GLIBCXX_CONSTEXPR float
+ 444:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****   sinh(float __x)
+ 445:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****   { return __builtin_sinhf(__x); }
+ 446:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath **** 
+ 447:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****   inline _GLIBCXX_CONSTEXPR long double
+ 448:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****   sinh(long double __x)
+ 449:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****   { return __builtin_sinhl(__x); }
+ 450:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath **** #endif
+ 451:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath **** 
+ 452:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****   template<typename _Tp>
+ 453:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****     inline _GLIBCXX_CONSTEXPR
+ 454:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****     typename __gnu_cxx::__enable_if<__is_integer<_Tp>::__value, 
+ 455:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****                                     double>::__type
+ 456:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****     sinh(_Tp __x)
+ 457:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****     { return __builtin_sinh(__x); }
+ 458:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath **** 
+ 459:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****   using ::sqrt;
+ 460:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath **** 
+ 461:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath **** #ifndef __CORRECT_ISO_CPP_MATH_H_PROTO
+ 462:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****   inline _GLIBCXX_CONSTEXPR float
+ 463:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****   sqrt(float __x)
+ 585              		.loc 4 463 3 view .LVU181
+ 586              	.LBB93:
+ 464:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****   { return __builtin_sqrtf(__x); }
+ 587              		.loc 4 464 5 view .LVU182
+ 588 01ca F1EE10FA 		vmrs	APSR_nzcv, FPSCR
+ 589 01ce 00F1E980 		bmi	.L50
+ 590              		.loc 4 464 27 is_stmt 0 view .LVU183
+ 591 01d2 B1EEE84A 		vsqrt.f32	s8, s17
+ 592              	.L35:
+ 593              	.LVL33:
+ 594              		.loc 4 464 27 view .LVU184
+ 595              	.LBE93:
+ 596              	.LBE92:
+ 597              		.loc 3 112 27 view .LVU185
+ 598 01d6 34EE044A 		vadd.f32	s8, s8, s8
+ 113:IIRFilter.h   **** 			float cosOmega = cosf(omega);
+ 599              		.loc 3 113 25 view .LVU186
+ 600 01da B0EE480A 		vmov.f32	s0, s16
+ 112:IIRFilter.h   **** 			float cosOmega = cosf(omega);
+ 601              		.loc 3 112 36 view .LVU187
+ARM GAS  /var/folders/5f/72p4brfx5932kssh4q_5ly0m0000gn/T//ccJ60apv.s 			page 26
+
+
+ 602 01de 24EE099A 		vmul.f32	s18, s8, s18
+ 603              	.LVL34:
+ 604              		.loc 3 113 4 is_stmt 1 view .LVU188
+ 605              		.loc 3 113 25 is_stmt 0 view .LVU189
+ 606 01e2 FFF7FEFF 		bl	cosf
+ 607              	.LVL35:
+ 114:IIRFilter.h   **** 
+ 115:IIRFilter.h   **** 			b[0] = A * ((A + 1.0) + (A - 1.0) * cosOmega + twoSqrtAalpha);
+ 608              		.loc 3 115 4 is_stmt 1 view .LVU190
+ 609              		.loc 3 115 11 is_stmt 0 view .LVU191
+ 610 01e6 B7EEE85A 		vcvt.f64.f32	d5, s17
+ 611              		.loc 3 115 19 view .LVU192
+ 612 01ea B7EE007B 		vmov.f64	d7, #1.0e+0
+ 613              		.loc 3 115 40 view .LVU193
+ 614 01ee B7EEC00A 		vcvt.f64.f32	d0, s0
+ 615              	.LVL36:
+ 116:IIRFilter.h   **** 			b[1] = -2.0 * A * ((A - 1.0) + (A + 1.0) * cosOmega);
+ 616              		.loc 3 116 16 view .LVU194
+ 617 01f2 B8EE003B 		vmov.f64	d3, #-2.0e+0
+ 115:IIRFilter.h   **** 			b[1] = -2.0 * A * ((A - 1.0) + (A + 1.0) * cosOmega);
+ 618              		.loc 3 115 19 view .LVU195
+ 619 01f6 35EE072B 		vadd.f64	d2, d5, d7
+ 115:IIRFilter.h   **** 			b[1] = -2.0 * A * ((A - 1.0) + (A + 1.0) * cosOmega);
+ 620              		.loc 3 115 31 view .LVU196
+ 621 01fa 35EE477B 		vsub.f64	d7, d5, d7
+ 622              		.loc 3 116 16 view .LVU197
+ 623 01fe 25EE033B 		vmul.f64	d3, d5, d3
+ 624              		.loc 3 116 33 view .LVU198
+ 625 0202 B0EE471B 		vmov.f64	d1, d7
+ 115:IIRFilter.h   **** 			b[1] = -2.0 * A * ((A - 1.0) + (A + 1.0) * cosOmega);
+ 626              		.loc 3 115 26 view .LVU199
+ 627 0206 B0EE426B 		vmov.f64	d6, d2
+ 115:IIRFilter.h   **** 			b[1] = -2.0 * A * ((A - 1.0) + (A + 1.0) * cosOmega);
+ 628              		.loc 3 115 51 view .LVU200
+ 629 020a B7EEC94A 		vcvt.f64.f32	d4, s18
+ 630              		.loc 3 116 4 is_stmt 1 view .LVU201
+ 631              		.loc 3 116 33 is_stmt 0 view .LVU202
+ 632 020e A2EE001B 		vfma.f64	d1, d2, d0
+ 115:IIRFilter.h   **** 			b[1] = -2.0 * A * ((A - 1.0) + (A + 1.0) * cosOmega);
+ 633              		.loc 3 115 26 view .LVU203
+ 634 0212 A7EE006B 		vfma.f64	d6, d7, d0
+ 635              	.LBE99:
+ 636              	.LBE103:
+ 637              		.loc 1 167 1 view .LVU204
+ 638 0216 BDEC048B 		vldm	sp!, {d8-d9}
+ 639              		.cfi_remember_state
+ 640              		.cfi_restore 82
+ 641              		.cfi_restore 83
+ 642              		.cfi_restore 80
+ 643              		.cfi_restore 81
+ 644              		.cfi_def_cfa_offset 16
+ 645              	.LVL37:
+ 646              	.LBB104:
+ 647              	.LBB100:
+ 648              		.loc 3 116 20 view .LVU205
+ 649 021a 23EE013B 		vmul.f64	d3, d3, d1
+ 117:IIRFilter.h   **** 			b[2] = A * ((A + 1.0) + (A - 1.0) * cosOmega - twoSqrtAalpha);
+ARM GAS  /var/folders/5f/72p4brfx5932kssh4q_5ly0m0000gn/T//ccJ60apv.s 			page 27
+
+
+ 650              		.loc 3 117 49 view .LVU206
+ 651 021e 36EE441B 		vsub.f64	d1, d6, d4
+ 115:IIRFilter.h   **** 			b[1] = -2.0 * A * ((A - 1.0) + (A + 1.0) * cosOmega);
+ 652              		.loc 3 115 49 view .LVU207
+ 653 0222 36EE046B 		vadd.f64	d6, d6, d4
+ 654              		.loc 3 117 13 view .LVU208
+ 655 0226 21EE051B 		vmul.f64	d1, d1, d5
+ 115:IIRFilter.h   **** 			b[1] = -2.0 * A * ((A - 1.0) + (A + 1.0) * cosOmega);
+ 656              		.loc 3 115 13 view .LVU209
+ 657 022a 26EE056B 		vmul.f64	d6, d6, d5
+ 658              		.loc 3 117 13 view .LVU210
+ 659 022e B7EEC15B 		vcvt.f32.f64	s10, d1
+ 118:IIRFilter.h   **** 			a[0] = (A + 1.0) - (A - 1.0) * cosOmega + twoSqrtAalpha;
+ 660              		.loc 3 118 21 view .LVU211
+ 661 0232 B0EE421B 		vmov.f64	d1, d2
+ 116:IIRFilter.h   **** 			b[2] = A * ((A + 1.0) + (A - 1.0) * cosOmega - twoSqrtAalpha);
+ 662              		.loc 3 116 20 view .LVU212
+ 663 0236 B7EEC33B 		vcvt.f32.f64	s6, d3
+ 117:IIRFilter.h   **** 			b[2] = A * ((A + 1.0) + (A - 1.0) * cosOmega - twoSqrtAalpha);
+ 664              		.loc 3 117 4 is_stmt 1 view .LVU213
+ 665              		.loc 3 118 4 view .LVU214
+ 115:IIRFilter.h   **** 			b[1] = -2.0 * A * ((A - 1.0) + (A + 1.0) * cosOmega);
+ 666              		.loc 3 115 13 is_stmt 0 view .LVU215
+ 667 023a F7EEC65B 		vcvt.f32.f64	s11, d6
+ 668              		.loc 3 118 21 view .LVU216
+ 669 023e A7EE401B 		vfms.f64	d1, d7, d0
+ 119:IIRFilter.h   **** 			a[1] = 2.0 * ((A - 1.0) - (A + 1.0) * cosOmega);
+ 670              		.loc 3 119 28 view .LVU217
+ 671 0242 A2EE407B 		vfms.f64	d7, d2, d0
+ 118:IIRFilter.h   **** 			a[1] = 2.0 * ((A - 1.0) - (A + 1.0) * cosOmega);
+ 672              		.loc 3 118 44 view .LVU218
+ 673 0246 34EE016B 		vadd.f64	d6, d4, d1
+ 120:IIRFilter.h   **** 			a[2] = (A + 1.0) - (A - 1.0) * cosOmega - twoSqrtAalpha;
+ 674              		.loc 3 120 44 view .LVU219
+ 675 024a 31EE444B 		vsub.f64	d4, d1, d4
+ 118:IIRFilter.h   **** 			a[1] = 2.0 * ((A - 1.0) - (A + 1.0) * cosOmega);
+ 676              		.loc 3 118 44 view .LVU220
+ 677 024e B7EEC66B 		vcvt.f32.f64	s12, d6
+ 119:IIRFilter.h   **** 			a[1] = 2.0 * ((A - 1.0) - (A + 1.0) * cosOmega);
+ 678              		.loc 3 119 4 is_stmt 1 view .LVU221
+ 119:IIRFilter.h   **** 			a[1] = 2.0 * ((A - 1.0) - (A + 1.0) * cosOmega);
+ 679              		.loc 3 119 15 is_stmt 0 view .LVU222
+ 680 0252 37EE077B 		vadd.f64	d7, d7, d7
+ 681              		.loc 3 120 44 view .LVU223
+ 682 0256 B7EEC44B 		vcvt.f32.f64	s8, d4
+ 683              	.LBB95:
+ 121:IIRFilter.h   **** 
+ 122:IIRFilter.h   **** 			// Normalize the coefficients
+ 123:IIRFilter.h   **** 			float a0 = a[0];
+ 124:IIRFilter.h   **** 			for (int i = 0; i < NUM_IIR_COEFFS; i++) {
+ 125:IIRFilter.h   **** 				a[i] = a[i]/a0;
+ 684              		.loc 3 125 16 view .LVU224
+ 685 025a C6EE063A 		vdiv.f32	s7, s12, s12
+ 686              	.LBE95:
+ 119:IIRFilter.h   **** 			a[2] = (A + 1.0) - (A - 1.0) * cosOmega - twoSqrtAalpha;
+ 687              		.loc 3 119 15 view .LVU225
+ 688 025e B7EEC77B 		vcvt.f32.f64	s14, d7
+ARM GAS  /var/folders/5f/72p4brfx5932kssh4q_5ly0m0000gn/T//ccJ60apv.s 			page 28
+
+
+ 120:IIRFilter.h   **** 			a[2] = (A + 1.0) - (A - 1.0) * cosOmega - twoSqrtAalpha;
+ 689              		.loc 3 120 4 is_stmt 1 view .LVU226
+ 123:IIRFilter.h   **** 			for (int i = 0; i < NUM_IIR_COEFFS; i++) {
+ 690              		.loc 3 123 4 view .LVU227
+ 691              	.LVL38:
+ 124:IIRFilter.h   **** 				a[i] = a[i]/a0;
+ 692              		.loc 3 124 4 view .LVU228
+ 693              	.LBB96:
+ 124:IIRFilter.h   **** 				a[i] = a[i]/a0;
+ 694              		.loc 3 124 22 view .LVU229
+ 695              		.loc 3 125 5 view .LVU230
+ 126:IIRFilter.h   **** 				b[i] = b[i]/a0;
+ 696              		.loc 3 126 16 is_stmt 0 view .LVU231
+ 697 0262 C5EE864A 		vdiv.f32	s9, s11, s12
+ 698 0266 C3EE066A 		vdiv.f32	s13, s6, s12
+ 125:IIRFilter.h   **** 				b[i] = b[i]/a0;
+ 699              		.loc 3 125 16 view .LVU232
+ 700 026a C7EE065A 		vdiv.f32	s11, s14, s12
+ 125:IIRFilter.h   **** 				b[i] = b[i]/a0;
+ 701              		.loc 3 125 10 view .LVU233
+ 702 026e C4ED473A 		vstr.32	s7, [r4, #284]
+ 703              		.loc 3 126 5 is_stmt 1 view .LVU234
+ 125:IIRFilter.h   **** 				b[i] = b[i]/a0;
+ 704              		.loc 3 125 16 is_stmt 0 view .LVU235
+ 705 0272 84EE067A 		vdiv.f32	s14, s8, s12
+ 706              		.loc 3 126 10 view .LVU236
+ 707 0276 C4ED4A4A 		vstr.32	s9, [r4, #296]
+ 124:IIRFilter.h   **** 				a[i] = a[i]/a0;
+ 708              		.loc 3 124 4 is_stmt 1 view .LVU237
+ 709              	.LVL39:
+ 124:IIRFilter.h   **** 				a[i] = a[i]/a0;
+ 710              		.loc 3 124 22 view .LVU238
+ 125:IIRFilter.h   **** 				b[i] = b[i]/a0;
+ 711              		.loc 3 125 5 view .LVU239
+ 712              		.loc 3 126 16 is_stmt 0 view .LVU240
+ 713 027a C5EE067A 		vdiv.f32	s15, s10, s12
+ 714              		.loc 3 126 10 view .LVU241
+ 715 027e C4ED4B6A 		vstr.32	s13, [r4, #300]
+ 125:IIRFilter.h   **** 				b[i] = b[i]/a0;
+ 716              		.loc 3 125 10 view .LVU242
+ 717 0282 C4ED485A 		vstr.32	s11, [r4, #288]
+ 718              		.loc 3 126 5 is_stmt 1 view .LVU243
+ 124:IIRFilter.h   **** 				a[i] = a[i]/a0;
+ 719              		.loc 3 124 4 view .LVU244
+ 720              	.LVL40:
+ 124:IIRFilter.h   **** 				a[i] = a[i]/a0;
+ 721              		.loc 3 124 22 view .LVU245
+ 125:IIRFilter.h   **** 				b[i] = b[i]/a0;
+ 722              		.loc 3 125 5 view .LVU246
+ 125:IIRFilter.h   **** 				b[i] = b[i]/a0;
+ 723              		.loc 3 125 10 is_stmt 0 view .LVU247
+ 724 0286 84ED497A 		vstr.32	s14, [r4, #292]
+ 725              		.loc 3 126 5 is_stmt 1 view .LVU248
+ 726              		.loc 3 126 10 is_stmt 0 view .LVU249
+ 727 028a C4ED4C7A 		vstr.32	s15, [r4, #304]
+ 124:IIRFilter.h   **** 				a[i] = a[i]/a0;
+ 728              		.loc 3 124 4 is_stmt 1 view .LVU250
+ARM GAS  /var/folders/5f/72p4brfx5932kssh4q_5ly0m0000gn/T//ccJ60apv.s 			page 29
+
+
+ 729              	.LVL41:
+ 124:IIRFilter.h   **** 				a[i] = a[i]/a0;
+ 730              		.loc 3 124 22 view .LVU251
+ 731              	.LBE96:
+ 732              	.LBE100:
+ 733              	.LBE104:
+ 734              		.loc 1 167 1 is_stmt 0 view .LVU252
+ 735 028e 70BD     		pop	{r4, r5, r6, pc}
+ 736              	.LVL42:
+ 737              	.L55:
+ 738              		.cfi_restore_state
+ 150:Equalizer.cpp **** 							      m_EQParams[band].fc,
+ 739              		.loc 1 150 3 is_stmt 1 view .LVU253
+ 740              	.LBB105:
+ 741              	.LBB106:
+  82:IIRFilter.h   **** 			float omega =  2.0 * float_PI * (fc / fs);
+ 742              		.loc 3 82 24 is_stmt 0 view .LVU254
+ 743 0290 94ED037A 		vldr.32	s14, [r4, #12]
+  82:IIRFilter.h   **** 			float omega =  2.0 * float_PI * (fc / fs);
+ 744              		.loc 3 82 17 view .LVU255
+ 745 0294 B2EE040B 		vmov.f64	d0, #1.0e+1
+ 746              	.LBE106:
+ 747              	.LBE105:
+ 150:Equalizer.cpp **** 							      m_EQParams[band].fc,
+ 748              		.loc 1 150 38 view .LVU256
+ 749 0298 D4ED016A 		vldr.32	s13, [r4, #4]	@ int
+ 750 029c B6EE009A 		vmov.f32	s18, #5.0e-1
+ 751              	.LBB117:
+ 752              	.LBB113:
+  82:IIRFilter.h   **** 			float omega =  2.0 * float_PI * (fc / fs);
+ 753              		.loc 3 82 24 view .LVU257
+ 754 02a0 B7EEC77A 		vcvt.f64.f32	d7, s14
+ 755              	.LBE113:
+ 756              	.LBE117:
+ 150:Equalizer.cpp **** 							      m_EQParams[band].fc,
+ 757              		.loc 1 150 38 view .LVU258
+ 758 02a4 D4ED048A 		vldr.32	s17, [r4, #16]
+ 759              	.LVL43:
+ 150:Equalizer.cpp **** 							      m_EQParams[band].fc,
+ 760              		.loc 1 150 38 view .LVU259
+ 761 02a8 B8EEE68A 		vcvt.f32.s32	s16, s13
+ 762              	.LVL44:
+ 763              	.LBB118:
+ 764              	.LBI105:
+  76:IIRFilter.h   ****                          const float fc,
+ 765              		.loc 3 76 8 is_stmt 1 view .LVU260
+ 766              	.LBB114:
+  81:IIRFilter.h   **** 			float A = pow(10.0,(Gain_dB/40.0)); // Converting from dB to gain factor
+ 767              		.loc 3 81 4 view .LVU261
+  82:IIRFilter.h   **** 			float omega =  2.0 * float_PI * (fc / fs);
+ 768              		.loc 3 82 4 view .LVU262
+  82:IIRFilter.h   **** 			float omega =  2.0 * float_PI * (fc / fs);
+ 769              		.loc 3 82 17 is_stmt 0 view .LVU263
+ 770 02ac 9FED441B 		vldr.64	d1, .L57
+ 771 02b0 87EE011B 		vdiv.f64	d1, d7, d1
+ 772 02b4 FFF7FEFF 		bl	pow
+ 773              	.LVL45:
+ARM GAS  /var/folders/5f/72p4brfx5932kssh4q_5ly0m0000gn/T//ccJ60apv.s 			page 30
+
+
+  83:IIRFilter.h   **** 			float alpha = sinf (omega) / (2.0 * Q);
+ 774              		.loc 3 83 40 view .LVU264
+ 775 02b8 88EE887A 		vdiv.f32	s14, s17, s16
+  82:IIRFilter.h   **** 			float omega =  2.0 * float_PI * (fc / fs);
+ 776              		.loc 3 82 37 view .LVU265
+ 777 02bc F7EEC08B 		vcvt.f32.f64	s17, d0
+ 778              	.LVL46:
+  83:IIRFilter.h   **** 			float alpha = sinf (omega) / (2.0 * Q);
+ 779              		.loc 3 83 4 is_stmt 1 view .LVU266
+  83:IIRFilter.h   **** 			float alpha = sinf (omega) / (2.0 * Q);
+ 780              		.loc 3 83 34 is_stmt 0 view .LVU267
+ 781 02c0 9FED415B 		vldr.64	d5, .L57+8
+  83:IIRFilter.h   **** 			float alpha = sinf (omega) / (2.0 * Q);
+ 782              		.loc 3 83 40 view .LVU268
+ 783 02c4 B7EEC77A 		vcvt.f64.f32	d7, s14
+  83:IIRFilter.h   **** 			float alpha = sinf (omega) / (2.0 * Q);
+ 784              		.loc 3 83 34 view .LVU269
+ 785 02c8 27EE057B 		vmul.f64	d7, d7, d5
+  83:IIRFilter.h   **** 			float alpha = sinf (omega) / (2.0 * Q);
+ 786              		.loc 3 83 10 view .LVU270
+ 787 02cc B7EEC78B 		vcvt.f32.f64	s16, d7
+ 788              	.LVL47:
+  84:IIRFilter.h   **** 			float twoSqrtAalpha = 2*sqrt(A)*alpha;
+ 789              		.loc 3 84 4 is_stmt 1 view .LVU271
+  84:IIRFilter.h   **** 			float twoSqrtAalpha = 2*sqrt(A)*alpha;
+ 790              		.loc 3 84 23 is_stmt 0 view .LVU272
+ 791 02d0 B0EE480A 		vmov.f32	s0, s16
+ 792 02d4 FFF7FEFF 		bl	sinf
+ 793              	.LVL48:
+ 794 02d8 F5EE408A 		vcmp.f32	s17, #0
+ 795 02dc 20EE099A 		vmul.f32	s18, s0, s18
+ 796              	.LVL49:
+  85:IIRFilter.h   **** 			float cosOmega = cosf(omega);
+ 797              		.loc 3 85 4 is_stmt 1 view .LVU273
+ 798              	.LBB107:
+ 799              	.LBI107:
+ 463:/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/cmath ****   { return __builtin_sqrtf(__x); }
+ 800              		.loc 4 463 3 view .LVU274
+ 801              	.LBB108:
+ 802              		.loc 4 464 5 view .LVU275
+ 803 02e0 F1EE10FA 		vmrs	APSR_nzcv, FPSCR
+ 804 02e4 65D4     		bmi	.L49
+ 805              		.loc 4 464 27 is_stmt 0 view .LVU276
+ 806 02e6 F1EEE87A 		vsqrt.f32	s15, s17
+ 807              	.L31:
+ 808              	.LVL50:
+ 809              		.loc 4 464 27 view .LVU277
+ 810              	.LBE108:
+ 811              	.LBE107:
+  85:IIRFilter.h   **** 			float cosOmega = cosf(omega);
+ 812              		.loc 3 85 27 view .LVU278
+ 813 02ea 77EEA77A 		vadd.f32	s15, s15, s15
+  86:IIRFilter.h   **** 
+ 814              		.loc 3 86 25 view .LVU279
+ 815 02ee B0EE480A 		vmov.f32	s0, s16
+  85:IIRFilter.h   **** 			float cosOmega = cosf(omega);
+ 816              		.loc 3 85 36 view .LVU280
+ARM GAS  /var/folders/5f/72p4brfx5932kssh4q_5ly0m0000gn/T//ccJ60apv.s 			page 31
+
+
+ 817 02f2 27EE898A 		vmul.f32	s16, s15, s18
+ 818              	.LVL51:
+  86:IIRFilter.h   **** 
+ 819              		.loc 3 86 4 is_stmt 1 view .LVU281
+  86:IIRFilter.h   **** 
+ 820              		.loc 3 86 25 is_stmt 0 view .LVU282
+ 821 02f6 FFF7FEFF 		bl	cosf
+ 822              	.LVL52:
+  88:IIRFilter.h   **** 			b[1] = 2.0 * A * ((A - 1.0) - (A + 1.0) * cosOmega);
+ 823              		.loc 3 88 4 is_stmt 1 view .LVU283
+  88:IIRFilter.h   **** 			b[1] = 2.0 * A * ((A - 1.0) - (A + 1.0) * cosOmega);
+ 824              		.loc 3 88 11 is_stmt 0 view .LVU284
+ 825 02fa B7EEE86A 		vcvt.f64.f32	d6, s17
+  88:IIRFilter.h   **** 			b[1] = 2.0 * A * ((A - 1.0) - (A + 1.0) * cosOmega);
+ 826              		.loc 3 88 19 view .LVU285
+ 827 02fe B7EE007B 		vmov.f64	d7, #1.0e+0
+  88:IIRFilter.h   **** 			b[1] = 2.0 * A * ((A - 1.0) - (A + 1.0) * cosOmega);
+ 828              		.loc 3 88 40 view .LVU286
+ 829 0302 B7EEC00A 		vcvt.f64.f32	d0, s0
+ 830              	.LVL53:
+  88:IIRFilter.h   **** 			b[1] = 2.0 * A * ((A - 1.0) - (A + 1.0) * cosOmega);
+ 831              		.loc 3 88 51 view .LVU287
+ 832 0306 B7EEC88A 		vcvt.f64.f32	d8, s16
+ 833              	.LVL54:
+  89:IIRFilter.h   **** 			b[2] = A * ((A + 1.0) - (A - 1.0) * cosOmega - twoSqrtAalpha);
+ 834              		.loc 3 89 4 is_stmt 1 view .LVU288
+  88:IIRFilter.h   **** 			b[1] = 2.0 * A * ((A - 1.0) - (A + 1.0) * cosOmega);
+ 835              		.loc 3 88 19 is_stmt 0 view .LVU289
+ 836 030a 36EE073B 		vadd.f64	d3, d6, d7
+  88:IIRFilter.h   **** 			b[1] = 2.0 * A * ((A - 1.0) - (A + 1.0) * cosOmega);
+ 837              		.loc 3 88 31 view .LVU290
+ 838 030e 36EE477B 		vsub.f64	d7, d6, d7
+  89:IIRFilter.h   **** 			b[2] = A * ((A + 1.0) - (A - 1.0) * cosOmega - twoSqrtAalpha);
+ 839              		.loc 3 89 15 view .LVU291
+ 840 0312 36EE062B 		vadd.f64	d2, d6, d6
+  88:IIRFilter.h   **** 			b[1] = 2.0 * A * ((A - 1.0) - (A + 1.0) * cosOmega);
+ 841              		.loc 3 88 26 view .LVU292
+ 842 0316 B0EE435B 		vmov.f64	d5, d3
+  89:IIRFilter.h   **** 			b[2] = A * ((A + 1.0) - (A - 1.0) * cosOmega - twoSqrtAalpha);
+ 843              		.loc 3 89 32 view .LVU293
+ 844 031a B0EE474B 		vmov.f64	d4, d7
+  88:IIRFilter.h   **** 			b[1] = 2.0 * A * ((A - 1.0) - (A + 1.0) * cosOmega);
+ 845              		.loc 3 88 26 view .LVU294
+ 846 031e A7EE405B 		vfms.f64	d5, d7, d0
+  89:IIRFilter.h   **** 			b[2] = A * ((A + 1.0) - (A - 1.0) * cosOmega - twoSqrtAalpha);
+ 847              		.loc 3 89 32 view .LVU295
+ 848 0322 A3EE404B 		vfms.f64	d4, d3, d0
+  89:IIRFilter.h   **** 			b[2] = A * ((A + 1.0) - (A - 1.0) * cosOmega - twoSqrtAalpha);
+ 849              		.loc 3 89 19 view .LVU296
+ 850 0326 22EE042B 		vmul.f64	d2, d2, d4
+  90:IIRFilter.h   **** 			a[0] = (A + 1.0) + (A - 1.0) * cosOmega + twoSqrtAalpha;
+ 851              		.loc 3 90 49 view .LVU297
+ 852 032a 35EE484B 		vsub.f64	d4, d5, d8
+  88:IIRFilter.h   **** 			b[1] = 2.0 * A * ((A - 1.0) - (A + 1.0) * cosOmega);
+ 853              		.loc 3 88 49 view .LVU298
+ 854 032e 35EE085B 		vadd.f64	d5, d5, d8
+  90:IIRFilter.h   **** 			a[0] = (A + 1.0) + (A - 1.0) * cosOmega + twoSqrtAalpha;
+ARM GAS  /var/folders/5f/72p4brfx5932kssh4q_5ly0m0000gn/T//ccJ60apv.s 			page 32
+
+
+ 855              		.loc 3 90 13 view .LVU299
+ 856 0332 24EE064B 		vmul.f64	d4, d4, d6
+  88:IIRFilter.h   **** 			b[1] = 2.0 * A * ((A - 1.0) - (A + 1.0) * cosOmega);
+ 857              		.loc 3 88 13 view .LVU300
+ 858 0336 25EE066B 		vmul.f64	d6, d5, d6
+  92:IIRFilter.h   **** 			a[2] = (A + 1.0) + (A - 1.0) * cosOmega - twoSqrtAalpha;
+ 859              		.loc 3 92 16 view .LVU301
+ 860 033a B8EE005B 		vmov.f64	d5, #-2.0e+0
+  89:IIRFilter.h   **** 			b[2] = A * ((A + 1.0) - (A - 1.0) * cosOmega - twoSqrtAalpha);
+ 861              		.loc 3 89 19 view .LVU302
+ 862 033e B7EEC22B 		vcvt.f32.f64	s4, d2
+  90:IIRFilter.h   **** 			a[0] = (A + 1.0) + (A - 1.0) * cosOmega + twoSqrtAalpha;
+ 863              		.loc 3 90 4 is_stmt 1 view .LVU303
+  88:IIRFilter.h   **** 			b[1] = 2.0 * A * ((A - 1.0) - (A + 1.0) * cosOmega);
+ 864              		.loc 3 88 13 is_stmt 0 view .LVU304
+ 865 0342 B7EEC66B 		vcvt.f32.f64	s12, d6
+  90:IIRFilter.h   **** 			a[0] = (A + 1.0) + (A - 1.0) * cosOmega + twoSqrtAalpha;
+ 866              		.loc 3 90 13 view .LVU305
+ 867 0346 F7EEC46B 		vcvt.f32.f64	s13, d4
+  91:IIRFilter.h   **** 			a[1] = -2.0 * ((A - 1.0) + (A + 1.0) * cosOmega);
+ 868              		.loc 3 91 4 is_stmt 1 view .LVU306
+  91:IIRFilter.h   **** 			a[1] = -2.0 * ((A - 1.0) + (A + 1.0) * cosOmega);
+ 869              		.loc 3 91 21 is_stmt 0 view .LVU307
+ 870 034a B0EE434B 		vmov.f64	d4, d3
+ 871 034e A7EE004B 		vfma.f64	d4, d7, d0
+  92:IIRFilter.h   **** 			a[2] = (A + 1.0) + (A - 1.0) * cosOmega - twoSqrtAalpha;
+ 872              		.loc 3 92 29 view .LVU308
+ 873 0352 A3EE007B 		vfma.f64	d7, d3, d0
+  92:IIRFilter.h   **** 			a[2] = (A + 1.0) + (A - 1.0) * cosOmega - twoSqrtAalpha;
+ 874              		.loc 3 92 16 view .LVU309
+ 875 0356 27EE057B 		vmul.f64	d7, d7, d5
+  91:IIRFilter.h   **** 			a[1] = -2.0 * ((A - 1.0) + (A + 1.0) * cosOmega);
+ 876              		.loc 3 91 44 view .LVU310
+ 877 035a 38EE045B 		vadd.f64	d5, d8, d4
+  93:IIRFilter.h   **** 
+ 878              		.loc 3 93 44 view .LVU311
+ 879 035e 34EE484B 		vsub.f64	d4, d4, d8
+  91:IIRFilter.h   **** 			a[1] = -2.0 * ((A - 1.0) + (A + 1.0) * cosOmega);
+ 880              		.loc 3 91 44 view .LVU312
+ 881 0362 B7EEC55B 		vcvt.f32.f64	s10, d5
+  92:IIRFilter.h   **** 			a[2] = (A + 1.0) + (A - 1.0) * cosOmega - twoSqrtAalpha;
+ 882              		.loc 3 92 4 is_stmt 1 view .LVU313
+  93:IIRFilter.h   **** 
+ 883              		.loc 3 93 44 is_stmt 0 view .LVU314
+ 884 0366 B7EEC44B 		vcvt.f32.f64	s8, d4
+  92:IIRFilter.h   **** 			a[2] = (A + 1.0) + (A - 1.0) * cosOmega - twoSqrtAalpha;
+ 885              		.loc 3 92 16 view .LVU315
+ 886 036a B7EEC77B 		vcvt.f32.f64	s14, d7
+  93:IIRFilter.h   **** 
+ 887              		.loc 3 93 4 is_stmt 1 view .LVU316
+  96:IIRFilter.h   **** 			for (int i = 0; i < NUM_IIR_COEFFS; i++) {
+ 888              		.loc 3 96 4 view .LVU317
+ 889              	.LVL55:
+  97:IIRFilter.h   **** 				a[i] = a[i]/a0;
+ 890              		.loc 3 97 4 view .LVU318
+ 891              	.LBB110:
+  97:IIRFilter.h   **** 				a[i] = a[i]/a0;
+ARM GAS  /var/folders/5f/72p4brfx5932kssh4q_5ly0m0000gn/T//ccJ60apv.s 			page 33
+
+
+ 892              		.loc 3 97 22 view .LVU319
+  98:IIRFilter.h   **** 				b[i] = b[i]/a0;
+ 893              		.loc 3 98 5 view .LVU320
+  99:IIRFilter.h   **** 			}
+ 894              		.loc 3 99 16 is_stmt 0 view .LVU321
+ 895 036e C6EE053A 		vdiv.f32	s7, s12, s10
+  98:IIRFilter.h   **** 				b[i] = b[i]/a0;
+ 896              		.loc 3 98 16 view .LVU322
+ 897 0372 85EE053A 		vdiv.f32	s6, s10, s10
+  99:IIRFilter.h   **** 			}
+ 898              		.loc 3 99 16 view .LVU323
+ 899 0376 C2EE054A 		vdiv.f32	s9, s4, s10
+  98:IIRFilter.h   **** 				b[i] = b[i]/a0;
+ 900              		.loc 3 98 16 view .LVU324
+ 901 037a C4EE055A 		vdiv.f32	s11, s8, s10
+  99:IIRFilter.h   **** 			}
+ 902              		.loc 3 99 10 view .LVU325
+ 903 037e C4ED183A 		vstr.32	s7, [r4, #96]
+  99:IIRFilter.h   **** 			}
+ 904              		.loc 3 99 16 view .LVU326
+ 905 0382 86EE856A 		vdiv.f32	s12, s13, s10
+  98:IIRFilter.h   **** 				b[i] = b[i]/a0;
+ 906              		.loc 3 98 10 view .LVU327
+ 907 0386 84ED153A 		vstr.32	s6, [r4, #84]
+  99:IIRFilter.h   **** 			}
+ 908              		.loc 3 99 5 is_stmt 1 view .LVU328
+  97:IIRFilter.h   **** 				a[i] = a[i]/a0;
+ 909              		.loc 3 97 4 view .LVU329
+ 910              	.LVL56:
+  97:IIRFilter.h   **** 				a[i] = a[i]/a0;
+ 911              		.loc 3 97 22 view .LVU330
+  98:IIRFilter.h   **** 				b[i] = b[i]/a0;
+ 912              		.loc 3 98 5 view .LVU331
+  98:IIRFilter.h   **** 				b[i] = b[i]/a0;
+ 913              		.loc 3 98 16 is_stmt 0 view .LVU332
+ 914 038a C7EE057A 		vdiv.f32	s15, s14, s10
+  99:IIRFilter.h   **** 			}
+ 915              		.loc 3 99 10 view .LVU333
+ 916 038e C4ED194A 		vstr.32	s9, [r4, #100]
+ 917              	.LBE110:
+ 918              	.LBE114:
+ 919              	.LBE118:
+ 920              		.loc 1 167 1 view .LVU334
+ 921 0392 BDEC048B 		vldm	sp!, {d8-d9}
+ 922              		.cfi_remember_state
+ 923              		.cfi_restore 82
+ 924              		.cfi_restore 83
+ 925              		.cfi_restore 80
+ 926              		.cfi_restore 81
+ 927              		.cfi_def_cfa_offset 16
+ 928              	.LVL57:
+ 929              	.LBB119:
+ 930              	.LBB115:
+ 931              	.LBB111:
+  98:IIRFilter.h   **** 				b[i] = b[i]/a0;
+ 932              		.loc 3 98 10 view .LVU335
+ 933 0396 C4ED175A 		vstr.32	s11, [r4, #92]
+ARM GAS  /var/folders/5f/72p4brfx5932kssh4q_5ly0m0000gn/T//ccJ60apv.s 			page 34
+
+
+  99:IIRFilter.h   **** 			}
+ 934              		.loc 3 99 10 view .LVU336
+ 935 039a 84ED1A6A 		vstr.32	s12, [r4, #104]
+  98:IIRFilter.h   **** 				b[i] = b[i]/a0;
+ 936              		.loc 3 98 10 view .LVU337
+ 937 039e C4ED167A 		vstr.32	s15, [r4, #88]
+  99:IIRFilter.h   **** 			}
+ 938              		.loc 3 99 5 is_stmt 1 view .LVU338
+  97:IIRFilter.h   **** 				a[i] = a[i]/a0;
+ 939              		.loc 3 97 4 view .LVU339
+ 940              	.LVL58:
+  97:IIRFilter.h   **** 				a[i] = a[i]/a0;
+ 941              		.loc 3 97 22 view .LVU340
+  98:IIRFilter.h   **** 				b[i] = b[i]/a0;
+ 942              		.loc 3 98 5 view .LVU341
+  99:IIRFilter.h   **** 			}
+ 943              		.loc 3 99 5 view .LVU342
+  97:IIRFilter.h   **** 				a[i] = a[i]/a0;
+ 944              		.loc 3 97 4 view .LVU343
+  97:IIRFilter.h   **** 				a[i] = a[i]/a0;
+ 945              		.loc 3 97 22 view .LVU344
+  97:IIRFilter.h   **** 				a[i] = a[i]/a0;
+ 946              		.loc 3 97 22 is_stmt 0 view .LVU345
+ 947              	.LBE111:
+ 948              	.LBE115:
+ 949              	.LBE119:
+ 950              		.loc 1 167 1 view .LVU346
+ 951 03a2 70BD     		pop	{r4, r5, r6, pc}
+ 952              	.LVL59:
+ 953              	.L50:
+ 954              		.cfi_restore_state
+ 955              	.LBB120:
+ 956              	.LBB101:
+ 957              	.LBB97:
+ 958              	.LBB94:
+ 959              		.loc 4 464 27 view .LVU347
+ 960 03a4 B0EE680A 		vmov.f32	s0, s17
+ 961 03a8 FFF7FEFF 		bl	sqrtf
+ 962              	.LVL60:
+ 963 03ac B0EE404A 		vmov.f32	s8, s0
+ 964 03b0 11E7     		b	.L35
+ 965              	.LVL61:
+ 966              	.L49:
+ 967              		.loc 4 464 27 view .LVU348
+ 968              	.LBE94:
+ 969              	.LBE97:
+ 970              	.LBE101:
+ 971              	.LBE120:
+ 972              	.LBB121:
+ 973              	.LBB116:
+ 974              	.LBB112:
+ 975              	.LBB109:
+ 976 03b2 B0EE680A 		vmov.f32	s0, s17
+ 977 03b6 FFF7FEFF 		bl	sqrtf
+ 978              	.LVL62:
+ 979 03ba F0EE407A 		vmov.f32	s15, s0
+ 980 03be 94E7     		b	.L31
+ARM GAS  /var/folders/5f/72p4brfx5932kssh4q_5ly0m0000gn/T//ccJ60apv.s 			page 35
+
+
+ 981              	.L58:
+ 982              		.align	3
+ 983              	.L57:
+ 984 03c0 00000000 		.word	0
+ 985 03c4 00004440 		.word	1078198272
+ 986 03c8 EA2E4454 		.word	1413754602
+ 987 03cc FB211940 		.word	1075388923
+ 988 03d0 00409C46 		.word	1184645120
+ 989              	.LBE109:
+ 990              	.LBE112:
+ 991              	.LBE116:
+ 992              	.LBE121:
+ 993              		.cfi_endproc
+ 994              	.LFE578:
+ 996              		.section	.text._ZN9Equalizer4InitEi,"ax",%progbits
+ 997              		.align	1
+ 998              		.p2align 2,,3
+ 999              		.global	_ZN9Equalizer4InitEi
+ 1000              		.syntax unified
+ 1001              		.thumb
+ 1002              		.thumb_func
+ 1004              	_ZN9Equalizer4InitEi:
+ 1005              	.LVL63:
+ 1006              	.LFB573:
+  42:Equalizer.cpp **** 	sampleRate_ = sampleRate;
+ 1007              		.loc 1 42 1 is_stmt 1 view -0
+ 1008              		.cfi_startproc
+ 1009              		@ args = 0, pretend = 0, frame = 0
+ 1010              		@ frame_needed = 0, uses_anonymous_args = 0
+  43:Equalizer.cpp **** 
+ 1011              		.loc 1 43 2 view .LVU350
+  47:Equalizer.cpp **** 	m_EQParams[0].gain = 0.0;
+ 1012              		.loc 1 47 19 is_stmt 0 view .LVU351
+ 1013 0000 194A     		ldr	r2, .L63
+  42:Equalizer.cpp **** 	sampleRate_ = sampleRate;
+ 1014              		.loc 1 42 1 view .LVU352
+ 1015 0002 F8B5     		push	{r3, r4, r5, r6, r7, lr}
+ 1016              		.cfi_def_cfa_offset 24
+ 1017              		.cfi_offset 3, -24
+ 1018              		.cfi_offset 4, -20
+ 1019              		.cfi_offset 5, -16
+ 1020              		.cfi_offset 6, -12
+ 1021              		.cfi_offset 7, -8
+ 1022              		.cfi_offset 14, -4
+  42:Equalizer.cpp **** 	sampleRate_ = sampleRate;
+ 1023              		.loc 1 42 1 view .LVU353
+ 1024 0004 0646     		mov	r6, r0
+  47:Equalizer.cpp **** 	m_EQParams[0].gain = 0.0;
+ 1025              		.loc 1 47 19 view .LVU354
+ 1026 0006 0261     		str	r2, [r0, #16]	@ float
+  49:Equalizer.cpp **** 	m_EQParams[1].gain = 0.0; 
+ 1027              		.loc 1 49 19 view .LVU355
+ 1028 0008 184C     		ldr	r4, .L63+4
+  48:Equalizer.cpp **** 	m_EQParams[1].fc = 400.0;
+ 1029              		.loc 1 48 21 view .LVU356
+ 1030 000a 0023     		movs	r3, #0
+  51:Equalizer.cpp **** 	m_EQParams[2].gain = 0.0; 
+ARM GAS  /var/folders/5f/72p4brfx5932kssh4q_5ly0m0000gn/T//ccJ60apv.s 			page 36
+
+
+ 1031              		.loc 1 51 19 view .LVU357
+ 1032 000c 184A     		ldr	r2, .L63+8
+  58:Equalizer.cpp **** 
+ 1033              		.loc 1 58 21 view .LVU358
+ 1034 000e 3746     		mov	r7, r6
+  43:Equalizer.cpp **** 
+ 1035              		.loc 1 43 14 view .LVU359
+ 1036 0010 4160     		str	r1, [r0, #4]
+  47:Equalizer.cpp **** 	m_EQParams[0].gain = 0.0;
+ 1037              		.loc 1 47 2 is_stmt 1 view .LVU360
+  48:Equalizer.cpp **** 	m_EQParams[1].fc = 400.0;
+ 1038              		.loc 1 48 2 view .LVU361
+  58:Equalizer.cpp **** 
+ 1039              		.loc 1 58 21 is_stmt 0 view .LVU362
+ 1040 0012 0025     		movs	r5, #0
+  53:Equalizer.cpp **** 	m_EQParams[3].gain = 0.0;
+ 1041              		.loc 1 53 19 view .LVU363
+ 1042 0014 1748     		ldr	r0, .L63+12
+ 1043              	.LVL64:
+  55:Equalizer.cpp **** 	m_EQParams[4].gain = 0.0;
+ 1044              		.loc 1 55 19 view .LVU364
+ 1045 0016 1849     		ldr	r1, .L63+16
+ 1046              	.LVL65:
+  49:Equalizer.cpp **** 	m_EQParams[1].gain = 0.0; 
+ 1047              		.loc 1 49 19 view .LVU365
+ 1048 0018 F461     		str	r4, [r6, #28]	@ float
+ 1049 001a 3446     		mov	r4, r6
+  51:Equalizer.cpp **** 	m_EQParams[2].gain = 0.0; 
+ 1050              		.loc 1 51 19 view .LVU366
+ 1051 001c B262     		str	r2, [r6, #40]	@ float
+  57:Equalizer.cpp **** 	m_EQParams[5].gain = 0.0; 
+ 1052              		.loc 1 57 19 view .LVU367
+ 1053 001e 174A     		ldr	r2, .L63+20
+  48:Equalizer.cpp **** 	m_EQParams[1].fc = 400.0;
+ 1054              		.loc 1 48 21 view .LVU368
+ 1055 0020 F360     		str	r3, [r6, #12]	@ float
+  49:Equalizer.cpp **** 	m_EQParams[1].gain = 0.0; 
+ 1056              		.loc 1 49 2 is_stmt 1 view .LVU369
+  50:Equalizer.cpp **** 	m_EQParams[2].fc = 1000.0;
+ 1057              		.loc 1 50 2 view .LVU370
+  50:Equalizer.cpp **** 	m_EQParams[2].fc = 1000.0;
+ 1058              		.loc 1 50 21 is_stmt 0 view .LVU371
+ 1059 0022 B361     		str	r3, [r6, #24]	@ float
+  51:Equalizer.cpp **** 	m_EQParams[2].gain = 0.0; 
+ 1060              		.loc 1 51 2 is_stmt 1 view .LVU372
+  52:Equalizer.cpp **** 	m_EQParams[3].fc = 2000.0;
+ 1061              		.loc 1 52 2 view .LVU373
+  52:Equalizer.cpp **** 	m_EQParams[3].fc = 2000.0;
+ 1062              		.loc 1 52 21 is_stmt 0 view .LVU374
+ 1063 0024 7362     		str	r3, [r6, #36]	@ float
+  53:Equalizer.cpp **** 	m_EQParams[3].gain = 0.0;
+ 1064              		.loc 1 53 2 is_stmt 1 view .LVU375
+  53:Equalizer.cpp **** 	m_EQParams[3].gain = 0.0;
+ 1065              		.loc 1 53 19 is_stmt 0 view .LVU376
+ 1066 0026 7063     		str	r0, [r6, #52]	@ float
+  54:Equalizer.cpp **** 	m_EQParams[4].fc = 4000.0;
+ 1067              		.loc 1 54 2 is_stmt 1 view .LVU377
+ARM GAS  /var/folders/5f/72p4brfx5932kssh4q_5ly0m0000gn/T//ccJ60apv.s 			page 37
+
+
+  54:Equalizer.cpp **** 	m_EQParams[4].fc = 4000.0;
+ 1068              		.loc 1 54 21 is_stmt 0 view .LVU378
+ 1069 0028 3363     		str	r3, [r6, #48]	@ float
+  55:Equalizer.cpp **** 	m_EQParams[4].gain = 0.0;
+ 1070              		.loc 1 55 2 is_stmt 1 view .LVU379
+  55:Equalizer.cpp **** 	m_EQParams[4].gain = 0.0;
+ 1071              		.loc 1 55 19 is_stmt 0 view .LVU380
+ 1072 002a 3164     		str	r1, [r6, #64]	@ float
+  56:Equalizer.cpp **** 	m_EQParams[5].fc = 8000.0;
+ 1073              		.loc 1 56 2 is_stmt 1 view .LVU381
+  56:Equalizer.cpp **** 	m_EQParams[5].fc = 8000.0;
+ 1074              		.loc 1 56 21 is_stmt 0 view .LVU382
+ 1075 002c F363     		str	r3, [r6, #60]	@ float
+  57:Equalizer.cpp **** 	m_EQParams[5].gain = 0.0; 
+ 1076              		.loc 1 57 2 is_stmt 1 view .LVU383
+  57:Equalizer.cpp **** 	m_EQParams[5].gain = 0.0; 
+ 1077              		.loc 1 57 19 is_stmt 0 view .LVU384
+ 1078 002e F264     		str	r2, [r6, #76]	@ float
+  58:Equalizer.cpp **** 
+ 1079              		.loc 1 58 2 is_stmt 1 view .LVU385
+  58:Equalizer.cpp **** 
+ 1080              		.loc 1 58 21 is_stmt 0 view .LVU386
+ 1081 0030 B364     		str	r3, [r6, #72]	@ float
+  61:Equalizer.cpp **** 	{
+ 1082              		.loc 1 61 2 is_stmt 1 view .LVU387
+ 1083              	.LVL66:
+ 1084              	.LBB126:
+  61:Equalizer.cpp **** 	{
+ 1085              		.loc 1 61 28 view .LVU388
+ 1086              	.L60:
+  63:Equalizer.cpp **** 	    //m_EQParams[band].gain = 1.0; // Default gain
+ 1087              		.loc 1 63 3 discriminator 2 view .LVU389
+ 1088              	.LBB127:
+ 1089              	.LBI127:
+  18:IIRFilter.h   **** 		{
+ 1090              		.loc 3 18 8 discriminator 2 view .LVU390
+ 1091              	.LBB128:
+  20:IIRFilter.h   **** 			{
+ 1092              		.loc 3 20 4 discriminator 2 view .LVU391
+ 1093              	.LBB129:
+  20:IIRFilter.h   **** 			{
+ 1094              		.loc 3 20 22 discriminator 2 view .LVU392
+  22:IIRFilter.h   **** 				b[i] = 0;
+ 1095              		.loc 3 22 5 discriminator 2 view .LVU393
+  23:IIRFilter.h   **** 			}
+ 1096              		.loc 3 23 5 discriminator 2 view .LVU394
+  20:IIRFilter.h   **** 			{
+ 1097              		.loc 3 20 4 discriminator 2 view .LVU395
+  20:IIRFilter.h   **** 			{
+ 1098              		.loc 3 20 22 discriminator 2 view .LVU396
+  22:IIRFilter.h   **** 				b[i] = 0;
+ 1099              		.loc 3 22 5 discriminator 2 view .LVU397
+  22:IIRFilter.h   **** 				b[i] = 0;
+ 1100              		.loc 3 22 10 is_stmt 0 discriminator 2 view .LVU398
+ 1101 0032 0023     		movs	r3, #0
+ 1102              	.LBE129:
+  25:IIRFilter.h   **** 			b[0] = 1.0;
+ARM GAS  /var/folders/5f/72p4brfx5932kssh4q_5ly0m0000gn/T//ccJ60apv.s 			page 38
+
+
+ 1103              		.loc 3 25 9 discriminator 2 view .LVU399
+ 1104 0034 4FF07E52 		mov	r2, #1065353216
+ 1105              	.LBE128:
+ 1106              	.LBE127:
+  65:Equalizer.cpp **** 		updateEQParameters(band);
+ 1107              		.loc 1 65 22 discriminator 2 view .LVU400
+ 1108 0038 4FF0804C 		mov	ip, #1073741824
+  66:Equalizer.cpp **** 	}
+ 1109              		.loc 1 66 21 discriminator 2 view .LVU401
+ 1110 003c 29B2     		sxth	r1, r5
+  61:Equalizer.cpp **** 	{
+ 1111              		.loc 1 61 28 discriminator 2 view .LVU402
+ 1112 003e 0135     		adds	r5, r5, #1
+ 1113              	.LVL67:
+ 1114              	.LBB137:
+ 1115              	.LBB133:
+ 1116              	.LBB130:
+  22:IIRFilter.h   **** 				b[i] = 0;
+ 1117              		.loc 3 22 10 discriminator 2 view .LVU403
+ 1118 0040 A365     		str	r3, [r4, #88]	@ float
+  23:IIRFilter.h   **** 			}
+ 1119              		.loc 3 23 5 is_stmt 1 discriminator 2 view .LVU404
+  23:IIRFilter.h   **** 			}
+ 1120              		.loc 3 23 10 is_stmt 0 discriminator 2 view .LVU405
+ 1121 0042 6366     		str	r3, [r4, #100]	@ float
+  20:IIRFilter.h   **** 			{
+ 1122              		.loc 3 20 4 is_stmt 1 discriminator 2 view .LVU406
+ 1123              	.LVL68:
+  20:IIRFilter.h   **** 			{
+ 1124              		.loc 3 20 22 discriminator 2 view .LVU407
+  22:IIRFilter.h   **** 				b[i] = 0;
+ 1125              		.loc 3 22 5 discriminator 2 view .LVU408
+ 1126              	.LBE130:
+ 1127              	.LBE133:
+ 1128              	.LBE137:
+  66:Equalizer.cpp **** 	}
+ 1129              		.loc 1 66 21 is_stmt 0 discriminator 2 view .LVU409
+ 1130 0044 3046     		mov	r0, r6
+ 1131              	.LBB138:
+ 1132              	.LBB134:
+ 1133              	.LBB131:
+  22:IIRFilter.h   **** 				b[i] = 0;
+ 1134              		.loc 3 22 10 discriminator 2 view .LVU410
+ 1135 0046 E365     		str	r3, [r4, #92]	@ float
+  23:IIRFilter.h   **** 			}
+ 1136              		.loc 3 23 5 is_stmt 1 discriminator 2 view .LVU411
+ 1137              	.LBE131:
+ 1138              	.LBE134:
+ 1139              	.LBE138:
+  61:Equalizer.cpp **** 	{
+ 1140              		.loc 1 61 28 is_stmt 0 discriminator 2 view .LVU412
+ 1141 0048 0C37     		adds	r7, r7, #12
+ 1142              	.LBB139:
+ 1143              	.LBB135:
+ 1144              	.LBB132:
+  23:IIRFilter.h   **** 			}
+ 1145              		.loc 3 23 10 discriminator 2 view .LVU413
+ARM GAS  /var/folders/5f/72p4brfx5932kssh4q_5ly0m0000gn/T//ccJ60apv.s 			page 39
+
+
+ 1146 004a A366     		str	r3, [r4, #104]	@ float
+  20:IIRFilter.h   **** 			{
+ 1147              		.loc 3 20 4 is_stmt 1 discriminator 2 view .LVU414
+ 1148              	.LVL69:
+  20:IIRFilter.h   **** 			{
+ 1149              		.loc 3 20 22 discriminator 2 view .LVU415
+ 1150              	.LBE132:
+  25:IIRFilter.h   **** 			b[0] = 1.0;
+ 1151              		.loc 3 25 4 discriminator 2 view .LVU416
+ 1152              	.LBE135:
+ 1153              	.LBE139:
+  61:Equalizer.cpp **** 	{
+ 1154              		.loc 1 61 28 is_stmt 0 discriminator 2 view .LVU417
+ 1155 004c 2834     		adds	r4, r4, #40
+ 1156              	.LBB140:
+ 1157              	.LBB136:
+  25:IIRFilter.h   **** 			b[0] = 1.0;
+ 1158              		.loc 3 25 9 discriminator 2 view .LVU418
+ 1159 004e E262     		str	r2, [r4, #44]	@ float
+  26:IIRFilter.h   **** 			x1_ = x2_ = y1_ = y2_ = 0.0;
+ 1160              		.loc 3 26 4 is_stmt 1 discriminator 2 view .LVU419
+  26:IIRFilter.h   **** 			x1_ = x2_ = y1_ = y2_ = 0.0;
+ 1161              		.loc 3 26 9 is_stmt 0 discriminator 2 view .LVU420
+ 1162 0050 A263     		str	r2, [r4, #56]	@ float
+  27:IIRFilter.h   **** 		}
+ 1163              		.loc 3 27 4 is_stmt 1 discriminator 2 view .LVU421
+  27:IIRFilter.h   **** 		}
+ 1164              		.loc 3 27 26 is_stmt 0 discriminator 2 view .LVU422
+ 1165 0052 2365     		str	r3, [r4, #80]	@ float
+  27:IIRFilter.h   **** 		}
+ 1166              		.loc 3 27 20 discriminator 2 view .LVU423
+ 1167 0054 E364     		str	r3, [r4, #76]	@ float
+  27:IIRFilter.h   **** 		}
+ 1168              		.loc 3 27 14 discriminator 2 view .LVU424
+ 1169 0056 A364     		str	r3, [r4, #72]	@ float
+  27:IIRFilter.h   **** 		}
+ 1170              		.loc 3 27 8 discriminator 2 view .LVU425
+ 1171 0058 6364     		str	r3, [r4, #68]	@ float
+ 1172              	.LVL70:
+  27:IIRFilter.h   **** 		}
+ 1173              		.loc 3 27 8 discriminator 2 view .LVU426
+ 1174              	.LBE136:
+ 1175              	.LBE140:
+  65:Equalizer.cpp **** 		updateEQParameters(band);
+ 1176              		.loc 1 65 3 is_stmt 1 discriminator 2 view .LVU427
+  65:Equalizer.cpp **** 		updateEQParameters(band);
+ 1177              		.loc 1 65 22 is_stmt 0 discriminator 2 view .LVU428
+ 1178 005a C7F808C0 		str	ip, [r7, #8]	@ float
+  66:Equalizer.cpp **** 	}
+ 1179              		.loc 1 66 3 is_stmt 1 discriminator 2 view .LVU429
+  66:Equalizer.cpp **** 	}
+ 1180              		.loc 1 66 21 is_stmt 0 discriminator 2 view .LVU430
+ 1181 005e FFF7FEFF 		bl	_ZN9Equalizer18updateEQParametersEs
+ 1182              	.LVL71:
+  61:Equalizer.cpp **** 	{
+ 1183              		.loc 1 61 2 is_stmt 1 discriminator 2 view .LVU431
+  61:Equalizer.cpp **** 	{
+ARM GAS  /var/folders/5f/72p4brfx5932kssh4q_5ly0m0000gn/T//ccJ60apv.s 			page 40
+
+
+ 1184              		.loc 1 61 28 discriminator 2 view .LVU432
+ 1185 0062 062D     		cmp	r5, #6
+ 1186 0064 E5D1     		bne	.L60
+ 1187              	.LBE126:
+  68:Equalizer.cpp **** 
+ 1188              		.loc 1 68 1 is_stmt 0 view .LVU433
+ 1189 0066 F8BD     		pop	{r3, r4, r5, r6, r7, pc}
+ 1190              	.LVL72:
+ 1191              	.L64:
+  68:Equalizer.cpp **** 
+ 1192              		.loc 1 68 1 view .LVU434
+ 1193              		.align	2
+ 1194              	.L63:
+ 1195 0068 0000C842 		.word	1120403456
+ 1196 006c 0000C843 		.word	1137180672
+ 1197 0070 00007A44 		.word	1148846080
+ 1198 0074 0000FA44 		.word	1157234688
+ 1199 0078 00007A45 		.word	1165623296
+ 1200 007c 0000FA45 		.word	1174011904
+ 1201              		.cfi_endproc
+ 1202              	.LFE573:
+ 1204              		.section	.text._ZN9Equalizer12setParameterEs9PARAMETERf,"ax",%progbits
+ 1205              		.align	1
+ 1206              		.p2align 2,,3
+ 1207              		.global	_ZN9Equalizer12setParameterEs9PARAMETERf
+ 1208              		.syntax unified
+ 1209              		.thumb
+ 1210              		.thumb_func
+ 1212              	_ZN9Equalizer12setParameterEs9PARAMETERf:
+ 1213              	.LVL73:
+ 1214              	.LFB577:
+ 103:Equalizer.cpp ****     bool update = false;
+ 1215              		.loc 1 103 1 is_stmt 1 view -0
+ 1216              		.cfi_startproc
+ 1217              		@ args = 0, pretend = 0, frame = 0
+ 1218              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1219              		@ link register save eliminated.
+ 104:Equalizer.cpp **** 	// float value_dB = pow(10.0,(value/20.0)); // Converting to dB
+ 1220              		.loc 1 104 5 view .LVU436
+ 106:Equalizer.cpp **** 	{
+ 1221              		.loc 1 106 2 view .LVU437
+ 1222 0000 0529     		cmp	r1, #5
+ 1223 0002 04DC     		bgt	.L65
+ 1224              	.LVL74:
+ 1225              	.LBB143:
+ 1226              	.LBI143:
+ 102:Equalizer.cpp **** {
+ 1227              		.loc 1 102 6 view .LVU438
+ 1228              	.LBB144:
+ 108:Equalizer.cpp **** 		{
+ 1229              		.loc 1 108 3 view .LVU439
+ 1230 0004 012A     		cmp	r2, #1
+ 1231 0006 20D0     		beq	.L67
+ 1232 0008 022A     		cmp	r2, #2
+ 1233 000a 10D0     		beq	.L68
+ 1234 000c 02B1     		cbz	r2, .L70
+ 1235              	.LVL75:
+ARM GAS  /var/folders/5f/72p4brfx5932kssh4q_5ly0m0000gn/T//ccJ60apv.s 			page 41
+
+
+ 1236              	.L65:
+ 108:Equalizer.cpp **** 		{
+ 1237              		.loc 1 108 3 is_stmt 0 view .LVU440
+ 1238              	.LBE144:
+ 1239              	.LBE143:
+ 131:Equalizer.cpp **** 
+ 1240              		.loc 1 131 1 view .LVU441
+ 1241 000e 7047     		bx	lr
+ 1242              	.LVL76:
+ 1243              	.L70:
+ 1244              	.LBB146:
+ 1245              	.LBB145:
+ 110:Equalizer.cpp **** 				if (m_EQParams[band].gain != value) {
+ 1246              		.loc 1 110 4 is_stmt 1 view .LVU442
+ 111:Equalizer.cpp **** 					m_EQParams[band].gain = value;
+ 1247              		.loc 1 111 5 view .LVU443
+ 111:Equalizer.cpp **** 					m_EQParams[band].gain = value;
+ 1248              		.loc 1 111 26 is_stmt 0 view .LVU444
+ 1249 0010 01EB4103 		add	r3, r1, r1, lsl #1
+ 1250 0014 00EB8303 		add	r3, r0, r3, lsl #2
+ 111:Equalizer.cpp **** 					m_EQParams[band].gain = value;
+ 1251              		.loc 1 111 5 view .LVU445
+ 1252 0018 D3ED037A 		vldr.32	s15, [r3, #12]
+ 1253 001c B4EE670A 		vcmp.f32	s0, s15
+ 1254 0020 F1EE10FA 		vmrs	APSR_nzcv, FPSCR
+ 1255 0024 F3D0     		beq	.L65
+ 112:Equalizer.cpp **** 					update = true;
+ 1256              		.loc 1 112 6 is_stmt 1 view .LVU446
+ 112:Equalizer.cpp **** 					update = true;
+ 1257              		.loc 1 112 28 is_stmt 0 view .LVU447
+ 1258 0026 83ED030A 		vstr.32	s0, [r3, #12]
+ 113:Equalizer.cpp **** 				}
+ 1259              		.loc 1 113 6 is_stmt 1 view .LVU448
+ 1260              	.LVL77:
+ 129:Equalizer.cpp **** 	}
+ 1261              		.loc 1 129 3 view .LVU449
+ 1262              	.L69:
+ 129:Equalizer.cpp **** 	}
+ 1263              		.loc 1 129 15 view .LVU450
+ 129:Equalizer.cpp **** 	}
+ 1264              		.loc 1 129 33 is_stmt 0 view .LVU451
+ 1265 002a FFF7FEBF 		b	_ZN9Equalizer18updateEQParametersEs
+ 1266              	.LVL78:
+ 1267              	.L68:
+ 122:Equalizer.cpp **** 				if (m_EQParams[band].Q != value) {
+ 1268              		.loc 1 122 4 is_stmt 1 view .LVU452
+ 123:Equalizer.cpp **** 					m_EQParams[band].Q = value;
+ 1269              		.loc 1 123 5 view .LVU453
+ 123:Equalizer.cpp **** 					m_EQParams[band].Q = value;
+ 1270              		.loc 1 123 26 is_stmt 0 view .LVU454
+ 1271 002e 01EB4103 		add	r3, r1, r1, lsl #1
+ 1272 0032 00EB8303 		add	r3, r0, r3, lsl #2
+ 123:Equalizer.cpp **** 					m_EQParams[band].Q = value;
+ 1273              		.loc 1 123 5 view .LVU455
+ 1274 0036 D3ED057A 		vldr.32	s15, [r3, #20]
+ 1275 003a B4EE670A 		vcmp.f32	s0, s15
+ 1276 003e F1EE10FA 		vmrs	APSR_nzcv, FPSCR
+ARM GAS  /var/folders/5f/72p4brfx5932kssh4q_5ly0m0000gn/T//ccJ60apv.s 			page 42
+
+
+ 1277 0042 E4D0     		beq	.L65
+ 124:Equalizer.cpp **** 					update = true;
+ 1278              		.loc 1 124 6 is_stmt 1 view .LVU456
+ 124:Equalizer.cpp **** 					update = true;
+ 1279              		.loc 1 124 25 is_stmt 0 view .LVU457
+ 1280 0044 83ED050A 		vstr.32	s0, [r3, #20]
+ 125:Equalizer.cpp **** 				}
+ 1281              		.loc 1 125 6 is_stmt 1 view .LVU458
+ 1282              	.LVL79:
+ 129:Equalizer.cpp **** 	}
+ 1283              		.loc 1 129 3 view .LVU459
+ 1284 0048 EFE7     		b	.L69
+ 1285              	.LVL80:
+ 1286              	.L67:
+ 116:Equalizer.cpp **** 				if (m_EQParams[band].fc != value) {
+ 1287              		.loc 1 116 4 view .LVU460
+ 117:Equalizer.cpp **** 					m_EQParams[band].fc = value;
+ 1288              		.loc 1 117 5 view .LVU461
+ 117:Equalizer.cpp **** 					m_EQParams[band].fc = value;
+ 1289              		.loc 1 117 26 is_stmt 0 view .LVU462
+ 1290 004a 01EB4103 		add	r3, r1, r1, lsl #1
+ 1291 004e 00EB8303 		add	r3, r0, r3, lsl #2
+ 117:Equalizer.cpp **** 					m_EQParams[band].fc = value;
+ 1292              		.loc 1 117 5 view .LVU463
+ 1293 0052 D3ED047A 		vldr.32	s15, [r3, #16]
+ 1294 0056 B4EE670A 		vcmp.f32	s0, s15
+ 1295 005a F1EE10FA 		vmrs	APSR_nzcv, FPSCR
+ 1296 005e D6D0     		beq	.L65
+ 118:Equalizer.cpp **** 					update = true;
+ 1297              		.loc 1 118 6 is_stmt 1 view .LVU464
+ 118:Equalizer.cpp **** 					update = true;
+ 1298              		.loc 1 118 26 is_stmt 0 view .LVU465
+ 1299 0060 83ED040A 		vstr.32	s0, [r3, #16]
+ 119:Equalizer.cpp **** 				}
+ 1300              		.loc 1 119 6 is_stmt 1 view .LVU466
+ 1301              	.LVL81:
+ 129:Equalizer.cpp **** 	}
+ 1302              		.loc 1 129 3 view .LVU467
+ 1303 0064 E1E7     		b	.L69
+ 1304              	.LBE145:
+ 1305              	.LBE146:
+ 1306              		.cfi_endproc
+ 1307              	.LFE577:
+ 1309 0066 00BF     		.section	.text._ZN9Equalizer12decParameterEs9PARAMETERf,"ax",%progbits
+ 1310              		.align	1
+ 1311              		.p2align 2,,3
+ 1312              		.global	_ZN9Equalizer12decParameterEs9PARAMETERf
+ 1313              		.syntax unified
+ 1314              		.thumb
+ 1315              		.thumb_func
+ 1317              	_ZN9Equalizer12decParameterEs9PARAMETERf:
+ 1318              	.LVL82:
+ 1319              	.LFB576:
+  87:Equalizer.cpp **** 	    //m_filterOn = true; // For test only
+ 1320              		.loc 1 87 1 view -0
+ 1321              		.cfi_startproc
+ 1322              		@ args = 0, pretend = 0, frame = 0
+ARM GAS  /var/folders/5f/72p4brfx5932kssh4q_5ly0m0000gn/T//ccJ60apv.s 			page 43
+
+
+ 1323              		@ frame_needed = 0, uses_anonymous_args = 0
+  89:Equalizer.cpp **** 		setParameter(band, param, m_EQParams[band].gain - delta);
+ 1324              		.loc 1 89 5 view .LVU469
+  87:Equalizer.cpp **** 	    //m_filterOn = true; // For test only
+ 1325              		.loc 1 87 1 is_stmt 0 view .LVU470
+ 1326 0000 70B5     		push	{r4, r5, r6, lr}
+ 1327              		.cfi_def_cfa_offset 16
+ 1328              		.cfi_offset 4, -16
+ 1329              		.cfi_offset 5, -12
+ 1330              		.cfi_offset 6, -8
+ 1331              		.cfi_offset 14, -4
+  87:Equalizer.cpp **** 	    //m_filterOn = true; // For test only
+ 1332              		.loc 1 87 1 view .LVU471
+ 1333 0002 0546     		mov	r5, r0
+ 1334 0004 0C46     		mov	r4, r1
+  89:Equalizer.cpp **** 		setParameter(band, param, m_EQParams[band].gain - delta);
+ 1335              		.loc 1 89 5 view .LVU472
+ 1336 0006 D2B9     		cbnz	r2, .L72
+  90:Equalizer.cpp **** 		updateEQParameters(band);
+ 1337              		.loc 1 90 3 is_stmt 1 view .LVU473
+  90:Equalizer.cpp **** 		updateEQParameters(band);
+ 1338              		.loc 1 90 46 is_stmt 0 view .LVU474
+ 1339 0008 01EB4103 		add	r3, r1, r1, lsl #1
+ 1340              	.LBB155:
+ 1341              	.LBB156:
+ 1342              	.LBB157:
+ 1343              	.LBB158:
+ 111:Equalizer.cpp **** 					m_EQParams[band].gain = value;
+ 1344              		.loc 1 111 5 view .LVU475
+ 1345 000c 0529     		cmp	r1, #5
+ 1346              	.LBE158:
+ 1347              	.LBE157:
+ 1348              	.LBE156:
+ 1349              	.LBE155:
+  90:Equalizer.cpp **** 		updateEQParameters(band);
+ 1350              		.loc 1 90 46 view .LVU476
+ 1351 000e 4FEA4106 		lsl	r6, r1, #1
+ 1352 0012 00EB8303 		add	r3, r0, r3, lsl #2
+ 1353 0016 D3ED037A 		vldr.32	s15, [r3, #12]
+  90:Equalizer.cpp **** 		updateEQParameters(band);
+ 1354              		.loc 1 90 15 view .LVU477
+ 1355 001a 37EEC00A 		vsub.f32	s0, s15, s0
+ 1356              	.LVL83:
+ 1357              	.LBB165:
+ 1358              	.LBI155:
+ 102:Equalizer.cpp **** {
+ 1359              		.loc 1 102 6 is_stmt 1 view .LVU478
+ 1360              	.LBB163:
+ 104:Equalizer.cpp **** 	// float value_dB = pow(10.0,(value/20.0)); // Converting to dB
+ 1361              		.loc 1 104 5 view .LVU479
+ 106:Equalizer.cpp **** 	{
+ 1362              		.loc 1 106 2 view .LVU480
+ 1363              	.LBB161:
+ 1364              	.LBI157:
+ 102:Equalizer.cpp **** {
+ 1365              		.loc 1 102 6 view .LVU481
+ 1366              	.LBB159:
+ARM GAS  /var/folders/5f/72p4brfx5932kssh4q_5ly0m0000gn/T//ccJ60apv.s 			page 44
+
+
+ 108:Equalizer.cpp **** 		{
+ 1367              		.loc 1 108 3 view .LVU482
+ 110:Equalizer.cpp **** 				if (m_EQParams[band].gain != value) {
+ 1368              		.loc 1 110 4 view .LVU483
+ 111:Equalizer.cpp **** 					m_EQParams[band].gain = value;
+ 1369              		.loc 1 111 5 view .LVU484
+ 1370 001e 04DC     		bgt	.L73
+ 1371 0020 F4EE407A 		vcmp.f32	s15, s0
+ 1372 0024 F1EE10FA 		vmrs	APSR_nzcv, FPSCR
+ 1373 0028 29D1     		bne	.L89
+ 1374              	.LVL84:
+ 1375              	.L73:
+ 111:Equalizer.cpp **** 					m_EQParams[band].gain = value;
+ 1376              		.loc 1 111 5 is_stmt 0 view .LVU485
+ 1377              	.LBE159:
+ 1378              	.LBE161:
+ 1379              	.LBE163:
+ 1380              	.LBE165:
+  91:Equalizer.cpp **** 		return m_EQParams[band].gain;
+ 1381              		.loc 1 91 3 is_stmt 1 view .LVU486
+  91:Equalizer.cpp **** 		return m_EQParams[band].gain;
+ 1382              		.loc 1 91 21 is_stmt 0 view .LVU487
+ 1383 002a 2146     		mov	r1, r4
+  92:Equalizer.cpp **** 	}
+ 1384              		.loc 1 92 27 view .LVU488
+ 1385 002c 3444     		add	r4, r4, r6
+  91:Equalizer.cpp **** 		return m_EQParams[band].gain;
+ 1386              		.loc 1 91 21 view .LVU489
+ 1387 002e 2846     		mov	r0, r5
+  92:Equalizer.cpp **** 	}
+ 1388              		.loc 1 92 27 view .LVU490
+ 1389 0030 05EB8405 		add	r5, r5, r4, lsl #2
+ 1390              	.LVL85:
+  91:Equalizer.cpp **** 		return m_EQParams[band].gain;
+ 1391              		.loc 1 91 21 view .LVU491
+ 1392 0034 FFF7FEFF 		bl	_ZN9Equalizer18updateEQParametersEs
+ 1393              	.LVL86:
+  92:Equalizer.cpp **** 	}
+ 1394              		.loc 1 92 3 is_stmt 1 view .LVU492
+  92:Equalizer.cpp **** 	}
+ 1395              		.loc 1 92 27 is_stmt 0 view .LVU493
+ 1396 0038 95ED030A 		vldr.32	s0, [r5, #12]
+ 100:Equalizer.cpp **** 
+ 1397              		.loc 1 100 1 view .LVU494
+ 1398 003c 70BD     		pop	{r4, r5, r6, pc}
+ 1399              	.LVL87:
+ 1400              	.L72:
+  95:Equalizer.cpp **** 		setParameter(band, param, m_EQParams[band].fc / pow(2, 1.0/12.0));
+ 1401              		.loc 1 95 2 is_stmt 1 view .LVU495
+  96:Equalizer.cpp **** 		updateEQParameters(band); 
+ 1402              		.loc 1 96 3 view .LVU496
+  96:Equalizer.cpp **** 		updateEQParameters(band); 
+ 1403              		.loc 1 96 46 is_stmt 0 view .LVU497
+ 1404 003e 01EB4103 		add	r3, r1, r1, lsl #1
+ 1405 0042 4E00     		lsls	r6, r1, #1
+ 1406 0044 00EB8303 		add	r3, r0, r3, lsl #2
+ 1407 0048 D3ED046A 		vldr.32	s13, [r3, #16]
+ARM GAS  /var/folders/5f/72p4brfx5932kssh4q_5ly0m0000gn/T//ccJ60apv.s 			page 45
+
+
+  96:Equalizer.cpp **** 		updateEQParameters(band); 
+ 1408              		.loc 1 96 49 view .LVU498
+ 1409 004c 9FED125B 		vldr.64	d5, .L91
+  96:Equalizer.cpp **** 		updateEQParameters(band); 
+ 1410              		.loc 1 96 46 view .LVU499
+ 1411 0050 B7EEE64A 		vcvt.f64.f32	d4, s13
+  96:Equalizer.cpp **** 		updateEQParameters(band); 
+ 1412              		.loc 1 96 49 view .LVU500
+ 1413 0054 84EE057B 		vdiv.f64	d7, d4, d5
+  96:Equalizer.cpp **** 		updateEQParameters(band); 
+ 1414              		.loc 1 96 15 view .LVU501
+ 1415 0058 B7EEC77B 		vcvt.f32.f64	s14, d7
+ 1416              	.LVL88:
+ 1417              	.LBB166:
+ 1418              	.LBI166:
+ 102:Equalizer.cpp **** {
+ 1419              		.loc 1 102 6 is_stmt 1 view .LVU502
+ 1420              	.LBB167:
+ 104:Equalizer.cpp **** 	// float value_dB = pow(10.0,(value/20.0)); // Converting to dB
+ 1421              		.loc 1 104 5 view .LVU503
+ 106:Equalizer.cpp **** 	{
+ 1422              		.loc 1 106 2 view .LVU504
+ 1423              	.LBB168:
+ 1424              	.LBI168:
+ 102:Equalizer.cpp **** {
+ 1425              		.loc 1 102 6 view .LVU505
+ 1426              	.LBB169:
+ 108:Equalizer.cpp **** 		{
+ 1427              		.loc 1 108 3 view .LVU506
+ 116:Equalizer.cpp **** 				if (m_EQParams[band].fc != value) {
+ 1428              		.loc 1 116 4 view .LVU507
+ 117:Equalizer.cpp **** 					m_EQParams[band].fc = value;
+ 1429              		.loc 1 117 5 view .LVU508
+ 1430 005c F4EE476A 		vcmp.f32	s13, s14
+ 1431 0060 F1EE10FA 		vmrs	APSR_nzcv, FPSCR
+ 1432 0064 01D0     		beq	.L75
+ 1433 0066 0529     		cmp	r1, #5
+ 1434 0068 0EDD     		ble	.L90
+ 1435              	.LVL89:
+ 1436              	.L75:
+ 117:Equalizer.cpp **** 					m_EQParams[band].fc = value;
+ 1437              		.loc 1 117 5 is_stmt 0 view .LVU509
+ 1438              	.LBE169:
+ 1439              	.LBE168:
+ 1440              	.LBE167:
+ 1441              	.LBE166:
+  97:Equalizer.cpp **** 		return m_EQParams[band].fc;
+ 1442              		.loc 1 97 3 is_stmt 1 view .LVU510
+  97:Equalizer.cpp **** 		return m_EQParams[band].fc;
+ 1443              		.loc 1 97 21 is_stmt 0 view .LVU511
+ 1444 006a 2146     		mov	r1, r4
+  98:Equalizer.cpp **** 	}
+ 1445              		.loc 1 98 27 view .LVU512
+ 1446 006c 3444     		add	r4, r4, r6
+  97:Equalizer.cpp **** 		return m_EQParams[band].fc;
+ 1447              		.loc 1 97 21 view .LVU513
+ 1448 006e 2846     		mov	r0, r5
+ARM GAS  /var/folders/5f/72p4brfx5932kssh4q_5ly0m0000gn/T//ccJ60apv.s 			page 46
+
+
+  98:Equalizer.cpp **** 	}
+ 1449              		.loc 1 98 27 view .LVU514
+ 1450 0070 05EB8405 		add	r5, r5, r4, lsl #2
+ 1451              	.LVL90:
+  97:Equalizer.cpp **** 		return m_EQParams[band].fc;
+ 1452              		.loc 1 97 21 view .LVU515
+ 1453 0074 FFF7FEFF 		bl	_ZN9Equalizer18updateEQParametersEs
+ 1454              	.LVL91:
+  98:Equalizer.cpp **** 	}
+ 1455              		.loc 1 98 3 is_stmt 1 view .LVU516
+  98:Equalizer.cpp **** 	}
+ 1456              		.loc 1 98 27 is_stmt 0 view .LVU517
+ 1457 0078 95ED040A 		vldr.32	s0, [r5, #16]
+ 100:Equalizer.cpp **** 
+ 1458              		.loc 1 100 1 view .LVU518
+ 1459 007c 70BD     		pop	{r4, r5, r6, pc}
+ 1460              	.LVL92:
+ 1461              	.L89:
+ 1462              	.LBB173:
+ 1463              	.LBB164:
+ 1464              	.LBB162:
+ 1465              	.LBB160:
+ 112:Equalizer.cpp **** 					update = true;
+ 1466              		.loc 1 112 6 is_stmt 1 view .LVU519
+ 112:Equalizer.cpp **** 					update = true;
+ 1467              		.loc 1 112 28 is_stmt 0 view .LVU520
+ 1468 007e 83ED030A 		vstr.32	s0, [r3, #12]
+ 113:Equalizer.cpp **** 				}
+ 1469              		.loc 1 113 6 is_stmt 1 view .LVU521
+ 1470              	.LVL93:
+ 129:Equalizer.cpp **** 	}
+ 1471              		.loc 1 129 3 view .LVU522
+ 129:Equalizer.cpp **** 	}
+ 1472              		.loc 1 129 15 view .LVU523
+ 129:Equalizer.cpp **** 	}
+ 1473              		.loc 1 129 33 is_stmt 0 view .LVU524
+ 1474 0082 FFF7FEFF 		bl	_ZN9Equalizer18updateEQParametersEs
+ 1475              	.LVL94:
+ 129:Equalizer.cpp **** 	}
+ 1476              		.loc 1 129 33 view .LVU525
+ 1477 0086 D0E7     		b	.L73
+ 1478              	.LVL95:
+ 1479              	.L90:
+ 129:Equalizer.cpp **** 	}
+ 1480              		.loc 1 129 33 view .LVU526
+ 1481              	.LBE160:
+ 1482              	.LBE162:
+ 1483              	.LBE164:
+ 1484              	.LBE173:
+ 1485              	.LBB174:
+ 1486              	.LBB172:
+ 1487              	.LBB171:
+ 1488              	.LBB170:
+ 118:Equalizer.cpp **** 					update = true;
+ 1489              		.loc 1 118 6 is_stmt 1 view .LVU527
+ 118:Equalizer.cpp **** 					update = true;
+ 1490              		.loc 1 118 26 is_stmt 0 view .LVU528
+ARM GAS  /var/folders/5f/72p4brfx5932kssh4q_5ly0m0000gn/T//ccJ60apv.s 			page 47
+
+
+ 1491 0088 83ED047A 		vstr.32	s14, [r3, #16]
+ 119:Equalizer.cpp **** 				}
+ 1492              		.loc 1 119 6 is_stmt 1 view .LVU529
+ 1493              	.LVL96:
+ 129:Equalizer.cpp **** 	}
+ 1494              		.loc 1 129 3 view .LVU530
+ 129:Equalizer.cpp **** 	}
+ 1495              		.loc 1 129 15 view .LVU531
+ 129:Equalizer.cpp **** 	}
+ 1496              		.loc 1 129 33 is_stmt 0 view .LVU532
+ 1497 008c FFF7FEFF 		bl	_ZN9Equalizer18updateEQParametersEs
+ 1498              	.LVL97:
+ 129:Equalizer.cpp **** 	}
+ 1499              		.loc 1 129 33 view .LVU533
+ 1500 0090 EBE7     		b	.L75
+ 1501              	.L92:
+ 1502 0092 00BFAFF3 		.align	3
+ 1502      0080
+ 1503              	.L91:
+ 1504 0098 6379D992 		.word	-1831241373
+ 1505 009c 8FF3F03F 		.word	1072755599
+ 1506              	.LBE170:
+ 1507              	.LBE171:
+ 1508              	.LBE172:
+ 1509              	.LBE174:
+ 1510              		.cfi_endproc
+ 1511              	.LFE576:
+ 1513              		.section	.text._ZN9Equalizer12incParameterEs9PARAMETERf,"ax",%progbits
+ 1514              		.align	1
+ 1515              		.p2align 2,,3
+ 1516              		.global	_ZN9Equalizer12incParameterEs9PARAMETERf
+ 1517              		.syntax unified
+ 1518              		.thumb
+ 1519              		.thumb_func
+ 1521              	_ZN9Equalizer12incParameterEs9PARAMETERf:
+ 1522              	.LVL98:
+ 1523              	.LFB574:
+  71:Equalizer.cpp ****     //m_filterOn = true; // For test only
+ 1524              		.loc 1 71 1 is_stmt 1 view -0
+ 1525              		.cfi_startproc
+ 1526              		@ args = 0, pretend = 0, frame = 0
+ 1527              		@ frame_needed = 0, uses_anonymous_args = 0
+  73:Equalizer.cpp **** 		setParameter(band, param, m_EQParams[band].gain + delta);
+ 1528              		.loc 1 73 5 view .LVU535
+  71:Equalizer.cpp ****     //m_filterOn = true; // For test only
+ 1529              		.loc 1 71 1 is_stmt 0 view .LVU536
+ 1530 0000 70B5     		push	{r4, r5, r6, lr}
+ 1531              		.cfi_def_cfa_offset 16
+ 1532              		.cfi_offset 4, -16
+ 1533              		.cfi_offset 5, -12
+ 1534              		.cfi_offset 6, -8
+ 1535              		.cfi_offset 14, -4
+  71:Equalizer.cpp ****     //m_filterOn = true; // For test only
+ 1536              		.loc 1 71 1 view .LVU537
+ 1537 0002 0546     		mov	r5, r0
+ 1538 0004 0C46     		mov	r4, r1
+  73:Equalizer.cpp **** 		setParameter(band, param, m_EQParams[band].gain + delta);
+ARM GAS  /var/folders/5f/72p4brfx5932kssh4q_5ly0m0000gn/T//ccJ60apv.s 			page 48
+
+
+ 1539              		.loc 1 73 5 view .LVU538
+ 1540 0006 D2B9     		cbnz	r2, .L94
+  74:Equalizer.cpp **** 		updateEQParameters(band);
+ 1541              		.loc 1 74 3 is_stmt 1 view .LVU539
+  74:Equalizer.cpp **** 		updateEQParameters(band);
+ 1542              		.loc 1 74 46 is_stmt 0 view .LVU540
+ 1543 0008 01EB4103 		add	r3, r1, r1, lsl #1
+ 1544              	.LBB183:
+ 1545              	.LBB184:
+ 1546              	.LBB185:
+ 1547              	.LBB186:
+ 111:Equalizer.cpp **** 					m_EQParams[band].gain = value;
+ 1548              		.loc 1 111 5 view .LVU541
+ 1549 000c 0529     		cmp	r1, #5
+ 1550              	.LBE186:
+ 1551              	.LBE185:
+ 1552              	.LBE184:
+ 1553              	.LBE183:
+  74:Equalizer.cpp **** 		updateEQParameters(band);
+ 1554              		.loc 1 74 46 view .LVU542
+ 1555 000e 4FEA4106 		lsl	r6, r1, #1
+ 1556 0012 00EB8303 		add	r3, r0, r3, lsl #2
+ 1557 0016 D3ED037A 		vldr.32	s15, [r3, #12]
+  74:Equalizer.cpp **** 		updateEQParameters(band);
+ 1558              		.loc 1 74 15 view .LVU543
+ 1559 001a 37EE800A 		vadd.f32	s0, s15, s0
+ 1560              	.LVL99:
+ 1561              	.LBB193:
+ 1562              	.LBI183:
+ 102:Equalizer.cpp **** {
+ 1563              		.loc 1 102 6 is_stmt 1 view .LVU544
+ 1564              	.LBB191:
+ 104:Equalizer.cpp **** 	// float value_dB = pow(10.0,(value/20.0)); // Converting to dB
+ 1565              		.loc 1 104 5 view .LVU545
+ 106:Equalizer.cpp **** 	{
+ 1566              		.loc 1 106 2 view .LVU546
+ 1567              	.LBB189:
+ 1568              	.LBI185:
+ 102:Equalizer.cpp **** {
+ 1569              		.loc 1 102 6 view .LVU547
+ 1570              	.LBB187:
+ 108:Equalizer.cpp **** 		{
+ 1571              		.loc 1 108 3 view .LVU548
+ 110:Equalizer.cpp **** 				if (m_EQParams[band].gain != value) {
+ 1572              		.loc 1 110 4 view .LVU549
+ 111:Equalizer.cpp **** 					m_EQParams[band].gain = value;
+ 1573              		.loc 1 111 5 view .LVU550
+ 1574 001e 04DC     		bgt	.L95
+ 1575 0020 F4EE407A 		vcmp.f32	s15, s0
+ 1576 0024 F1EE10FA 		vmrs	APSR_nzcv, FPSCR
+ 1577 0028 29D1     		bne	.L111
+ 1578              	.LVL100:
+ 1579              	.L95:
+ 111:Equalizer.cpp **** 					m_EQParams[band].gain = value;
+ 1580              		.loc 1 111 5 is_stmt 0 view .LVU551
+ 1581              	.LBE187:
+ 1582              	.LBE189:
+ARM GAS  /var/folders/5f/72p4brfx5932kssh4q_5ly0m0000gn/T//ccJ60apv.s 			page 49
+
+
+ 1583              	.LBE191:
+ 1584              	.LBE193:
+  75:Equalizer.cpp **** 		return m_EQParams[band].gain;
+ 1585              		.loc 1 75 3 is_stmt 1 view .LVU552
+  75:Equalizer.cpp **** 		return m_EQParams[band].gain;
+ 1586              		.loc 1 75 21 is_stmt 0 view .LVU553
+ 1587 002a 2146     		mov	r1, r4
+  76:Equalizer.cpp **** 	}
+ 1588              		.loc 1 76 27 view .LVU554
+ 1589 002c 3444     		add	r4, r4, r6
+  75:Equalizer.cpp **** 		return m_EQParams[band].gain;
+ 1590              		.loc 1 75 21 view .LVU555
+ 1591 002e 2846     		mov	r0, r5
+  76:Equalizer.cpp **** 	}
+ 1592              		.loc 1 76 27 view .LVU556
+ 1593 0030 05EB8405 		add	r5, r5, r4, lsl #2
+ 1594              	.LVL101:
+  75:Equalizer.cpp **** 		return m_EQParams[band].gain;
+ 1595              		.loc 1 75 21 view .LVU557
+ 1596 0034 FFF7FEFF 		bl	_ZN9Equalizer18updateEQParametersEs
+ 1597              	.LVL102:
+  76:Equalizer.cpp **** 	}
+ 1598              		.loc 1 76 3 is_stmt 1 view .LVU558
+  76:Equalizer.cpp **** 	}
+ 1599              		.loc 1 76 27 is_stmt 0 view .LVU559
+ 1600 0038 95ED030A 		vldr.32	s0, [r5, #12]
+  84:Equalizer.cpp **** 
+ 1601              		.loc 1 84 1 view .LVU560
+ 1602 003c 70BD     		pop	{r4, r5, r6, pc}
+ 1603              	.LVL103:
+ 1604              	.L94:
+  79:Equalizer.cpp **** 		setParameter(band, param, m_EQParams[band].fc * pow(2, 1.0/12.0));
+ 1605              		.loc 1 79 2 is_stmt 1 view .LVU561
+  80:Equalizer.cpp **** 		updateEQParameters(band); 
+ 1606              		.loc 1 80 3 view .LVU562
+  80:Equalizer.cpp **** 		updateEQParameters(band); 
+ 1607              		.loc 1 80 46 is_stmt 0 view .LVU563
+ 1608 003e 01EB4103 		add	r3, r1, r1, lsl #1
+ 1609 0042 4E00     		lsls	r6, r1, #1
+ 1610 0044 00EB8303 		add	r3, r0, r3, lsl #2
+ 1611 0048 D3ED046A 		vldr.32	s13, [r3, #16]
+  80:Equalizer.cpp **** 		updateEQParameters(band); 
+ 1612              		.loc 1 80 49 view .LVU564
+ 1613 004c 9FED125B 		vldr.64	d5, .L113
+  80:Equalizer.cpp **** 		updateEQParameters(band); 
+ 1614              		.loc 1 80 46 view .LVU565
+ 1615 0050 B7EEE67A 		vcvt.f64.f32	d7, s13
+  80:Equalizer.cpp **** 		updateEQParameters(band); 
+ 1616              		.loc 1 80 49 view .LVU566
+ 1617 0054 27EE057B 		vmul.f64	d7, d7, d5
+  80:Equalizer.cpp **** 		updateEQParameters(band); 
+ 1618              		.loc 1 80 15 view .LVU567
+ 1619 0058 B7EEC77B 		vcvt.f32.f64	s14, d7
+ 1620              	.LVL104:
+ 1621              	.LBB194:
+ 1622              	.LBI194:
+ 102:Equalizer.cpp **** {
+ARM GAS  /var/folders/5f/72p4brfx5932kssh4q_5ly0m0000gn/T//ccJ60apv.s 			page 50
+
+
+ 1623              		.loc 1 102 6 is_stmt 1 view .LVU568
+ 1624              	.LBB195:
+ 104:Equalizer.cpp **** 	// float value_dB = pow(10.0,(value/20.0)); // Converting to dB
+ 1625              		.loc 1 104 5 view .LVU569
+ 106:Equalizer.cpp **** 	{
+ 1626              		.loc 1 106 2 view .LVU570
+ 1627              	.LBB196:
+ 1628              	.LBI196:
+ 102:Equalizer.cpp **** {
+ 1629              		.loc 1 102 6 view .LVU571
+ 1630              	.LBB197:
+ 108:Equalizer.cpp **** 		{
+ 1631              		.loc 1 108 3 view .LVU572
+ 116:Equalizer.cpp **** 				if (m_EQParams[band].fc != value) {
+ 1632              		.loc 1 116 4 view .LVU573
+ 117:Equalizer.cpp **** 					m_EQParams[band].fc = value;
+ 1633              		.loc 1 117 5 view .LVU574
+ 1634 005c F4EE476A 		vcmp.f32	s13, s14
+ 1635 0060 F1EE10FA 		vmrs	APSR_nzcv, FPSCR
+ 1636 0064 01D0     		beq	.L97
+ 1637 0066 0529     		cmp	r1, #5
+ 1638 0068 0EDD     		ble	.L112
+ 1639              	.LVL105:
+ 1640              	.L97:
+ 117:Equalizer.cpp **** 					m_EQParams[band].fc = value;
+ 1641              		.loc 1 117 5 is_stmt 0 view .LVU575
+ 1642              	.LBE197:
+ 1643              	.LBE196:
+ 1644              	.LBE195:
+ 1645              	.LBE194:
+  81:Equalizer.cpp **** 		return m_EQParams[band].fc;
+ 1646              		.loc 1 81 3 is_stmt 1 view .LVU576
+  81:Equalizer.cpp **** 		return m_EQParams[band].fc;
+ 1647              		.loc 1 81 21 is_stmt 0 view .LVU577
+ 1648 006a 2146     		mov	r1, r4
+  82:Equalizer.cpp **** 	}	
+ 1649              		.loc 1 82 27 view .LVU578
+ 1650 006c 3444     		add	r4, r4, r6
+  81:Equalizer.cpp **** 		return m_EQParams[band].fc;
+ 1651              		.loc 1 81 21 view .LVU579
+ 1652 006e 2846     		mov	r0, r5
+  82:Equalizer.cpp **** 	}	
+ 1653              		.loc 1 82 27 view .LVU580
+ 1654 0070 05EB8405 		add	r5, r5, r4, lsl #2
+ 1655              	.LVL106:
+  81:Equalizer.cpp **** 		return m_EQParams[band].fc;
+ 1656              		.loc 1 81 21 view .LVU581
+ 1657 0074 FFF7FEFF 		bl	_ZN9Equalizer18updateEQParametersEs
+ 1658              	.LVL107:
+  82:Equalizer.cpp **** 	}	
+ 1659              		.loc 1 82 3 is_stmt 1 view .LVU582
+  82:Equalizer.cpp **** 	}	
+ 1660              		.loc 1 82 27 is_stmt 0 view .LVU583
+ 1661 0078 95ED040A 		vldr.32	s0, [r5, #16]
+  84:Equalizer.cpp **** 
+ 1662              		.loc 1 84 1 view .LVU584
+ 1663 007c 70BD     		pop	{r4, r5, r6, pc}
+ARM GAS  /var/folders/5f/72p4brfx5932kssh4q_5ly0m0000gn/T//ccJ60apv.s 			page 51
+
+
+ 1664              	.LVL108:
+ 1665              	.L111:
+ 1666              	.LBB201:
+ 1667              	.LBB192:
+ 1668              	.LBB190:
+ 1669              	.LBB188:
+ 112:Equalizer.cpp **** 					update = true;
+ 1670              		.loc 1 112 6 is_stmt 1 view .LVU585
+ 112:Equalizer.cpp **** 					update = true;
+ 1671              		.loc 1 112 28 is_stmt 0 view .LVU586
+ 1672 007e 83ED030A 		vstr.32	s0, [r3, #12]
+ 113:Equalizer.cpp **** 				}
+ 1673              		.loc 1 113 6 is_stmt 1 view .LVU587
+ 1674              	.LVL109:
+ 129:Equalizer.cpp **** 	}
+ 1675              		.loc 1 129 3 view .LVU588
+ 129:Equalizer.cpp **** 	}
+ 1676              		.loc 1 129 15 view .LVU589
+ 129:Equalizer.cpp **** 	}
+ 1677              		.loc 1 129 33 is_stmt 0 view .LVU590
+ 1678 0082 FFF7FEFF 		bl	_ZN9Equalizer18updateEQParametersEs
+ 1679              	.LVL110:
+ 129:Equalizer.cpp **** 	}
+ 1680              		.loc 1 129 33 view .LVU591
+ 1681 0086 D0E7     		b	.L95
+ 1682              	.LVL111:
+ 1683              	.L112:
+ 129:Equalizer.cpp **** 	}
+ 1684              		.loc 1 129 33 view .LVU592
+ 1685              	.LBE188:
+ 1686              	.LBE190:
+ 1687              	.LBE192:
+ 1688              	.LBE201:
+ 1689              	.LBB202:
+ 1690              	.LBB200:
+ 1691              	.LBB199:
+ 1692              	.LBB198:
+ 118:Equalizer.cpp **** 					update = true;
+ 1693              		.loc 1 118 6 is_stmt 1 view .LVU593
+ 118:Equalizer.cpp **** 					update = true;
+ 1694              		.loc 1 118 26 is_stmt 0 view .LVU594
+ 1695 0088 83ED047A 		vstr.32	s14, [r3, #16]
+ 119:Equalizer.cpp **** 				}
+ 1696              		.loc 1 119 6 is_stmt 1 view .LVU595
+ 1697              	.LVL112:
+ 129:Equalizer.cpp **** 	}
+ 1698              		.loc 1 129 3 view .LVU596
+ 129:Equalizer.cpp **** 	}
+ 1699              		.loc 1 129 15 view .LVU597
+ 129:Equalizer.cpp **** 	}
+ 1700              		.loc 1 129 33 is_stmt 0 view .LVU598
+ 1701 008c FFF7FEFF 		bl	_ZN9Equalizer18updateEQParametersEs
+ 1702              	.LVL113:
+ 129:Equalizer.cpp **** 	}
+ 1703              		.loc 1 129 33 view .LVU599
+ 1704 0090 EBE7     		b	.L97
+ 1705              	.L114:
+ARM GAS  /var/folders/5f/72p4brfx5932kssh4q_5ly0m0000gn/T//ccJ60apv.s 			page 52
+
+
+ 1706 0092 00BFAFF3 		.align	3
+ 1706      0080
+ 1707              	.L113:
+ 1708 0098 6379D992 		.word	-1831241373
+ 1709 009c 8FF3F03F 		.word	1072755599
+ 1710              	.LBE198:
+ 1711              	.LBE199:
+ 1712              	.LBE200:
+ 1713              	.LBE202:
+ 1714              		.cfi_endproc
+ 1715              	.LFE574:
+ 1717              		.section	.text._ZN9Equalizer12getParameterEs9PARAMETER,"ax",%progbits
+ 1718              		.align	1
+ 1719              		.p2align 2,,3
+ 1720              		.global	_ZN9Equalizer12getParameterEs9PARAMETER
+ 1721              		.syntax unified
+ 1722              		.thumb
+ 1723              		.thumb_func
+ 1725              	_ZN9Equalizer12getParameterEs9PARAMETER:
+ 1726              	.LVL114:
+ 1727              	.LFB579:
+ 168:Equalizer.cpp **** 
+ 169:Equalizer.cpp **** float Equalizer::getParameter(short band, PARAMETER param) 
+ 170:Equalizer.cpp **** {
+ 1728              		.loc 1 170 1 is_stmt 1 view -0
+ 1729              		.cfi_startproc
+ 1730              		@ args = 0, pretend = 0, frame = 0
+ 1731              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1732              		@ link register save eliminated.
+ 171:Equalizer.cpp **** 		switch (param) 
+ 1733              		.loc 1 171 3 view .LVU601
+ 1734 0000 012A     		cmp	r2, #1
+ 1735 0002 05D0     		beq	.L116
+ 1736 0004 022A     		cmp	r2, #2
+ 1737 0006 11D0     		beq	.L117
+ 1738 0008 4AB1     		cbz	r2, .L120
+ 1739 000a 9FED0C0A 		vldr.32	s0, .L121
+ 172:Equalizer.cpp **** 		{
+ 173:Equalizer.cpp **** 			case PM_GAIN:
+ 174:Equalizer.cpp **** 				return m_EQParams[band].gain;
+ 175:Equalizer.cpp **** 			case PM_FREQ:
+ 176:Equalizer.cpp **** 				return m_EQParams[band].fc;
+ 177:Equalizer.cpp **** 			case PM_Q:
+ 178:Equalizer.cpp **** 				return m_EQParams[band].Q;
+ 179:Equalizer.cpp **** 			default:
+ 180:Equalizer.cpp **** 				return 0.0;
+ 181:Equalizer.cpp **** 		}
+ 182:Equalizer.cpp **** 	}...
+ 1740              		.loc 1 182 2 is_stmt 0 view .LVU602
+ 1741 000e 7047     		bx	lr
+ 1742              	.L116:
+ 175:Equalizer.cpp **** 			case PM_FREQ:
+ 1743              		.loc 1 175 4 is_stmt 1 view .LVU603
+ 176:Equalizer.cpp **** 				return m_EQParams[band].fc;
+ 1744              		.loc 1 176 5 view .LVU604
+ 176:Equalizer.cpp **** 				return m_EQParams[band].fc;
+ 1745              		.loc 1 176 29 is_stmt 0 view .LVU605
+ARM GAS  /var/folders/5f/72p4brfx5932kssh4q_5ly0m0000gn/T//ccJ60apv.s 			page 53
+
+
+ 1746 0010 01EB4101 		add	r1, r1, r1, lsl #1
+ 1747              	.LVL115:
+ 176:Equalizer.cpp **** 				return m_EQParams[band].fc;
+ 1748              		.loc 1 176 29 view .LVU606
+ 1749 0014 00EB8100 		add	r0, r0, r1, lsl #2
+ 1750              	.LVL116:
+ 176:Equalizer.cpp **** 				return m_EQParams[band].fc;
+ 1751              		.loc 1 176 29 view .LVU607
+ 1752 0018 90ED040A 		vldr.32	s0, [r0, #16]
+ 1753 001c 7047     		bx	lr
+ 1754              	.LVL117:
+ 1755              	.L120:
+ 173:Equalizer.cpp **** 			case PM_GAIN:
+ 1756              		.loc 1 173 4 is_stmt 1 view .LVU608
+ 174:Equalizer.cpp **** 				return m_EQParams[band].gain;
+ 1757              		.loc 1 174 5 view .LVU609
+ 174:Equalizer.cpp **** 				return m_EQParams[band].gain;
+ 1758              		.loc 1 174 29 is_stmt 0 view .LVU610
+ 1759 001e 01EB4101 		add	r1, r1, r1, lsl #1
+ 1760              	.LVL118:
+ 174:Equalizer.cpp **** 				return m_EQParams[band].gain;
+ 1761              		.loc 1 174 29 view .LVU611
+ 1762 0022 00EB8100 		add	r0, r0, r1, lsl #2
+ 1763              	.LVL119:
+ 174:Equalizer.cpp **** 				return m_EQParams[band].gain;
+ 1764              		.loc 1 174 29 view .LVU612
+ 1765 0026 90ED030A 		vldr.32	s0, [r0, #12]
+ 1766 002a 7047     		bx	lr
+ 1767              	.LVL120:
+ 1768              	.L117:
+ 177:Equalizer.cpp **** 			case PM_Q:
+ 1769              		.loc 1 177 4 is_stmt 1 view .LVU613
+ 178:Equalizer.cpp **** 				return m_EQParams[band].Q;
+ 1770              		.loc 1 178 5 view .LVU614
+ 178:Equalizer.cpp **** 				return m_EQParams[band].Q;
+ 1771              		.loc 1 178 29 is_stmt 0 view .LVU615
+ 1772 002c 01EB4101 		add	r1, r1, r1, lsl #1
+ 1773              	.LVL121:
+ 178:Equalizer.cpp **** 				return m_EQParams[band].Q;
+ 1774              		.loc 1 178 29 view .LVU616
+ 1775 0030 00EB8100 		add	r0, r0, r1, lsl #2
+ 1776              	.LVL122:
+ 178:Equalizer.cpp **** 				return m_EQParams[band].Q;
+ 1777              		.loc 1 178 29 view .LVU617
+ 1778 0034 90ED050A 		vldr.32	s0, [r0, #20]
+ 1779 0038 7047     		bx	lr
+ 1780              	.L122:
+ 1781 003a 00BF     		.align	2
+ 1782              	.L121:
+ 1783 003c 00000000 		.word	0
+ 1784              		.cfi_endproc
+ 1785              	.LFE579:
+ 1787              		.global	_ZTV9Equalizer
+ 1788              		.section	.rodata._ZTV9Equalizer,"a"
+ 1789              		.align	2
+ 1790              		.set	.LANCHOR0,. + 0
+ 1793              	_ZTV9Equalizer:
+ARM GAS  /var/folders/5f/72p4brfx5932kssh4q_5ly0m0000gn/T//ccJ60apv.s 			page 54
+
+
+ 1794 0000 00000000 		.word	0
+ 1795 0004 00000000 		.word	0
+ 1796 0008 00000000 		.word	_ZN9EqualizerD1Ev
+ 1797 000c 00000000 		.word	_ZN9EqualizerD0Ev
+ 1798 0010 00000000 		.word	_ZN9Equalizer7ProcessEf
+ 1799 0014 00000000 		.word	_ZN9Equalizer4InitEi
+ 1800              		.text
+ 1801              	.Letext0:
+ 1802              		.file 5 "/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/bits/std_abs.h"
+ 1803              		.file 6 "/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/arm-none-eabi/thumb/v7
+ 1804              		.file 7 "/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/math.h"
+ 1805              		.file 8 "/Library/DaisyToolchain/0.2.0/arm/arm-none-eabi/include/c++/10.3.1/math.h"
+ 1806              		.file 9 "Equalizer.h"
+ 1807              		.file 10 "<built-in>"
+ARM GAS  /var/folders/5f/72p4brfx5932kssh4q_5ly0m0000gn/T//ccJ60apv.s 			page 55
+
+
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 Equalizer.cpp
+/var/folders/5f/72p4brfx5932kssh4q_5ly0m0000gn/T//ccJ60apv.s:19     .text._ZN9EqualizerD2Ev:0000000000000000 $t
+/var/folders/5f/72p4brfx5932kssh4q_5ly0m0000gn/T//ccJ60apv.s:26     .text._ZN9EqualizerD2Ev:0000000000000000 _ZN9EqualizerD2Ev
+/var/folders/5f/72p4brfx5932kssh4q_5ly0m0000gn/T//ccJ60apv.s:26     .text._ZN9EqualizerD2Ev:0000000000000000 _ZN9EqualizerD1Ev
+/var/folders/5f/72p4brfx5932kssh4q_5ly0m0000gn/T//ccJ60apv.s:49     .text._ZN9EqualizerD0Ev:0000000000000000 $t
+/var/folders/5f/72p4brfx5932kssh4q_5ly0m0000gn/T//ccJ60apv.s:56     .text._ZN9EqualizerD0Ev:0000000000000000 _ZN9EqualizerD0Ev
+/var/folders/5f/72p4brfx5932kssh4q_5ly0m0000gn/T//ccJ60apv.s:92     .text._ZN9Equalizer7ProcessEf:0000000000000000 $t
+/var/folders/5f/72p4brfx5932kssh4q_5ly0m0000gn/T//ccJ60apv.s:99     .text._ZN9Equalizer7ProcessEf:0000000000000000 _ZN9Equalizer7ProcessEf
+/var/folders/5f/72p4brfx5932kssh4q_5ly0m0000gn/T//ccJ60apv.s:203    .text._ZN9EqualizerC2Ev:0000000000000000 $t
+/var/folders/5f/72p4brfx5932kssh4q_5ly0m0000gn/T//ccJ60apv.s:210    .text._ZN9EqualizerC2Ev:0000000000000000 _ZN9EqualizerC2Ev
+/var/folders/5f/72p4brfx5932kssh4q_5ly0m0000gn/T//ccJ60apv.s:241    .text._ZN9EqualizerC2Ev:000000000000000c $d
+/var/folders/5f/72p4brfx5932kssh4q_5ly0m0000gn/T//ccJ60apv.s:210    .text._ZN9EqualizerC2Ev:0000000000000000 _ZN9EqualizerC1Ev
+/var/folders/5f/72p4brfx5932kssh4q_5ly0m0000gn/T//ccJ60apv.s:248    .text._ZN9Equalizer18updateEQParametersEs:0000000000000000 $t
+/var/folders/5f/72p4brfx5932kssh4q_5ly0m0000gn/T//ccJ60apv.s:255    .text._ZN9Equalizer18updateEQParametersEs:0000000000000000 _ZN9Equalizer18updateEQParametersEs
+/var/folders/5f/72p4brfx5932kssh4q_5ly0m0000gn/T//ccJ60apv.s:984    .text._ZN9Equalizer18updateEQParametersEs:00000000000003c0 $d
+/var/folders/5f/72p4brfx5932kssh4q_5ly0m0000gn/T//ccJ60apv.s:997    .text._ZN9Equalizer4InitEi:0000000000000000 $t
+/var/folders/5f/72p4brfx5932kssh4q_5ly0m0000gn/T//ccJ60apv.s:1004   .text._ZN9Equalizer4InitEi:0000000000000000 _ZN9Equalizer4InitEi
+/var/folders/5f/72p4brfx5932kssh4q_5ly0m0000gn/T//ccJ60apv.s:1195   .text._ZN9Equalizer4InitEi:0000000000000068 $d
+/var/folders/5f/72p4brfx5932kssh4q_5ly0m0000gn/T//ccJ60apv.s:1205   .text._ZN9Equalizer12setParameterEs9PARAMETERf:0000000000000000 $t
+/var/folders/5f/72p4brfx5932kssh4q_5ly0m0000gn/T//ccJ60apv.s:1212   .text._ZN9Equalizer12setParameterEs9PARAMETERf:0000000000000000 _ZN9Equalizer12setParameterEs9PARAMETERf
+/var/folders/5f/72p4brfx5932kssh4q_5ly0m0000gn/T//ccJ60apv.s:1310   .text._ZN9Equalizer12decParameterEs9PARAMETERf:0000000000000000 $t
+/var/folders/5f/72p4brfx5932kssh4q_5ly0m0000gn/T//ccJ60apv.s:1317   .text._ZN9Equalizer12decParameterEs9PARAMETERf:0000000000000000 _ZN9Equalizer12decParameterEs9PARAMETERf
+/var/folders/5f/72p4brfx5932kssh4q_5ly0m0000gn/T//ccJ60apv.s:1504   .text._ZN9Equalizer12decParameterEs9PARAMETERf:0000000000000098 $d
+/var/folders/5f/72p4brfx5932kssh4q_5ly0m0000gn/T//ccJ60apv.s:1514   .text._ZN9Equalizer12incParameterEs9PARAMETERf:0000000000000000 $t
+/var/folders/5f/72p4brfx5932kssh4q_5ly0m0000gn/T//ccJ60apv.s:1521   .text._ZN9Equalizer12incParameterEs9PARAMETERf:0000000000000000 _ZN9Equalizer12incParameterEs9PARAMETERf
+/var/folders/5f/72p4brfx5932kssh4q_5ly0m0000gn/T//ccJ60apv.s:1708   .text._ZN9Equalizer12incParameterEs9PARAMETERf:0000000000000098 $d
+/var/folders/5f/72p4brfx5932kssh4q_5ly0m0000gn/T//ccJ60apv.s:1718   .text._ZN9Equalizer12getParameterEs9PARAMETER:0000000000000000 $t
+/var/folders/5f/72p4brfx5932kssh4q_5ly0m0000gn/T//ccJ60apv.s:1725   .text._ZN9Equalizer12getParameterEs9PARAMETER:0000000000000000 _ZN9Equalizer12getParameterEs9PARAMETER
+/var/folders/5f/72p4brfx5932kssh4q_5ly0m0000gn/T//ccJ60apv.s:1783   .text._ZN9Equalizer12getParameterEs9PARAMETER:000000000000003c $d
+/var/folders/5f/72p4brfx5932kssh4q_5ly0m0000gn/T//ccJ60apv.s:1793   .rodata._ZTV9Equalizer:0000000000000000 _ZTV9Equalizer
+/var/folders/5f/72p4brfx5932kssh4q_5ly0m0000gn/T//ccJ60apv.s:1789   .rodata._ZTV9Equalizer:0000000000000000 $d
+
+UNDEFINED SYMBOLS
+_ZdlPvj
+pow
+sinf
+cosf
+sqrtf

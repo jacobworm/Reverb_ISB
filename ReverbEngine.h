@@ -1,0 +1,64 @@
+#pragma once
+
+#include "Diffusor.h"
+constexpr int NUM_STEPS = 5;
+constexpr int NUM_DELAYLINES = 8;
+constexpr int DIFFUSER_STEP_TO_EARLY = 1; //OBS: 0-indekseret
+template <typename SampleType>
+class ReverbEngine{
+
+public:
+    ReverbEngine(){
+    for (int i=0;i<NUM_STEPS;++i)
+        diffusors[i] = Diffusor<SampleType>(sampleRate, i, diffusor_max_delay_ms[i], diffusor_delay_distribution[i]);
+
+    }
+
+    std::array<SampleType,2> process(std::array<SampleType,2> input){
+        // distribuerer input til 8 channels, L R L R L R L R
+        int count = 0;
+        for (int i = 0; i<NUM_DELAYLINES;i++){
+            sample_8ch[i]=input[count];
+            count++;
+            if (count > 1){
+                count = 0;
+            }
+        }
+
+        // Processerer igennem diffusorer. OBS:: DETTE KALD IKKE KORREKT ENDNU (DOBBELT IN/OUT REFERENCE)
+        for (int i = 0; i<NUM_STEPS;i++){
+            diffusors[i].process(sample_8ch);
+            if(i == DIFFUSER_STEP_TO_EARLY){
+                sample_8ch_early = sample_8ch; // Tapning af signal til early reflection
+            }
+        }
+
+
+        std::array<SampleType,2> output {{0.0f, 0.0f}};
+        //Temp summeret output til test af diffusorer:::::::::::
+        count = 0;
+        for (int i = 0; i<NUM_DELAYLINES;i++){
+            output[count]+=sample_8ch[i];
+            count++;
+            if (count > 1){
+                count = 0;
+            }
+        }
+        return output;
+    }
+
+private:
+    std::array<Diffusor<SampleType>, NUM_STEPS> diffusors;
+    std::array<std::array<float, NUM_DELAYLINES>,NUM_STEPS> diffusor_delay_distribution = {{
+        {{ 0.70f, 0.32f, 0.45f, 0.20f, 0.84f, 0.67f, 0.18f, 0.23f }},
+        {{ 0.22f, 0.77f, 0.45f, 0.67f, 0.84f, 0.14f, 0.97f, 0.80f }},
+        {{ 0.72f, 0.35f, 0.12f, 0.58f, 0.12f, 0.25f, 0.93f, 0.24f }},
+        {{ 0.43f, 0.35f, 0.84f, 0.96f, 0.67f, 0.88f, 0.31f, 0.42f }},
+        {{ 0.70f, 0.44f, 0.87f, 0.39f, 0.63f, 0.73f, 0.74f, 0.70f }}
+    }};
+    std::array<size_t, NUM_STEPS> diffusor_max_delay_ms = {30, 60, 120, 240, 480};
+    double sampleRate = 48000;
+    std::array<SampleType,NUM_DELAYLINES> sample_8ch = {0.0f, 0.0f};
+    std::array<SampleType,NUM_DELAYLINES> sample_8ch_early = {0.0f, 0.0f};
+
+};
