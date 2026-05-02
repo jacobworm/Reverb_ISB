@@ -1,8 +1,10 @@
 
 #include <string.h>
 #include <math.h>
+#include <array>
 #include "daisy_pod.h"
 #include "daisysp.h"
+#include "ReverbEngine.h"
 #include "Equalizer.h"
 #include "Controller.h"
 
@@ -12,7 +14,7 @@ using namespace daisysp;
 // Use hwPod or hwSeed (Realtime or testing)
 #define USE_HWPOD 
 
-#define SAMPLE_RATE 		48000 // Set to 48000 or 96000
+#define SAMPLE_RATE 		48000 // Set to 48000
 #define SAMPLE_BUFFER_SIZE 		8
 #define SAMPLE_TIME_NS		(SAMPLE_BUFFER_SIZE/(float)SAMPLE_RATE*1000000000) // in ns
 #define NUM_COLORS 				7
@@ -24,8 +26,9 @@ static Color my_colors[NUM_COLORS];
 static DaisyPod hwPod; // Used for realtime audio and controls
 static uint32_t  start, end, dur;
 
-static Equalizer equalizerLeft;
-static Equalizer equalizerRight;
+static ReverbEngine reverbEngine;
+//static Equalizer equalizerLeft;
+//static Equalizer equalizerRight;
 static Controller controller(&equalizerLeft, &equalizerRight, &hwPod);
 
 void AudioCallback(AudioHandle::InputBuffer in, AudioHandle::OutputBuffer out, size_t size)
@@ -34,13 +37,19 @@ void AudioCallback(AudioHandle::InputBuffer in, AudioHandle::OutputBuffer out, s
 
 	for (size_t i = 0; i < size; i++)
 	{
-		float sample = equalizerLeft.Process(in[0][i]); 
-		out[0][i] = sample;
-		out[1][i] = equalizerRight.Process(in[1][i]);
+		std::array<float, 2> sample = {in[0][i],in[1][i]};
+		
+		sample = reverbEngine.process(sample);
+
+		//float sample = equalizerLeft.Process(in[0][i]); 
+		//out[0][i] = sample;
+		//out[1][i] = equalizerRight.Process(in[1][i]);
 
 		// Bypass filter
 		//out[0][i] = in[0][i];
 		//out[1][i] = in[1][i];
+		out[0][i] = sample[0];
+		out[1][i] = sample[1];
 	}
 
 	end = System::GetTick();
@@ -97,10 +106,10 @@ void algoTester(void)
 
 int main(void)
 {
-	equalizerLeft.Init(SAMPLE_RATE);
-	equalizerLeft.setBypass(true);
-	equalizerRight.Init(SAMPLE_RATE);
-	equalizerRight.setBypass(true);
+	//equalizerLeft.Init(SAMPLE_RATE);
+	//equalizerLeft.setBypass(true);
+	//equalizerRight.Init(SAMPLE_RATE);
+	//equalizerRight.setBypass(true);
 
 #ifdef USE_HWPOD // Realtime audio with Daisy Pod and IIR Filter bypass toggle
 

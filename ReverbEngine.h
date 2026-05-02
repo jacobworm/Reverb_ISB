@@ -2,16 +2,21 @@
 
 #include "Diffusor.h"
 constexpr int NUM_STEPS = 5;
-constexpr int NUM_DELAYLINES = 8;
+//constexpr int NUM_DELAYLINES = 8;
 constexpr int DIFFUSER_STEP_TO_EARLY = 1; //OBS: 0-indekseret
 template <typename SampleType>
 class ReverbEngine{
 
 public:
-    ReverbEngine(){
-    for (int i=0;i<NUM_STEPS;++i)
-        diffusors[i] = Diffusor<SampleType>(sampleRate, i, diffusor_max_delay_ms[i], diffusor_delay_distribution[i]);
-
+    ReverbEngine()
+    : diffusors{{
+    Diffusor<SampleType>(sampleRate, 0, diffusor_max_delay_ms[0], diffusor_delay_distribution[0]),
+        Diffusor<SampleType>(sampleRate, 1, diffusor_max_delay_ms[1], diffusor_delay_distribution[1]),
+        Diffusor<SampleType>(sampleRate, 2, diffusor_max_delay_ms[2], diffusor_delay_distribution[2]),
+        Diffusor<SampleType>(sampleRate, 3, diffusor_max_delay_ms[3], diffusor_delay_distribution[3]),
+        Diffusor<SampleType>(sampleRate, 4, diffusor_max_delay_ms[4], diffusor_delay_distribution[4])    
+    }} 
+    {
     }
 
     std::array<SampleType,2> process(std::array<SampleType,2> input){
@@ -25,7 +30,7 @@ public:
             }
         }
 
-        // Processerer igennem diffusorer. OBS:: DETTE KALD IKKE KORREKT ENDNU (DOBBELT IN/OUT REFERENCE)
+        // Processerer igennem diffusorer.
         for (int i = 0; i<NUM_STEPS;i++){
             diffusors[i].process(sample_8ch);
             if(i == DIFFUSER_STEP_TO_EARLY){

@@ -1,6 +1,7 @@
 #pragma once
 
 #include "DelayLineBasic.h"
+#include "Matrix_array.h"
 #include <vector>
 #include <array>
 #include <cmath>
@@ -12,7 +13,12 @@ template<typename SampleType>
 class Diffusor
 {
 public:
-    Diffusor(int fs, int diff_num_, size_t max_delay_ms, std::array<float, NUM_DELAYLINES> delay_distribution_)
+    Diffusor()
+    : Diffusor(48000, 0, 0, std::array<float, NUM_DELAYLINES>{})
+    {
+    }
+
+    Diffusor(int fs, size_t diff_num_, size_t max_delay_ms, std::array<float, NUM_DELAYLINES> delay_distribution_)
     : diffusor_num(diff_num_),sampleRate(fs), delay_distribution(delay_distribution_)
     {
         max_delay_samples = fs * max_delay_ms / 1000;
@@ -41,7 +47,10 @@ public:
             sample[i] = delayLines[i].read(delay_times[i]);
         }
         // Her kan du foretage matrix-multiplikation af HadShuffle på `out`
-            
+        sample = matrix.multiplyShuffleHadVector(sample, diffusor_num);
+        for(size_t i = 0; i < NUM_DELAYLINES; i++){
+            sample[i] *= gainHadamardInv;
+        }            
     }
 
 private:
@@ -63,9 +72,11 @@ private:
     double sampleRate = 48000;
     float diffusor_skew = 5.0f;
     float diffusor_time_scaler = 1.0f;
-    int diffusor_num;
+    size_t diffusor_num = 0;
+    static constexpr float gainHadamardInv = 1.0f / std::sqrt(static_cast<float>(NUM_DELAYLINES)); //Beregnes ved compile
     std::array<float, NUM_DELAYLINES> delay_distribution;
     std::array<int, NUM_DELAYLINES> delay_times;
     size_t max_delay_samples;
     std::vector<DelayLineBasic<SampleType>> delayLines;
+    Matrix_array<SampleType> matrix;
 };
