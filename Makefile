@@ -1,8 +1,8 @@
 # Project Name
-TARGET = Equalizer
+TARGET = Reverb
 
 # Sources
-CPP_SOURCES = main.cpp Controller.cpp Equalizer.cpp
+CPP_SOURCES = main.cpp
 
 # Library Locations
 LIBDAISY_DIR = ../../libDaisy/

@@ -9,13 +9,14 @@
 template<typename scalar, size_t N = 8>
 class Matrix_array
 {
+    /*
     static_assert(
         std::is_same_v<scalar, int32_t> ||
         std::is_same_v<scalar, float> ||
         std::is_same_v<scalar, double> ||
         std::is_same_v<scalar, uint32_t>,
         "Only int32_t, uint32_t, float, double allowed"
-    );
+    );*/
 
 public:
     // Default constructor
@@ -50,9 +51,9 @@ public:
         const std::array<scalar, N>& vec,
         size_t shuffleHad_Nr) const
     {
-        if (shuffleHad_Nr >= shuffleHad_.size()){
-            throw std::out_of_range("shuffleHad_Nr out of range (0-4)");
-            }
+        //if (shuffleHad_Nr >= shuffleHad_.size()){
+        //    throw std::out_of_range("shuffleHad_Nr out of range (0-4)");
+        //    }
         return multiplyMatrixVector(vec, shuffleHad_[shuffleHad_Nr]);        
     }
     // Matrix-vektor multiplikation, Hadamard

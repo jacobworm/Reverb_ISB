@@ -5,8 +5,8 @@
 #include "daisy_pod.h"
 #include "daisysp.h"
 #include "ReverbEngine.h"
-#include "Equalizer.h"
-#include "Controller.h"
+//#include "Equalizer.h"
+//#include "Controller.h"
 
 using namespace daisy;
 using namespace daisysp;
@@ -26,10 +26,10 @@ static Color my_colors[NUM_COLORS];
 static DaisyPod hwPod; // Used for realtime audio and controls
 static uint32_t  start, end, dur;
 
-static ReverbEngine reverbEngine;
+static ReverbEngine<float> reverbEngine;
 //static Equalizer equalizerLeft;
 //static Equalizer equalizerRight;
-static Controller controller(&equalizerLeft, &equalizerRight, &hwPod);
+//static Controller controller(&equalizerLeft, &equalizerRight, &hwPod);
 
 void AudioCallback(AudioHandle::InputBuffer in, AudioHandle::OutputBuffer out, size_t size)
 {
@@ -39,17 +39,20 @@ void AudioCallback(AudioHandle::InputBuffer in, AudioHandle::OutputBuffer out, s
 	{
 		std::array<float, 2> sample = {in[0][i],in[1][i]};
 		
-		sample = reverbEngine.process(sample);
+		//sample = reverbEngine.process(sample);
 
 		//float sample = equalizerLeft.Process(in[0][i]); 
 		//out[0][i] = sample;
 		//out[1][i] = equalizerRight.Process(in[1][i]);
 
-		// Bypass filter
+		// Bypass
 		//out[0][i] = in[0][i];
 		//out[1][i] = in[1][i];
 		out[0][i] = sample[0];
 		out[1][i] = sample[1];
+		// Bypass
+		out[0][i] = in[0][i];
+		out[1][i] = in[1][i];
 	}
 
 	end = System::GetTick();
@@ -113,10 +116,10 @@ int main(void)
 
 #ifdef USE_HWPOD // Realtime audio with Daisy Pod and IIR Filter bypass toggle
 
-	int32_t  inc;
-	bool eqOn = false;
-	int counter = 0;
-	int band = 0;
+	//int32_t  inc;
+	//bool eqOn = false;
+	//int counter = 0;
+	//int band = 0;
 
 	my_colors[0].Init(Color::PresetColor::RED);
 	my_colors[1].Init(Color::PresetColor::GOLD);
@@ -146,8 +149,8 @@ int main(void)
 	
 		// Debounce the Encoder at a steady, fixed rate.
 		//hwPod.encoder.Debounce();
-		inc = hwPod.encoder.Increment();
-
+		//inc = hwPod.encoder.Increment();
+		/*	
 		if (inc < 0) {
 			controller.adjust(DEC_PARAM_VALUE);
 		}
@@ -198,8 +201,9 @@ int main(void)
 			//controller.printState(dur, SAMPLE_TIME_NS);
 			controller.printParam();
 		}
-		counter++;
-		//System::Delay(1); // Wait 1 ms
+			*/
+		//counter++;
+		System::Delay(1); // Wait 1 ms
     }
 
 #else // Non-realtime test with Daisy Seed testing and logging

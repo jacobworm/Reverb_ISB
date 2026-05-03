@@ -1,7 +1,9 @@
 #pragma once
 
 #include "Diffusor.h"
-constexpr int NUM_STEPS = 5;
+#include "FDN.h"
+#include "Constants.h"
+
 //constexpr int NUM_DELAYLINES = 8;
 constexpr int DIFFUSER_STEP_TO_EARLY = 1; //OBS: 0-indekseret
 template <typename SampleType>
@@ -68,11 +70,14 @@ public:
     #endif
 
 private:
-    std::array<std::array<float, NUM_DELAYLINES>,NUM_STEPS> diffusor_delay_distribution;
-    std::array<size_t, NUM_STEPS> diffusor_max_delay_ms;
     int sampleRate;
+    // Diffusor-related private attributes
+    std::array<std::array<float, NUM_DELAYLINES>,NUM_STEPS> diffusor_delay_distribution;
+    std::array<size_t, NUM_STEPS> diffusor_max_delay_ms;    
     std::array<Diffusor<SampleType>, NUM_STEPS> diffusors;
     std::array<SampleType,NUM_DELAYLINES> sample_8ch = {0.0f, 0.0f};
     std::array<SampleType,NUM_DELAYLINES> sample_8ch_early = {0.0f, 0.0f};
 
+    // FDN-related private attributes
+    FDN<float> fdn;
 };

@@ -2,6 +2,7 @@
 
 #include "DelayLineBasic.h"
 #include "Matrix_array.h"
+#include "Constants.h"
 #include <vector>
 #include <array>
 #include <cmath>
@@ -16,7 +17,7 @@
 constexpr int N_TEST = 48000;
 #endif
 
-constexpr int NUM_DELAYLINES = 8;
+
 
 template<typename SampleType>
 class Diffusor
@@ -51,10 +52,11 @@ public:
         //std::array<SampleType, NUM_DELAYLINES> out{};
         for (int i = 0; i < NUM_DELAYLINES; ++i)
         {
-            delayLines[i].write(sample[i]);
+            temp_sample = sample[i];
             sample[i] = delayLines[i].read(delay_times[i]);
+            delayLines[i].write(temp_sample);
         }
-        // Her kan du foretage matrix-multiplikation af HadShuffle på `out`
+        // Her foretages matrix-multiplikation af HadShuffle på `sample`
         sample = matrix.multiplyShuffleHadVector(sample, diffusor_num);
         for(size_t i = 0; i < NUM_DELAYLINES; i++){
             sample[i] *= gainHadamardInv;
@@ -80,11 +82,12 @@ private:
             // Inddeler intervallet fra 0 til 1 i NUM_DELAYLINES eksponentielt inddelte intervaller. Placerer delaytider pseudo-random i disse slots med fordelingerne i delay_distribution
             float diff_delay_skew = calculateSkew(n,NUM_DELAYLINES,diffusor_skew)+(calculateSkew(n+1,NUM_DELAYLINES,diffusor_skew)-calculateSkew(n,NUM_DELAYLINES,diffusor_skew)) * delay_distribution[n];
             delay_times[n] = static_cast<int>(std::ceil(diff_delay_skew * delay));
-            delay_times[n] = std::clamp(delay_times[n], 0, static_cast<int>(max_delay_samples));
+            delay_times[n] = delay_times[n] < 1 ? 1 : delay_times[n] >  static_cast<int>(max_delay_samples) ? static_cast<int>(max_delay_samples) :  delay_times[n];
         }        
     }
+    SampleType temp_sample;
     double sampleRate = 48000;
-    float diffusor_skew = 100.0f;
+    float diffusor_skew = 1.0f;
     float diffusor_time_scaler = 1.0f;
     size_t diffusor_num = 0;
     static constexpr float gainHadamardInv = 0.353553f; // 1.0f / sqrt(NUM_DELAYLINES)
