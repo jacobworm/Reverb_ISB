@@ -8,8 +8,8 @@ template<typename SampleType>
 class DelayLineBasic
 {
 public:
-    DelayLineBasic (size_t max_delay) 
-    :   buffer(static_cast<int>(max_delay)),
+    DelayLineBasic (int max_delay) 
+    :   buffer(static_cast<size_t>(max_delay)),
         maxDelayInSamples(max_delay),         
         writePosition(0)
     {
@@ -25,29 +25,39 @@ public:
     }
 
     SampleType read(int delayInSamples){
-        int readPosition_int=static_cast<int>(std::round(writePosition-delayInSamples));
-                if (readPosition_int < 0) {
-                    readPosition_int += static_cast<int>(maxDelayInSamples);
-                }
-                SampleType output = buffer[readPosition_int];
-                return output;
-    }
+        if (buffer.empty() || maxDelayInSamples == 0) {
+            return SampleType(0);
+        }
 
+        int readPositionInt = writePosition - delayInSamples;
+
+        if (readPositionInt < 0) {
+            while (readPositionInt < 0) {
+                readPositionInt += maxDelayInSamples;
+            }
+        } else if (readPositionInt >= maxDelayInSamples) {
+            while (readPositionInt >= maxDelayInSamples) {
+                readPositionInt -= maxDelayInSamples;
+            }
+        }
+
+        return buffer[static_cast<size_t>(readPositionInt)];
+    }
 
     void clear() {
         std::fill(buffer.begin(), buffer.end(), SampleType(0));              // Clear AudioBuffer
         writePosition = 0;           // Reset write position  
     }
-    void setBufferSize(size_t new_max_delay){  //Reallocation memory. Do not call during playback
+    void setBufferSize(int new_max_delay){  //Reallocation memory. Do not call during playback
         if(new_max_delay != maxDelayInSamples){
             maxDelayInSamples = new_max_delay;
-            buffer.resize(new_max_delay);
+            buffer.resize(static_cast<size_t>(new_max_delay));
             writePosition = 0;
             std::fill(buffer.begin(),buffer.end(), SampleType(0));
         }
     }
 private:
     std::vector<SampleType> buffer;    
-    size_t maxDelayInSamples;
-    size_t writePosition;   
+    int maxDelayInSamples;
+    int writePosition;   
 };

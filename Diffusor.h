@@ -7,6 +7,15 @@
 #include <cmath>
 #include <algorithm>
 
+//#define DIF_TEST
+
+#ifdef DIF_TEST
+#include <fstream>
+#include <string>
+
+constexpr int N_TEST = 48000;
+#endif
+
 constexpr int NUM_DELAYLINES = 8;
 
 template<typename SampleType>
@@ -18,13 +27,13 @@ public:
     {
     }
 
-    Diffusor(int fs, size_t diff_num_, size_t max_delay_ms, std::array<float, NUM_DELAYLINES> delay_distribution_)
+    Diffusor(int fs, size_t diff_num_, int max_delay_ms, std::array<float, NUM_DELAYLINES> delay_distribution_)
     : diffusor_num(diff_num_),sampleRate(fs), delay_distribution(delay_distribution_)
     {
         max_delay_samples = fs * max_delay_ms / 1000;
         delayLines.reserve(NUM_DELAYLINES);
         for (int i = 0; i < NUM_DELAYLINES; ++i){
-            delayLines.emplace_back(max_delay_samples);
+            delayLines.emplace_back(ceil(((i+1) * 1.0f * max_delay_samples/NUM_DELAYLINES) + 2.0f));
         }
         updateDelayTimes();
     }
@@ -34,8 +43,7 @@ public:
         diffusor_skew = skew_ < 0.5f ? 0.5f : skew_;
         // sikring af diffusor_time_scaler imellem 0.0167 og 1
         diffusor_time_scaler = diffusor_time_scaler_ < 0.0167 ? 0.0167 : diffusor_time_scaler_ > 1.0f ? 1.0f : diffusor_time_scaler_;
-        updateDelayTimes();
-        
+        updateDelayTimes();        
     }
 
     void process(std::array<SampleType, NUM_DELAYLINES>& sample)
@@ -50,7 +58,13 @@ public:
         sample = matrix.multiplyShuffleHadVector(sample, diffusor_num);
         for(size_t i = 0; i < NUM_DELAYLINES; i++){
             sample[i] *= gainHadamardInv;
-        }            
+        } 
+        #ifdef DIF_TEST
+        if (testCounter < N_TEST) {
+            testOutput[testCounter] = sample;
+            testCounter++;
+        }
+        #endif
     }
 
 private:
@@ -70,13 +84,40 @@ private:
         }        
     }
     double sampleRate = 48000;
-    float diffusor_skew = 5.0f;
+    float diffusor_skew = 100.0f;
     float diffusor_time_scaler = 1.0f;
     size_t diffusor_num = 0;
-    static constexpr float gainHadamardInv = 1.0f / std::sqrt(static_cast<float>(NUM_DELAYLINES)); //Beregnes ved compile
+    static constexpr float gainHadamardInv = 0.353553f; // 1.0f / sqrt(NUM_DELAYLINES)
     std::array<float, NUM_DELAYLINES> delay_distribution;
     std::array<int, NUM_DELAYLINES> delay_times;
-    size_t max_delay_samples;
+    int max_delay_samples;
     std::vector<DelayLineBasic<SampleType>> delayLines;
     Matrix_array<SampleType> matrix;
+
+public:
+    #ifdef DIF_TEST
+    void exportTestOutputToFile() const {
+        std::string filename = "diffusor_output_" + std::to_string(diffusor_num) + ".txt";
+        std::ofstream file(filename);
+        if (!file.is_open()) {
+            std::cerr << "Could not open file: " << filename << std::endl;
+            return;
+        }
+        for (int i = 0; i < testCounter; ++i) {
+            for (int j = 0; j < NUM_DELAYLINES; ++j) {
+                file << testOutput[i][j];
+                if (j < NUM_DELAYLINES - 1) file << " ";
+            }
+            file << "\n";
+        }
+        file.close();
+        std::cout << "Exported " << testCounter << " samples to " << filename << std::endl;
+    }
+    #endif
+
+private:
+    #ifdef DIF_TEST
+    int testCounter = 0;
+    std::array<std::array<SampleType, NUM_DELAYLINES>, N_TEST> testOutput;
+    #endif
 };
