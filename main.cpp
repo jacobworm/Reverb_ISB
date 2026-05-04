@@ -26,7 +26,7 @@ static Color my_colors[NUM_COLORS];
 static DaisyPod hwPod; // Used for realtime audio and controls
 static uint32_t  start, end, dur;
 
-static ReverbEngine<float> reverbEngine;
+DSY_SDRAM_DATA static ReverbEngine<float> reverbEngine;
 //static Equalizer equalizerLeft;
 //static Equalizer equalizerRight;
 //static Controller controller(&equalizerLeft, &equalizerRight, &hwPod);
@@ -39,20 +39,18 @@ void AudioCallback(AudioHandle::InputBuffer in, AudioHandle::OutputBuffer out, s
 	{
 		std::array<float, 2> sample = {in[0][i],in[1][i]};
 		
-		//sample = reverbEngine.process(sample);
+		sample = reverbEngine.process(sample);
 
 		//float sample = equalizerLeft.Process(in[0][i]); 
 		//out[0][i] = sample;
 		//out[1][i] = equalizerRight.Process(in[1][i]);
 
-		// Bypass
-		//out[0][i] = in[0][i];
-		//out[1][i] = in[1][i];
+		
 		out[0][i] = sample[0];
 		out[1][i] = sample[1];
 		// Bypass
-		out[0][i] = in[0][i];
-		out[1][i] = in[1][i];
+		//out[0][i] = in[0][i];
+		//out[1][i] = in[1][i];
 	}
 
 	end = System::GetTick();
