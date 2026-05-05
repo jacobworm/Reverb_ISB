@@ -2,11 +2,16 @@
 #include <string.h>
 #include <math.h>
 #include <array>
+#include "core_cm7.h"
 #include "daisy_pod.h"
 #include "daisysp.h"
+#include "SdramPool.h"
 #include "ReverbEngine.h"
 //#include "Equalizer.h"
 //#include "Controller.h"
+
+//For at kunne flushe denormals
+#include "core_cm7.h"
 
 using namespace daisy;
 using namespace daisysp;
@@ -15,7 +20,7 @@ using namespace daisysp;
 #define USE_HWPOD 
 
 #define SAMPLE_RATE 		48000 // Set to 48000
-#define SAMPLE_BUFFER_SIZE 		8
+#define SAMPLE_BUFFER_SIZE 		512
 #define SAMPLE_TIME_NS		(SAMPLE_BUFFER_SIZE/(float)SAMPLE_RATE*1000000000) // in ns
 #define NUM_COLORS 				7
 
@@ -25,8 +30,21 @@ using namespace daisysp;
 static Color my_colors[NUM_COLORS];
 static DaisyPod hwPod; // Used for realtime audio and controls
 static uint32_t  start, end, dur;
+static volatile uint32_t cb_overruns = 0;
+static volatile uint32_t cb_peak_ns = 0;
 
-DSY_SDRAM_DATA static ReverbEngine<float> reverbEngine;
+static inline void ConfigureFpuForRealtimeAudio()
+{
+	// Flush denormals to zero to avoid expensive subnormal float handling on M7.
+	FPU->FPDSCR |= (1UL << 24) | (1UL << 25); // FZ + DN
+	uint32_t fpscr = __get_FPSCR();
+	fpscr |= (1UL << 24) | (1UL << 25);        // FZ + DN for current context
+	__set_FPSCR(fpscr);
+}
+
+ReverbEngine<float>* reverbEngine = nullptr; //Global oprettelse, initialiseres i main efter hardwawre-initialisering for adgang til SDRAM memory
+
+//DSY_SDRAM_DATA static ReverbEngine<float> reverbEngine;
 //static Equalizer equalizerLeft;
 //static Equalizer equalizerRight;
 //static Controller controller(&equalizerLeft, &equalizerRight, &hwPod);
@@ -39,7 +57,7 @@ void AudioCallback(AudioHandle::InputBuffer in, AudioHandle::OutputBuffer out, s
 	{
 		std::array<float, 2> sample = {in[0][i],in[1][i]};
 		
-		sample = reverbEngine.process(sample);
+		sample = reverbEngine->process(sample);
 
 		//float sample = equalizerLeft.Process(in[0][i]); 
 		//out[0][i] = sample;
@@ -55,6 +73,14 @@ void AudioCallback(AudioHandle::InputBuffer in, AudioHandle::OutputBuffer out, s
 
 	end = System::GetTick();
 	dur = (end - start) * 5; // ns
+	if (dur > cb_peak_ns)
+	{
+		cb_peak_ns = dur;
+	}
+	if (dur > static_cast<uint32_t>(SAMPLE_TIME_NS))
+	{
+		cb_overruns++;
+	}
 	//dur = (end - start) / 200; // us
 }
 
@@ -128,8 +154,14 @@ int main(void)
     my_colors[6].Init(Color::PresetColor::OFF);
 	
 	hwPod.Init();
+	
+	// For at flushe denormals (tjek ud hvad den gør. Processor-specifik funktion)
+	ConfigureFpuForRealtimeAudio();
+	resetDelayBufferCounter(); //OBS: Skal kaldet være her eller senere?
 	hwPod.seed.StartLog();
 	hwPod.SetAudioBlockSize(SAMPLE_BUFFER_SIZE); // number of samples handled per callback
+
+	reverbEngine = new ReverbEngine<float>();
 	
 	if (SAMPLE_RATE == 48000)
 		hwPod.SetAudioSampleRate(SaiHandle::Config::SampleRate::SAI_48KHZ);
@@ -141,9 +173,20 @@ int main(void)
 	hwPod.StartAdc();
 	hwPod.StartAudio(AudioCallback);
 
+	uint32_t monitor_counter = 0;
+
     while(1)
     {
     	hwPod.ProcessAllControls(); 
+		monitor_counter++;
+		if (monitor_counter >= 1000)
+		{
+			hwPod.seed.PrintLine("cb_peak_ns=%lu budget_ns=%lu overruns=%lu",
+			                     static_cast<unsigned long>(cb_peak_ns),
+			                     static_cast<unsigned long>(SAMPLE_TIME_NS),
+			                     static_cast<unsigned long>(cb_overruns));
+			monitor_counter = 0;
+		}
 	
 		// Debounce the Encoder at a steady, fixed rate.
 		//hwPod.encoder.Debounce();
@@ -201,7 +244,7 @@ int main(void)
 		}
 			*/
 		//counter++;
-		System::Delay(1); // Wait 1 ms
+		System::Delay(100); // Wait 1 ms
     }
 
 #else // Non-realtime test with Daisy Seed testing and logging

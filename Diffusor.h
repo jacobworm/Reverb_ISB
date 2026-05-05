@@ -3,6 +3,7 @@
 #include "DelayLineBasic.h"
 #include "Matrix_array.h"
 #include "Constants.h"
+#include "SdramPool.h"
 #include <vector>
 #include <array>
 #include <cmath>
@@ -24,17 +25,19 @@ class Diffusor
 {
 public:
     Diffusor()
-    : Diffusor(48000, 0, 0, std::array<float, NUM_DELAYLINES>{})
+    : Diffusor(48000.0f, 0, 0, std::array<float, NUM_DELAYLINES>{})
     {
     }
 
-    Diffusor(int fs, size_t diff_num_, int max_delay_ms, std::array<float, NUM_DELAYLINES> delay_distribution_)
-    : diffusor_num(diff_num_),sampleRate(fs), delay_distribution(delay_distribution_)
+    Diffusor(double fs, size_t diff_num_, int max_delay_ms, std::array<float, NUM_DELAYLINES> delay_distribution_)
+    : sampleRate(fs), diffusor_num(diff_num_),delay_distribution(delay_distribution_)
     {
-        max_delay_samples = fs * max_delay_ms / 1000;
+        max_delay_samples = static_cast<int>(fs * max_delay_ms / 1000);        
         delayLines.reserve(NUM_DELAYLINES);
         for (int i = 0; i < NUM_DELAYLINES; ++i){
-            delayLines.emplace_back(ceil(((i+1) * 1.0f * max_delay_samples/NUM_DELAYLINES) + 2.0f));
+            float* buf = allocateDelaybuffer(); //Henter pointer til næste delaybuffer i delay_pool
+            //delayLines.emplace_back(buf, ceil(((i+1) * 1.0f * max_delay_samples/NUM_DELAYLINES) + 2.0f));
+            delayLines.emplace_back(buf, max_delay_samples + 2);
         }
         updateDelayTimes();
     }
@@ -84,16 +87,16 @@ private:
             delay_times[n] = static_cast<int>(std::ceil(diff_delay_skew * delay));
             delay_times[n] = delay_times[n] < 1 ? 1 : delay_times[n] >  static_cast<int>(max_delay_samples) ? static_cast<int>(max_delay_samples) :  delay_times[n];
         }        
-    }
-    SampleType temp_sample;
+    }    
     double sampleRate = 48000;
+    size_t diffusor_num = 0;
+    std::array<float, NUM_DELAYLINES> delay_distribution;
     float diffusor_skew = 100.0f;
     float diffusor_time_scaler = 1.0f;
-    size_t diffusor_num = 0;
     static constexpr float gainHadamardInv = 0.353553f; // 1.0f / sqrt(NUM_DELAYLINES)
-    std::array<float, NUM_DELAYLINES> delay_distribution;
     std::array<int, NUM_DELAYLINES> delay_times;
     int max_delay_samples;
+    SampleType temp_sample;
     std::vector<DelayLineBasic<SampleType>> delayLines;
     Matrix_array<SampleType> matrix;
 

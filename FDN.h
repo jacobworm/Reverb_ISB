@@ -1,6 +1,6 @@
 #pragma once
 
-#include "DelayLine.h"
+#include "DelayLineBasic.h"
 #include "Matrix_array.h"
 #include "Constants.h"
 #include <vector>
@@ -17,9 +17,6 @@
 constexpr int N_TEST = 48000;
 #endif
 
-
-
-
 template<typename SampleType>
 class FDN
 {
@@ -34,9 +31,16 @@ public:
     {
         delayLines.reserve(NUM_DELAYLINES);
         for (int i = 0; i < NUM_DELAYLINES; ++i){
+            int max_delay_samples = static_cast<int>(std::ceil(fs * delay_ms_fdn_default[i] / 1000.0f));
+            float* buf = allocateDelaybuffer(); //Henter pointer til næste delaybuffer i delay_pool
+            //delayLines.emplace_back(buf, ceil(((i+1) * 1.0f * max_delay_samples/NUM_DELAYLINES) + 2.0f));
+            delayLines.emplace_back(buf, max_delay_samples + 2);
+        }
+        /*
+        for (int i = 0; i < NUM_DELAYLINES; ++i){
             delayLines.emplace_back(static_cast<size_t>(std::ceil(fs * delay_ms_fdn_default[i] / 1000.0f))); //sætter bufferstørrelse til max delay tid svarende til FDN_time_scaler = 1
             delayLines[i].setInterpolationMode(InterpolationMode::None);
-        }
+        } */
         updateDelayTimes();
         updateFeedbackGain();
     }
@@ -52,27 +56,38 @@ public:
         updateFeedbackGain();
     }
 
+    void setLoDecay(float factor){
+        //:::::::::::::::::::::::::::::::::IMPLEMENTERES MED KALD TIL FILTRE::::::::::::::::::::
+    }
+
+    void setHiDecay(float factor){
+        //:::::::::::::::::::::::::::::::::IMPLEMENTERES MED KALD TIL FILTRE::::::::::::::::::::
+    }
+
     void process(std::array<SampleType, NUM_DELAYLINES>& sample)
     {
-        //std::array<SampleType, NUM_DELAYLINES> out{};
+        // Læs fra delaylines
         for (int i = 0; i < NUM_DELAYLINES; ++i)
         {
             //temp_sample[i] = sample[i];
-            temp_sample[i] = delayLines[i].read(delay_times[i]);
+            read_sample[i] = delayLines[i].read(delay_times[i]);
         }
+        
         // Her foretages matrix-multiplikation af HadShuffle på `sample`
-        temp_sample = matrix.multiplyHadamardVector(temp_sample);
+        feedb_sample = matrix.multiplyHadamardVector(read_sample);
         for(size_t i = 0; i < NUM_DELAYLINES; i++){
-            temp_sample[i] *= gainHadamardInv;
+            feedb_sample[i] *= gainHadamardInv;
         }
         // write med feedback
         for (int i = 0; i < NUM_DELAYLINES; ++i)
         {
-            delayLines[i].write(temp_sample[i] * feedback_gain + sample[i]);
+            delayLines[i].write(feedb_sample[i] * feedback_gain + sample[i]);
         }
         #ifdef DIF_TEST
         // Til test-eksport. Ikke implementeret.
         #endif
+        sample = read_sample; // output af delaylines returneres.
+
     }
 
 private:
@@ -89,7 +104,8 @@ private:
         feedback_gain = std::pow(10.0f, -3.0f * T_avg_fdn / RT60);
     }
 
-    std::array<SampleType, NUM_DELAYLINES> temp_sample;
+    std::array<SampleType, NUM_DELAYLINES> read_sample;
+    std::array<SampleType, NUM_DELAYLINES> feedb_sample;
     double sampleRate = 48000;
     float FDN_time_scaler = 0.9f;
     float FDN_tuning = 0.82f;
@@ -101,7 +117,7 @@ private:
     //std::array<float, NUM_DELAYLINES> delay_distribution;
     std::array<int, NUM_DELAYLINES> delay_times;
     //int max_delay_samples;
-    std::vector<DelayLine<SampleType>> delayLines;
+    std::vector<DelayLineBasic<SampleType>> delayLines;
     Matrix_array<SampleType> matrix;
 
     // til testkode. Ikke implementeret.
