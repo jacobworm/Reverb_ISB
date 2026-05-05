@@ -19,7 +19,7 @@ constexpr int N_TEST = 48000;
 
 
 
-template<typename SampleType>
+template<typename SampleType, size_t max_delay>
 class Diffusor
 {
 public:
