@@ -17,9 +17,6 @@
 constexpr int N_TEST = 48000;
 #endif
 
-
-
-
 template<typename SampleType>
 class FDN
 {
@@ -52,27 +49,38 @@ public:
         updateFeedbackGain();
     }
 
+    void setLoDecay(float factor){
+        //:::::::::::::::::::::::::::::::::IMPLEMENTERES MED KALD TIL FILTRE::::::::::::::::::::
+    }
+
+    void setHiDecay(float factor){
+        //:::::::::::::::::::::::::::::::::IMPLEMENTERES MED KALD TIL FILTRE::::::::::::::::::::
+    }
+
     void process(std::array<SampleType, NUM_DELAYLINES>& sample)
     {
-        //std::array<SampleType, NUM_DELAYLINES> out{};
+        // Læs fra delaylines
         for (int i = 0; i < NUM_DELAYLINES; ++i)
         {
             //temp_sample[i] = sample[i];
-            temp_sample[i] = delayLines[i].read(delay_times[i]);
+            read_sample[i] = delayLines[i].read(delay_times[i]);
         }
+        
         // Her foretages matrix-multiplikation af HadShuffle på `sample`
-        temp_sample = matrix.multiplyHadamardVector(temp_sample);
+        feedb_sample = matrix.multiplyHadamardVector(read_sample);
         for(size_t i = 0; i < NUM_DELAYLINES; i++){
-            temp_sample[i] *= gainHadamardInv;
+            feedb_sample[i] *= gainHadamardInv;
         }
         // write med feedback
         for (int i = 0; i < NUM_DELAYLINES; ++i)
         {
-            delayLines[i].write(temp_sample[i] * feedback_gain + sample[i]);
+            delayLines[i].write(feedb_sample[i] * feedback_gain + sample[i]);
         }
         #ifdef DIF_TEST
         // Til test-eksport. Ikke implementeret.
         #endif
+        sample = read_sample; // output af delaylines returneres.
+
     }
 
 private:
@@ -89,7 +97,8 @@ private:
         feedback_gain = std::pow(10.0f, -3.0f * T_avg_fdn / RT60);
     }
 
-    std::array<SampleType, NUM_DELAYLINES> temp_sample;
+    std::array<SampleType, NUM_DELAYLINES> read_sample;
+    std::array<SampleType, NUM_DELAYLINES> feedb_sample;
     double sampleRate = 48000;
     float FDN_time_scaler = 0.9f;
     float FDN_tuning = 0.82f;

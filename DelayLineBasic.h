@@ -8,24 +8,30 @@ template<typename SampleType>
 class DelayLineBasic
 {
 public:
-    DelayLineBasic (int max_delay) 
-    :   buffer(static_cast<size_t>(max_delay)),
+    DelayLineBasic (SampleType* externalBuffer, int max_delay) 
+    :   buffer_ptr(externalBuffer),
         maxDelayInSamples(max_delay),         
         writePosition(0)
     {
-
+        if (buffer_ptr == nullptr || maxDelayInSamples <= 0)
+        {
+            fallbackSample = SampleType(0);
+            buffer_ptr = &fallbackSample;
+            maxDelayInSamples = 1;
+        }
+        std::fill(buffer_ptr, buffer_ptr + maxDelayInSamples, SampleType(0));
     }
 
     void write(SampleType sample){
-        buffer[writePosition]=sample;
-        writePosition +=1;
+        buffer_ptr[writePosition]=sample;
+        writePosition ++;
         if (writePosition>= maxDelayInSamples) {
             writePosition -= maxDelayInSamples;
         }        
     }
 
     SampleType read(int delayInSamples){
-        if (buffer.empty() || maxDelayInSamples == 0) {
+        if (buffer_ptr == nullptr || maxDelayInSamples == 0) {
             return SampleType(0);
         }
 
@@ -41,23 +47,12 @@ public:
             }
         }
 
-        return buffer[static_cast<size_t>(readPositionInt)];
+        return buffer_ptr[readPositionInt];
     }
 
-    void clear() {
-        std::fill(buffer.begin(), buffer.end(), SampleType(0));              // Clear AudioBuffer
-        writePosition = 0;           // Reset write position  
-    }
-    void setBufferSize(int new_max_delay){  //Reallocation memory. Do not call during playback
-        if(new_max_delay != maxDelayInSamples){
-            maxDelayInSamples = new_max_delay;
-            buffer.resize(static_cast<size_t>(new_max_delay));
-            writePosition = 0;
-            std::fill(buffer.begin(),buffer.end(), SampleType(0));
-        }
-    }
 private:
-    std::vector<SampleType> buffer;    
+    SampleType* buffer_ptr;    
+    SampleType fallbackSample = SampleType(0);
     int maxDelayInSamples;
     int writePosition;   
 };

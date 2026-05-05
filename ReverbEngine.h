@@ -17,7 +17,9 @@ public:
         {{ 0.72f, 0.35f, 0.12f, 0.58f, 0.12f, 0.25f, 0.93f, 0.24f }},
         {{ 0.43f, 0.35f, 0.84f, 0.96f, 0.67f, 0.88f, 0.31f, 0.42f }},
         {{ 0.70f, 0.44f, 0.87f, 0.39f, 0.63f, 0.73f, 0.74f, 0.70f }}
-    }}, diffusor_max_delay_ms{30, 60, 120, 240, 480}, sampleRate(static_cast<int>(48000)),
+    }}, 
+    diffusor_max_delay_ms{30, 60, 120, 240, 480}, 
+    sampleRate(48000.0f),
     diffusors{{
     Diffusor<SampleType>(static_cast<int>(sampleRate), 0, diffusor_max_delay_ms[0], diffusor_delay_distribution[0]),
         Diffusor<SampleType>(static_cast<int>(sampleRate), 1, diffusor_max_delay_ms[1], diffusor_delay_distribution[1]),
@@ -36,7 +38,7 @@ public:
         {{ 0.22f, 0.77f, 0.45f, 0.67f, 0.84f, 0.14f, 0.97f, 0.80f }},
         {{ 0.72f, 0.35f, 0.12f, 0.58f, 0.12f, 0.25f, 0.93f, 0.24f }},
         {{ 0.43f, 0.35f, 0.84f, 0.96f, 0.67f, 0.88f, 0.31f, 0.42f }}
-    }}, diffusor_max_delay_ms{30}, sampleRate(static_cast<int>(48000)),
+    }}, diffusor_max_delay_ms{30, 60, 120, 240}, sampleRate(static_cast<int>(48000)),
     diffusors{{
     Diffusor<SampleType>(static_cast<int>(sampleRate), 0, diffusor_max_delay_ms[0], diffusor_delay_distribution[0]),
     Diffusor<SampleType>(static_cast<int>(sampleRate), 1, diffusor_max_delay_ms[1], diffusor_delay_distribution[1]),
@@ -56,7 +58,7 @@ public:
                 count = 0;
             }
         }
-
+/*
         // Processerer igennem diffusorer.
         for (int i = 0; i<NUM_STEPS;i++){
             diffusors[i].process(sample_8ch);
@@ -64,19 +66,54 @@ public:
                 sample_8ch_early = sample_8ch; // Tapning af signal til early reflection
             }
         }
+        */    
+
+        fdn.process(sample_8ch);
 
 
         std::array<SampleType,2> output {{0.0f, 0.0f}};
         //Temp summeret output til test af diffusorer:::::::::::
-        count = 0;
+        /*count = 0;
         for (int i = 0; i<NUM_DELAYLINES;i++){
             output[count]+=sample_8ch[i];
             count++;
             if (count > 1){
                 count = 0;
             }
-        }
+        }*/
+       // Implementering af mix, early level og late level
+        output[0]=input[0]* direct_level + wet_level * late_level * sample_8ch[0];
+        output[1]=input[1]* direct_level + wet_level * late_level * sample_8ch[1];
+
         return output;
+    }
+    // USER PARAMETERS:
+    void setRT60(float rt60_ms){
+        fdn.setRT60(rt60_ms);
+    }
+
+    void setSize(float size){
+        // Kald til kontrol af FDN time scaler, Diff time scaler, Diff_skew, early_size
+        for(int i = 0; i < NUM_STEPS; i++){
+            float skew_ = 1.0f;
+            float diff_time_scaler_ = 1.0f;
+            float fdn_time_scaler_ = 1.0f;
+            diffusors[i]->setParameters(skew_, diff_time_scaler_);
+            fdn.setFDNTimeScaler(fdn_time_scaler_);
+        }
+    }
+
+    void setLoDecay(float factor){
+        fdn.setLoDecay(factor);
+    }
+
+    void setHiDecay(float factor){
+        fdn.setHiDecay(factor);
+    }
+
+    void setMix(float value){
+        direct_level = (200.0f - 2 * value)/100.0f > 100 ? 100 : (200.0f - 2 * value)/100.0f; //Directlevel 100% indtil mix=50%. Derefter aftager direct level mod 0.
+        wet_level = 2 * value / 100;
     }
 
     #ifdef DIF_TEST
@@ -88,14 +125,17 @@ public:
     #endif
 
 private:
-    int sampleRate;
+    SampleType late_level = 1.0f;
+    SampleType direct_level = 1.0f;
+    SampleType wet_level = 0.5;
     // Diffusor-related private attributes
     std::array<std::array<float, NUM_DELAYLINES>,NUM_STEPS> diffusor_delay_distribution;
-    std::array<size_t, NUM_STEPS> diffusor_max_delay_ms;    
+    std::array<size_t, NUM_STEPS> diffusor_max_delay_ms; 
+    double sampleRate = 48000;   
     std::array<Diffusor<SampleType>, NUM_STEPS> diffusors;
     std::array<SampleType,NUM_DELAYLINES> sample_8ch = {0.0f, 0.0f};
     std::array<SampleType,NUM_DELAYLINES> sample_8ch_early = {0.0f, 0.0f};
 
     // FDN-related private attributes
-    //FDN<float> fdn;
+    FDN<float> fdn;
 };
