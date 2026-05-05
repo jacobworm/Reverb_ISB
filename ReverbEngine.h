@@ -10,7 +10,8 @@ template <typename SampleType>
 class ReverbEngine{
 
 public:
-    /*ReverbEngine()
+/*
+    ReverbEngine()
     : diffusor_delay_distribution{{
         {{ 0.70f, 0.32f, 0.45f, 0.20f, 0.84f, 0.67f, 0.18f, 0.23f }},
         {{ 0.22f, 0.77f, 0.45f, 0.67f, 0.84f, 0.14f, 0.97f, 0.80f }},
@@ -28,8 +29,8 @@ public:
         Diffusor<SampleType>(static_cast<int>(sampleRate), 4, diffusor_max_delay_ms[4], diffusor_delay_distribution[4])
     }} 
     {
-    } */
-    
+    }
+    */
    
    //Constructor for 4 step diffusor (DEBUG)
     ReverbEngine()
