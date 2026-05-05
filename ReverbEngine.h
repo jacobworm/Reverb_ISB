@@ -10,7 +10,7 @@ template <typename SampleType>
 class ReverbEngine{
 
 public:
-    ReverbEngine()
+    /*ReverbEngine()
     : diffusor_delay_distribution{{
         {{ 0.70f, 0.32f, 0.45f, 0.20f, 0.84f, 0.67f, 0.18f, 0.23f }},
         {{ 0.22f, 0.77f, 0.45f, 0.67f, 0.84f, 0.14f, 0.97f, 0.80f }},
@@ -28,9 +28,9 @@ public:
         Diffusor<SampleType>(static_cast<int>(sampleRate), 4, diffusor_max_delay_ms[4], diffusor_delay_distribution[4])
     }} 
     {
-    }
+    } */
     
-   /*
+   
    //Constructor for 4 step diffusor (DEBUG)
     ReverbEngine()
     : diffusor_delay_distribution{{
@@ -38,16 +38,18 @@ public:
         {{ 0.22f, 0.77f, 0.45f, 0.67f, 0.84f, 0.14f, 0.97f, 0.80f }},
         {{ 0.72f, 0.35f, 0.12f, 0.58f, 0.12f, 0.25f, 0.93f, 0.24f }},
         {{ 0.43f, 0.35f, 0.84f, 0.96f, 0.67f, 0.88f, 0.31f, 0.42f }}
-    }}, diffusor_max_delay_ms{30, 60, 120, 240}, sampleRate(static_cast<int>(48000)),
+    }}, 
+    diffusor_max_delay_ms{30, 60, 120, 240}, 
+    sampleRate(48000.0f),
     diffusors{{
     Diffusor<SampleType>(static_cast<int>(sampleRate), 0, diffusor_max_delay_ms[0], diffusor_delay_distribution[0]),
-    Diffusor<SampleType>(static_cast<int>(sampleRate), 1, diffusor_max_delay_ms[1], diffusor_delay_distribution[1]),
-    Diffusor<SampleType>(static_cast<int>(sampleRate), 2, diffusor_max_delay_ms[2], diffusor_delay_distribution[2]),
-    Diffusor<SampleType>(static_cast<int>(sampleRate), 3, diffusor_max_delay_ms[3], diffusor_delay_distribution[3])
+        Diffusor<SampleType>(static_cast<int>(sampleRate), 1, diffusor_max_delay_ms[1], diffusor_delay_distribution[1]),
+        Diffusor<SampleType>(static_cast<int>(sampleRate), 2, diffusor_max_delay_ms[2], diffusor_delay_distribution[2]),
+        Diffusor<SampleType>(static_cast<int>(sampleRate), 3, diffusor_max_delay_ms[3], diffusor_delay_distribution[3])
     }} 
     {
     }
-    */
+    
     std::array<SampleType,2> process(std::array<SampleType,2> input){
         // distribuerer input til 8 channels, L R L R L R L R
         int count = 0;
@@ -58,7 +60,7 @@ public:
                 count = 0;
             }
         }
-/*
+
         // Processerer igennem diffusorer.
         for (int i = 0; i<NUM_STEPS;i++){
             diffusors[i].process(sample_8ch);
@@ -66,7 +68,7 @@ public:
                 sample_8ch_early = sample_8ch; // Tapning af signal til early reflection
             }
         }
-        */    
+            
 
         fdn.process(sample_8ch);
 

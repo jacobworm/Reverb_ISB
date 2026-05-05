@@ -20,7 +20,7 @@ using namespace daisysp;
 #define USE_HWPOD 
 
 #define SAMPLE_RATE 		48000 // Set to 48000
-#define SAMPLE_BUFFER_SIZE 		256
+#define SAMPLE_BUFFER_SIZE 		512
 #define SAMPLE_TIME_NS		(SAMPLE_BUFFER_SIZE/(float)SAMPLE_RATE*1000000000) // in ns
 #define NUM_COLORS 				7
 
@@ -156,7 +156,7 @@ int main(void)
 	hwPod.Init();
 	
 	// For at flushe denormals (tjek ud hvad den gør. Processor-specifik funktion)
-	//ConfigureFpuForRealtimeAudio();
+	ConfigureFpuForRealtimeAudio();
 	resetDelayBufferCounter(); //OBS: Skal kaldet være her eller senere?
 	hwPod.seed.StartLog();
 	hwPod.SetAudioBlockSize(SAMPLE_BUFFER_SIZE); // number of samples handled per callback
@@ -244,7 +244,7 @@ int main(void)
 		}
 			*/
 		//counter++;
-		System::Delay(1); // Wait 1 ms
+		System::Delay(100); // Wait 1 ms
     }
 
 #else // Non-realtime test with Daisy Seed testing and logging
