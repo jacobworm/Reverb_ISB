@@ -90,7 +90,7 @@ public:
 
         return output;
     }
-    // USER PARAMETERS:
+    // USER PARAMETERS::::::::::::::::::::::::::::::::
     void setRT60(float rt60_ms){
         fdn.setRT60(rt60_ms);
     }
@@ -118,7 +118,8 @@ public:
         direct_level = (200.0f - 2 * value)/100.0f > 100 ? 100 : (200.0f - 2 * value)/100.0f; //Directlevel 100% indtil mix=50%. Derefter aftager direct level mod 0.
         wet_level = 2 * value / 100;
     }
-
+    // END OF USER PARAMETERS::::::::::::::::::::::::::::::::::::::::
+    
     #ifdef DIF_TEST
     void exportAllTestOutputs() const {
         for (size_t i = 0; i < NUM_STEPS; ++i) {
