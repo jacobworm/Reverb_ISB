@@ -90,34 +90,43 @@ public:
 
         return output;
     }
-    // USER PARAMETERS:
-    void setRT60(float rt60_ms){
+    // USER PARAMETERS::::::::::::::::::::::::::::::::
+    void setRT60(float rt60_ms){ //Range 100 - 10000
         fdn.setRT60(rt60_ms);
     }
 
-    void setSize(float size){
+    void setSize(float size){ // Range 1 - 100
         // Kald til kontrol af FDN time scaler, Diff time scaler, Diff_skew, early_size
         for(int i = 0; i < NUM_STEPS; i++){
-            float skew_ = 1.0f;
-            float diff_time_scaler_ = 1.0f;
-            float fdn_time_scaler_ = 1.0f;
+            float skew_ = 0.01282f * size + 0.4876f;
+            float diff_time_scaler_ = 0.0001643f * size * size - 0.0008811 * size + 0.01027f + 0.041f;
+            float fdn_time_scaler_ = 0.00009609f * size * size + 0.00362 * size + 0.09626;
             diffusors[i]->setParameters(skew_, diff_time_scaler_);
             fdn.setFDNTimeScaler(fdn_time_scaler_);
         }
     }
 
-    void setLoDecay(float factor){
-        fdn.setLoDecay(factor);
+    void setLoDecay(SampleType lo_decay){ // Range:0.1 - 10
+        fdn.setLoDecay(lo_decay);
     }
 
-    void setHiDecay(float factor){
-        fdn.setHiDecay(factor);
+    void setLoFreq(SampleType freq){ // Range: 20 - 1000
+        fdn.setLoFreq(freq);
+    }
+    
+    void setHiDecay(SampleType hi_decay){ // Range:0.1 - 10
+        fdn.setHiDecay(hi_decay);
     }
 
-    void setMix(float value){
-        direct_level = (200.0f - 2 * value)/100.0f > 100 ? 100 : (200.0f - 2 * value)/100.0f; //Directlevel 100% indtil mix=50%. Derefter aftager direct level mod 0.
-        wet_level = 2 * value / 100;
+    void setHiFreq(SampleType freq){ // Range: 500 - 10000
+        fdn.setLoFreq(freq);
     }
+
+    void setMix(float value_pct){ // Range: 0 - 100;
+        direct_level = (200.0f - 2 * value_pct)/100.0f > 1 ? 1 : (200.0f - 2 * value_pct)/100.0f; //Directlevel 100% indtil mix=50%. Derefter aftager direct level mod 0.
+        wet_level = 2 * value_pct / 100;
+    }
+    // END OF USER PARAMETERS::::::::::::::::::::::::::::::::::::::::
 
     #ifdef DIF_TEST
     void exportAllTestOutputs() const {

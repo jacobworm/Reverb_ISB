@@ -91,7 +91,7 @@ private:
     double sampleRate = 48000;
     size_t diffusor_num = 0;
     std::array<float, NUM_DELAYLINES> delay_distribution;
-    float diffusor_skew = 100.0f;
+    float diffusor_skew = 1.5f;
     float diffusor_time_scaler = 1.0f;
     static constexpr float gainHadamardInv = 0.353553f; // 1.0f / sqrt(NUM_DELAYLINES)
     std::array<int, NUM_DELAYLINES> delay_times;

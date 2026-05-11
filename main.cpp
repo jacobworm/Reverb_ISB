@@ -21,7 +21,7 @@ using namespace daisysp;
 
 #define SAMPLE_RATE 		48000 // Set to 48000
 #define SAMPLE_BUFFER_SIZE 		512
-#define SAMPLE_TIME_NS		(SAMPLE_BUFFER_SIZE/(float)SAMPLE_RATE*1000000000) // in ns
+#define BUFFER_TIME_NS		(SAMPLE_BUFFER_SIZE/(float)SAMPLE_RATE*1000000000) // in ns
 #define NUM_COLORS 				7
 
 
@@ -77,7 +77,7 @@ void AudioCallback(AudioHandle::InputBuffer in, AudioHandle::OutputBuffer out, s
 	{
 		cb_peak_ns = dur;
 	}
-	if (dur > static_cast<uint32_t>(SAMPLE_TIME_NS))
+	if (dur > static_cast<uint32_t>(BUFFER_TIME_NS))
 	{
 		cb_overruns++;
 	}
@@ -179,12 +179,13 @@ int main(void)
     {
     	hwPod.ProcessAllControls(); 
 		monitor_counter++;
-		if (monitor_counter >= 1000)
+		if (monitor_counter >= 100)
 		{
 			hwPod.seed.PrintLine("cb_peak_ns=%lu budget_ns=%lu overruns=%lu",
 			                     static_cast<unsigned long>(cb_peak_ns),
-			                     static_cast<unsigned long>(SAMPLE_TIME_NS),
+			                     static_cast<unsigned long>(BUFFER_TIME_NS),
 			                     static_cast<unsigned long>(cb_overruns));
+			//hwPod.seed.PrintLine("Test printout ");
 			monitor_counter = 0;
 		}
 	
