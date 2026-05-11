@@ -12,12 +12,26 @@ class HighShelving
 public:
 HighShelving(double samplerate) : SampleRate(samplerate){
     // initialize coefficients with reasonable defaults
-    calculateCoeffs(2000.0f, 1.0f, 0.5f);
+    calculateCoeffs();
+}
+void setFreq(SampleType freq_){
+    freq = freq_;
+    calculateCoeffs();
 }
 
-void calculateCoeffs(float freq, float hi_decay, float feedback_gain){
+void setHiDecay(SampleType hi_decay){
+    hiDecay = hi_decay;
+    calculateCoeffs();
+}
+
+void setFeedbackGain(SampleType feedback_gain){
+    feedbackGain = feedback_gain;
+    calculateCoeffs();
+}
+
+void calculateCoeffs(){
     T = 1.0f / SampleRate;
-    K = (1-(1-feedback_gain) / hi_decay) / feedback_gain;
+    K = (1-(1-feedbackGain) / hiDecay) / feedbackGain;
     if (K < 0.0f){
         K = 0.0f;
     }
@@ -43,6 +57,9 @@ SampleType process(SampleType input){
 private:
 SampleType T = 1.0f/48000.0f;
 SampleType K = 0.0f;
+SampleType freq = 2000.0f;
+SampleType hiDecay = 0.2f;
+SampleType feedbackGain = 0.85f;
 SampleType omega = 1200.0f;
 SampleType b0 = 0.0f;
 SampleType b1 = 0.0f;
@@ -51,7 +68,6 @@ SampleType a1 = 0.0f;
 SampleType b0overa0 = 0.0f;
 SampleType b1overa0 = 0.0f;
 SampleType a1overa0 = 0.0f;
-
 double SampleRate = 48000;
 SampleType y_old = 0.0f;
 SampleType x_old = 0.0f;

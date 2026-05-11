@@ -12,12 +12,27 @@ class LowShelving
 public:
 LowShelving(double samplerate) : SampleRate(samplerate){
     // initialize coefficients with reasonable defaults
-    calculateCoeffs(1000.0f, 1.0f, 0.5f);
+    calculateCoeffs();
 }
 
-void calculateCoeffs(float freq, float lo_decay, float feedback_gain){
+void setFreq(SampleType freq_){
+    freq = freq_;
+    calculateCoeffs();
+}
+
+void setLoDecay(SampleType lo_decay){
+    loDecay = lo_decay;
+    calculateCoeffs();
+}
+
+void setFeedbackGain(SampleType feedback_gain){
+    feedbackGain = feedback_gain;
+    calculateCoeffs();
+}
+
+void calculateCoeffs(){
     T = 1.0f / SampleRate;
-    K = (1-(1-feedback_gain) / lo_decay) / feedback_gain;
+    K = (1-(1-feedbackGain) / loDecay) / feedbackGain;
     if (K < 0.0f){
         K = 0.0f;
     }
@@ -43,6 +58,9 @@ SampleType process(SampleType input){
 private:
 SampleType T = 1.0f/48000.0f;
 SampleType K = 0.0f;
+SampleType freq = 300.0f;
+SampleType loDecay = 3.0f;
+SampleType feedbackGain = 0.85f;
 SampleType omega = 1200.0f;
 SampleType b0 = 0.0f;
 SampleType b1 = 0.0f;
