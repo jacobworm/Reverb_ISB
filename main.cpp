@@ -8,6 +8,7 @@
 #include "SdramPool.h"
 #include "ReverbEngine.h"
 #include "Matrix_array_v0.0.1.h"
+#include "Controller.h"
 //#include "Equalizer.h"
 //#include "Controller.h"
 
