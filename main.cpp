@@ -7,8 +7,14 @@
 #include "daisysp.h"
 #include "SdramPool.h"
 #include "ReverbEngine.h"
+#include "Matrix_array_v0.0.1.h"
 //#include "Equalizer.h"
 //#include "Controller.h"
+
+// In Git Bash
+// make clean
+// make
+// make program-dfu
 
 //For at kunne flushe denormals
 #include "core_cm7.h"
@@ -131,6 +137,7 @@ void algoTester(void)
 
 #endif
 
+// shuffleHad matrix container. Is manually allocated to DTCM ram
 int main(void)
 {
 	//equalizerLeft.Init(SAMPLE_RATE);
@@ -154,6 +161,13 @@ int main(void)
     my_colors[6].Init(Color::PresetColor::OFF);
 	
 	hwPod.Init();
+
+	// Manually assign shuffleHad values. Zero-initialized on compile. Allocated in DTCM ram.
+	initShuffleHadMatrix();
+
+	// Create hadamard matrix
+	createHadamardMatrix(8);
+	
 	
 	// For at flushe denormals (tjek ud hvad den gør. Processor-specifik funktion)
 	ConfigureFpuForRealtimeAudio();
@@ -175,6 +189,7 @@ int main(void)
 
 	uint32_t monitor_counter = 0;
 
+	hwPod.seed.PrintLine("Program started\n");	
     while(1)
     {
     	hwPod.ProcessAllControls(); 

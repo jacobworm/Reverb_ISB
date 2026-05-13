@@ -1,7 +1,7 @@
 #pragma once
 
 #include "DelayLineBasic.h"
-#include "Matrix_array.h"
+#include "Matrix_array_v0.0.1.h"
 #include "HighShelving.h"
 #include "LowShelving.h"
 #include "Constants.h"
@@ -103,7 +103,7 @@ public:
         }
         
         // Her foretages matrix-multiplikation af HadShuffle på `sample`
-        feedb_sample = matrix.multiplyHadamardVector(read_sample);
+        feedb_sample = multiplyHadamardVector(read_sample);
         for(size_t i = 0; i < NUM_DELAYLINES; i++){
             //. Gain kompensation for Hadamard matrix
             feedb_sample[i] *= gainHadamardInv;
@@ -154,7 +154,6 @@ private:
     std::vector<DelayLineBasic<SampleType>> delayLines;
     std::vector<HighShelving<SampleType>> highShelvings;
     std::vector<LowShelving<SampleType>> lowShelvings;
-    Matrix_array<SampleType> matrix;
 
     // til testkode. Ikke implementeret.
 public:
