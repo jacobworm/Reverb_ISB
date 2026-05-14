@@ -101,7 +101,7 @@ public:
             float skew_ = 0.01282f * size + 0.4876f;
             float diff_time_scaler_ = 0.0001643f * size * size - 0.0008811 * size + 0.01027f + 0.041f;
             float fdn_time_scaler_ = 0.00009609f * size * size + 0.00362 * size + 0.09626;
-            diffusors[i]->setParameters(skew_, diff_time_scaler_);
+            diffusors[i].setParameters(skew_, diff_time_scaler_);
             fdn.setFDNTimeScaler(fdn_time_scaler_);
         }
     }

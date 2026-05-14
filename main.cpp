@@ -12,7 +12,7 @@
 //#include "Equalizer.h"
 //#include "Controller.h"
 
-// In Git Bash
+// In Git Bash compile by:
 // make clean
 // make
 // make program-dfu
@@ -25,6 +25,9 @@ using namespace daisysp;
 
 // Use hwPod or hwSeed (Realtime or testing)
 #define USE_HWPOD 
+
+// Print parameters or not
+#define PRINT_USER_PARAMETERS
 
 #define SAMPLE_RATE 		48000 // Set to 48000
 #define SAMPLE_BUFFER_SIZE 		512
@@ -50,6 +53,7 @@ static inline void ConfigureFpuForRealtimeAudio()
 }
 
 ReverbEngine<float>* reverbEngine = nullptr; //Global oprettelse, initialiseres i main efter hardwawre-initialisering for adgang til SDRAM memory
+
 
 //DSY_SDRAM_DATA static ReverbEngine<float> reverbEngine;
 //static Equalizer equalizerLeft;
@@ -163,6 +167,7 @@ int main(void)
 	
 	hwPod.Init();
 
+
 	// Manually assign shuffleHad values. Zero-initialized on compile. Allocated in DTCM ram.
 	initShuffleHadMatrix();
 
@@ -177,6 +182,8 @@ int main(void)
 	hwPod.SetAudioBlockSize(SAMPLE_BUFFER_SIZE); // number of samples handled per callback
 
 	reverbEngine = new ReverbEngine<float>();
+
+	controller contr(&hwPod, reverbEngine); // Instantiate controller
 	
 	if (SAMPLE_RATE == 48000)
 		hwPod.SetAudioSampleRate(SaiHandle::Config::SampleRate::SAI_48KHZ);
@@ -193,14 +200,32 @@ int main(void)
 	hwPod.seed.PrintLine("Program started\n");	
     while(1)
     {
-    	hwPod.ProcessAllControls(); 
+    	hwPod.ProcessAllControls(); // Reads all buttons
+
+		contr.update(); // Maps button values to reverb parameters
+
+
 		monitor_counter++;
-		if (monitor_counter >= 100)
+		if (monitor_counter >= 250)
 		{
-			hwPod.seed.PrintLine("cb_peak_ns=%lu budget_ns=%lu overruns=%lu",
-			                     static_cast<unsigned long>(cb_peak_ns),
-			                     static_cast<unsigned long>(BUFFER_TIME_NS),
-			                     static_cast<unsigned long>(cb_overruns));
+			#ifdef PRINT_USER_PARAMETERS
+			// Print user parameters
+			hwPod.seed.PrintLine("===== User parameters =====\n");	
+			hwPod.seed.PrintLine("State: %d\n", contr.getState());	
+			hwPod.seed.PrintLine("Armed: %s", contr.getArmed() ? "true" : "false");
+			hwPod.seed.PrintLine("RT60: %.1f\n", contr.getRT60());	
+			hwPod.seed.PrintLine("Mix: %.2f\n", contr.getMix());	
+			hwPod.seed.PrintLine("Size: %d\n", contr.getSize());	
+			hwPod.seed.PrintLine("Low decay: %.2f\n", contr.getLoDecay());	
+			hwPod.seed.PrintLine("High decay: %.2f\n", contr.getHiDecay());
+			hwPod.seed.PrintLine("Low frequency: %.2f\n", contr.getLoFreq());
+			hwPod.seed.PrintLine("High frequency: %.2f\n", contr.getHiFreq());
+			#endif
+			// Print cycle time
+			// hwPod.seed.PrintLine("cb_peak_ns=%lu budget_ns=%lu overruns=%lu",
+			//                      static_cast<unsigned long>(cb_peak_ns),
+			//                      static_cast<unsigned long>(BUFFER_TIME_NS),
+			//                      static_cast<unsigned long>(cb_overruns));
 			//hwPod.seed.PrintLine("Test printout ");
 			monitor_counter = 0;
 		}
@@ -260,8 +285,10 @@ int main(void)
 			controller.printParam();
 		}
 			*/
+		hwPod.UpdateLeds();
+
 		//counter++;
-		System::Delay(100); // Wait 1 ms
+		System::Delay(1); // Wait 0.1 ms
     }
 
 #else // Non-realtime test with Daisy Seed testing and logging
