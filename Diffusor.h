@@ -1,7 +1,7 @@
 #pragma once
 
 #include "DelayLineBasic.h"
-#include "Matrix_array.h"
+#include "Matrix_array_v0.0.1.h"
 #include "Constants.h"
 #include "SdramPool.h"
 #include <vector>
@@ -60,7 +60,7 @@ public:
             delayLines[i].write(temp_sample);
         }
         // Her foretages matrix-multiplikation af HadShuffle på `sample`
-        sample = matrix.multiplyShuffleHadVector(sample, diffusor_num);
+        sample = multiplyShuffleHadVector(sample, diffusor_num);
         for(size_t i = 0; i < NUM_DELAYLINES; i++){
             sample[i] *= gainHadamardInv;
         } 
@@ -98,7 +98,6 @@ private:
     int max_delay_samples;
     SampleType temp_sample;
     std::vector<DelayLineBasic<SampleType>> delayLines;
-    Matrix_array<SampleType> matrix;
 
 public:
     #ifdef DIF_TEST
