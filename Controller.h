@@ -104,11 +104,11 @@ void update()
             if(armed_)
             {
                 // Pot1 changes HiFreq between 500 and 10000
-                HiFreq_ = 500 + (hwPod->knob1.Value() * (9500));
+                HiFreq_ = 500 + (hwPod->knob2.Value() * (9500));
                 revEng->setHiFreq(HiFreq_);
 
                 // Pot2 changes LoFreq between 20 and 1000
-                LoFreq_ = 20 + (hwPod->knob2.Value() * 980);
+                LoFreq_ = 20 + (hwPod->knob1.Value() * 980);
                 revEng->setLoFreq(LoFreq_);
             }
 
@@ -121,11 +121,11 @@ void update()
             if(armed_)
             {
                 // Pot1 changes HiDecay between 0.1 and 
-                HiDecay_ = (0.1 + (hwPod->knob1.Value() * 9.9));
+                HiDecay_ = (0.1 + (hwPod->knob2.Value() * 9.9));
                 revEng->setHiDecay(HiDecay_);
 
                 // Pot2 changes LoDecay between 0.1 and 10
-                LoDecay_ = 0.1 + (hwPod->knob2.Value() * 9.9);
+                LoDecay_ = 0.1 + (hwPod->knob1.Value() * 9.9);
                 revEng->setLoDecay(LoDecay_);
             }
 
