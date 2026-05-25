@@ -58,8 +58,6 @@ void update()
         switch (state_)
         {
         case 1: 
-
-
             
             // State 1 -> Set LED1 to red
             hwPod->led1.Set(1.0f, 0.0f, 0.0f);
@@ -69,6 +67,18 @@ void update()
 
             // Pot2 changes mix between 0 and 100
             mix_temp = hwPod->knob2.Value() * 100;
+
+            // Update values if knob value is within threshold value
+            if(fabs(RT60_ - RT60_temp) < RT60_threshold)
+            {
+                // Update RT60_
+                RT60_ = RT60_temp;
+                revEng->setRT60(RT60_);
+
+                // Set LED2
+                hwPod->led2.Set(1.0f, 1.0f, 1.0f);
+
+            }
 
 
 
@@ -93,17 +103,6 @@ void update()
             }
                 
 
-            // Update values if knob value is within threshold value
-            if(fabs(RT60_ - RT60_temp) < RT60_threshold)
-            {
-                // Update RT60_
-                RT60_ = RT60_temp;
-                revEng->setRT60(RT60_);
-
-                // Set LED2
-                hwPod->led2.Set(1.0f, 1.0f, 1.0f);
-
-            }
 
 
             if (fabs(mix_ - mix_temp) < mix_treshold)
