@@ -212,7 +212,7 @@ int main(void)
 			// Print user parameters
 			hwPod.seed.PrintLine("===== User parameters =====\n");	
 			hwPod.seed.PrintLine("State: %d\n", contr.getState());	
-			hwPod.seed.PrintLine("Armed: %s", contr.getArmed() ? "true" : "false");
+			// hwPod.seed.PrintLine("Armed: %s", contr.getArmed() ? "true" : "false");
 			hwPod.seed.PrintLine("RT60: %.1f\n", contr.getRT60());	
 			hwPod.seed.PrintLine("Mix: %.2f\n", contr.getMix());	
 			hwPod.seed.PrintLine("Size: %d\n", contr.getSize());	

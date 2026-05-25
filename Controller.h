@@ -28,23 +28,13 @@ controller(DaisyPod *hwPod, ReverbEngine<float>* revEng)
 void update()
     {
 
-        // Encoder button toggles armed_ status
-        if(hwPod->encoder.RisingEdge())
-        {
-            armed_ = !armed_;
-        }
-        
-        // Control LED2 based off armed_ status
-        if(armed_)
-        {
-            // Set LED2
-            hwPod->led2.Set(1.0f, 1.0f, 1.0f);
-        }
-        else if(!armed_)
-        {
-            // Turn off LED2
-            hwPod->led2.Set(0.0f, 0.0f, 0.0f);
-        }
+        float RT60_temp = 0, mix_temp = 0;
+        float HiFreq_temp = 0, LoFreq_temp = 0;
+        float HiDecay_temp = 0, LoDecay_temp = 0;
+
+        // Turn off LED2
+        hwPod->led2.Set(0.0f, 0.0f, 0.0f);
+
 
 
         // SW1 and SW2 changes state
@@ -59,57 +49,106 @@ void update()
             if(state_ < 1) state_ = NUM_STATES; // If state is less than 1, wrap around to NUM_STATES
         }
 
+
+        // Evaluate if encoder has been incremented
+        int8_t inc = hwPod->encoder.Increment();
+
+
         // Evaluate state
         switch (state_)
         {
         case 1: 
+
+
+            
             // State 1 -> Set LED1 to red
             hwPod->led1.Set(1.0f, 0.0f, 0.0f);
 
-            // Update values if armed
-            if(armed_)
+            // Pot1 changes RT60 between 100 and 10000
+            RT60_temp = 100 + (hwPod->knob1.Value() * (9900));
+
+            // Pot2 changes mix between 0 and 100
+            mix_temp = hwPod->knob2.Value() * 100;
+
+
+
+            // Switch 1 and 2 in- and decrements and sets size
+            if(inc > 0) // Increment size
             {
-                int8_t inc = hwPod->encoder.Increment();
-                
-                // Switch 1 and 2 in- and decrements and sets size
-                if(inc > 0) // Increment size
-                {
-                    size_ += 2;
-                    if(size_ > 100) size_ = 100;
-                    else if(size_ < 0) size_ = 0;
-                }
-                else if(inc < 0) // Decrement size
-                {
-                    size_ -= 2;
-                    if(size_ > 100) size_ = 100;
-                    else if(size_ < 0) size_ = 0;
-                }
+                size_ += 2;
+                if(size_ > 100) size_ = 100;
+                else if(size_ < 0) size_ = 0;
+
+                revEng->setSize(size_); // Set size
+
+            }
+            else if(inc < 0) // Decrement size
+            {
+                size_ -= 2;
+                if(size_ > 100) size_ = 100;
+                else if(size_ < 0) size_ = 0;
                 
                 revEng->setSize(size_); // Set size
 
-                // Pot1 changes RT60 between 100 and 10000
-                RT60_ = 100 + (hwPod->knob1.Value() * (9900));
+            }
+                
+
+            // Update values if knob value is within threshold value
+            if(fabs(RT60_ - RT60_temp) < RT60_threshold)
+            {
+                // Update RT60_
+                RT60_ = RT60_temp;
                 revEng->setRT60(RT60_);
 
-                // Pot2 changes mix between 0 and 100
-                mix_ = hwPod->knob2.Value() * 100;
-                revEng->setMix(mix_);
+                // Set LED2
+                hwPod->led2.Set(1.0f, 1.0f, 1.0f);
+
             }
+
+
+            if (fabs(mix_ - mix_temp) < mix_treshold)
+            {
+                // Update mix value
+                mix_ = mix_temp;
+                revEng->setMix(mix_);
+
+                // Set LED2
+                hwPod->led2.Set(1.0f, 1.0f, 1.0f);
+            }
+
             break;
-        
         case 2:
+
             // State 2 -> Set LED1 to green
             hwPod->led1.Set(0.0f, 1.0f, 0.0f);
 
-            if(armed_)
+            // Pot2 changes HiFreq between 500 and 10000
+            HiFreq_temp = 500 + (hwPod->knob2.Value() * (9500));
+
+            // Pot1 changes LoFreq between 20 and 1000
+            LoFreq_temp = 20 + (hwPod->knob1.Value() * 980);
+
+
+            // Evaluate if Pot2 is within threshold value
+            if(fabs(HiFreq_ - HiFreq_temp) < HiFreq_threshold)
             {
-                // Pot1 changes HiFreq between 500 and 10000
-                HiFreq_ = 500 + (hwPod->knob2.Value() * (9500));
+                // Update values                
+                HiFreq_ = HiFreq_temp;
                 revEng->setHiFreq(HiFreq_);
 
+                // Set LED2
+                hwPod->led2.Set(1.0f, 1.0f, 1.0f);
+            }
+
+            // Evaluate if Pot1 is within threshold value
+            if(fabs(LoFreq_ - LoFreq_temp) < LoFreq_threshold)
+            {
                 // Pot2 changes LoFreq between 20 and 1000
-                LoFreq_ = 20 + (hwPod->knob1.Value() * 980);
+                LoFreq_ = LoFreq_temp;
                 revEng->setLoFreq(LoFreq_);
+
+                // Set LED2
+                hwPod->led2.Set(1.0f, 1.0f, 1.0f);
             }
 
             break;
@@ -117,16 +156,34 @@ void update()
             // State 3 -> Set LED1 to blue
             hwPod->led1.Set(0.0f, 0.0f, 1.0f);
 
-            // Update values if armed
-            if(armed_)
+            // Pot2 changes HiDecay between 0.1 and 10
+            HiDecay_temp = (0.1 + (hwPod->knob2.Value() * 9.9));
+
+            // Pot1 changes LoDecay between 0.1 and 10 
+            LoDecay_temp = 0.1 + (hwPod->knob1.Value() * 9.9);
+
+            // Update values if within threshold
+            if(fabs(HiDecay_ - HiDecay_temp) < decay_threshold)
             {
-                // Pot1 changes HiDecay between 0.1 and 
-                HiDecay_ = (0.1 + (hwPod->knob2.Value() * 9.9));
+                // Pot2 changes HiDecay between 0.1 and 10
+                HiDecay_ = HiDecay_temp;
                 revEng->setHiDecay(HiDecay_);
 
-                // Pot2 changes LoDecay between 0.1 and 10
-                LoDecay_ = 0.1 + (hwPod->knob1.Value() * 9.9);
+                // Set LED2
+                hwPod->led2.Set(1.0f, 1.0f, 1.0f);
+            }
+
+
+            // Update values if within threshold
+            if(fabs(LoDecay_ - LoDecay_temp) < decay_threshold)
+            {
+
+                // Pot1 changes LoDecay between 0.1 and 10
+                LoDecay_ = LoDecay_temp;
                 revEng->setLoDecay(LoDecay_);
+
+                // Set LED2
+                hwPod->led2.Set(1.0f, 1.0f, 1.0f);
             }
 
             break;
@@ -139,7 +196,6 @@ void update()
     };
 
 // Getters
-const bool getArmed(){ return armed_;};
 const uint8_t getState(){ return state_;};
 const uint8_t getSize(){ return size_;};
 const float getHiFreq(){return HiFreq_;};
@@ -153,18 +209,22 @@ const float getMix() { return mix_;};
 private:
     // Variables to be affected by the user interface
     uint8_t state_ = 1;
-    uint8_t size_;
-    float HiFreq_;
-    float LoFreq_;
-    float HiDecay_;
-    float LoDecay_;
-    float RT60_;
-    float mix_;
-    int8_t inc_;
-    bool armed_ = false;
+    uint8_t size_ = 0;
+    float HiFreq_ = 5000;
+    float LoFreq_ = 500;
+    float HiDecay_ = 5;
+    float LoDecay_ = 5;
+    float RT60_ = 5000;
+    float mix_ = 50;
+    int8_t inc_ = 0;
+    float RT60_threshold = 100.0f;
+    float HiFreq_threshold = 100.0f;
+    float LoFreq_threshold = 10.0f;
+    float decay_threshold = 0.2f;
+    float mix_treshold = 5.0f;
+
 
     DaisyPod *hwPod;
     ReverbEngine<float> *revEng;
-
 
 };
