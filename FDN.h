@@ -73,6 +73,8 @@ public:
         for(size_t i = 0; i < NUM_DELAYLINES; i++){
             lowShelvings[i].setLoDecay(lo_decay);
         }
+        lowDecay = lo_decay;
+        updateFeedbackGain();
     }
 
     void setLoFreq(SampleType freq){
@@ -85,6 +87,8 @@ public:
         for(size_t i = 0; i < NUM_DELAYLINES; i++){
             highShelvings[i].setHiDecay(hi_decay);
         }
+        highDecay = hi_decay;
+        updateFeedbackGain();
     }
 
     void setHiFreq(SampleType freq){
@@ -115,6 +119,8 @@ public:
         // write med feedback
         for (int i = 0; i < NUM_DELAYLINES; ++i)
         {
+            // Clamping af feedback for at undgå feedback ved kaskadekobling af feedback_gain og gain fra filtre:
+
             delayLines[i].write(feedb_sample[i] * feedback_gain + sample[i]);
         }
         #ifdef DIF_TEST
@@ -136,6 +142,15 @@ private:
     void updateFeedbackGain(){
         float T_avg_fdn = FDN_time_scaler * FDN_avg_delay_ms * FDN_tuning;
         feedback_gain = std::pow(10.0f, -3.0f * T_avg_fdn / RT60);
+        // Clamping af feedback for at undgå ustabilitet ved filter-gain
+        SampleType Klow = (1-(1-feedback_gain)/lowDecay)/feedback_gain;
+        SampleType Khigh = (1-(1-feedback_gain)/highDecay)/feedback_gain;
+        if(feedback_gain*Klow >0.999){
+            feedback_gain = 0.999 / Klow;
+        }
+        if(feedback_gain*Khigh >0.999){
+            feedback_gain = 0.999 / Khigh;
+        }
     }
 
     std::array<SampleType, NUM_DELAYLINES> read_sample;
@@ -146,6 +161,8 @@ private:
     float FDN_avg_delay_ms = 168;
     SampleType feedback_gain = 0.85f; //0.68f;
     SampleType RT60 = 2500;
+    SampleType lowDecay = 1;
+    SampleType highDecay = 1;
     std::array<int, 8> delay_ms_fdn_default = {80, 107, 126, 139,157, 167,186, 197};
     static constexpr float gainHadamardInv = 0.353553f; // 1.0f / sqrt(NUM_DELAYLINES)
     //std::array<float, NUM_DELAYLINES> delay_distribution;

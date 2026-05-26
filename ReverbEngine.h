@@ -126,6 +126,10 @@ public:
         direct_level = (200.0f - 2 * value_pct)/100.0f > 1 ? 1 : (200.0f - 2 * value_pct)/100.0f; //Directlevel 100% indtil mix=50%. Derefter aftager direct level mod 0.
         wet_level = 2 * value_pct / 100;
     }
+
+    void setEarlyReflection(){ // Range: 0 - 100
+
+    }
     // END OF USER PARAMETERS::::::::::::::::::::::::::::::::::::::::
 
     #ifdef DIF_TEST
