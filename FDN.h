@@ -161,7 +161,7 @@ private:
     float FDN_avg_delay_ms = 168;
     SampleType feedback_gain = 0.85f; //0.68f;
     SampleType RT60 = 2500;
-    SampleType lowDecay = 1;
+    SampleType lowDecay = 2;
     SampleType highDecay = 1;
     std::array<int, 8> delay_ms_fdn_default = {80, 107, 126, 139,157, 167,186, 197};
     static constexpr float gainHadamardInv = 0.353553f; // 1.0f / sqrt(NUM_DELAYLINES)
