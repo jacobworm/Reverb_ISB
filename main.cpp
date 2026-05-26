@@ -206,13 +206,13 @@ int main(void)
 
 
 		monitor_counter++;
-		if (monitor_counter >= 250)
+		if (monitor_counter >= 20000)
 		{
 			#ifdef PRINT_USER_PARAMETERS
 			// Print user parameters
 			hwPod.seed.PrintLine("===== User parameters =====\n");	
 			hwPod.seed.PrintLine("State: %d\n", contr.getState());	
-			hwPod.seed.PrintLine("Armed: %s", contr.getArmed() ? "true" : "false");
+			// hwPod.seed.PrintLine("Armed: %s", contr.getArmed() ? "true" : "false");
 			hwPod.seed.PrintLine("RT60: %.1f\n", contr.getRT60());	
 			hwPod.seed.PrintLine("Mix: %.2f\n", contr.getMix());	
 			hwPod.seed.PrintLine("Size: %d\n", contr.getSize());	
@@ -288,7 +288,7 @@ int main(void)
 		hwPod.UpdateLeds();
 
 		//counter++;
-		System::Delay(1); // Wait 0.1 ms
+		//System::Delay(1); // Wait 0.1 ms
     }
 
 #else // Non-realtime test with Daisy Seed testing and logging

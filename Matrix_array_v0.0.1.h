@@ -93,6 +93,8 @@ void createHadamardMatrix(uint8_t N)
     }
 }
 
+
+
 // Init shuffleHad matrices. Is Zero-initialized to DTCM memory
 void initShuffleHadMatrix()
 {
