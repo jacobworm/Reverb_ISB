@@ -206,7 +206,7 @@ int main(void)
 
 
 		monitor_counter++;
-		if (monitor_counter >= 250)
+		if (monitor_counter >= 20000)
 		{
 			#ifdef PRINT_USER_PARAMETERS
 			// Print user parameters
@@ -288,7 +288,7 @@ int main(void)
 		hwPod.UpdateLeds();
 
 		//counter++;
-		System::Delay(1); // Wait 0.1 ms
+		//System::Delay(1); // Wait 0.1 ms
     }
 
 #else // Non-realtime test with Daisy Seed testing and logging

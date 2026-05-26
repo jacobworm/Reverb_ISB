@@ -14,7 +14,7 @@
 
 using namespace daisy;
 #define NUM_STATES 3 // Max number of states
-
+#define PCT_THRESHOLD 0.01 // Percent of max value used as threshold value in decimal
 
 class controller
 {
@@ -50,9 +50,6 @@ void update()
         }
 
 
-        // Evaluate if encoder has been incremented
-        int8_t inc = hwPod->encoder.Increment();
-
 
         // Evaluate state
         switch (state_)
@@ -80,10 +77,11 @@ void update()
 
             }
 
-
+            // Evaluate if encoder has been incremented
+            inc_ = hwPod->encoder.Increment();
 
             // Switch 1 and 2 in- and decrements and sets size
-            if(inc > 0) // Increment size
+            if(inc_ > 0) // Increment size
             {
                 size_ += 2;
                 if(size_ > 100) size_ = 100;
@@ -92,17 +90,15 @@ void update()
                 revEng->setSize(size_); // Set size
 
             }
-            else if(inc < 0) // Decrement size
+            else if(inc_ < 0) // Decrement size
             {
                 size_ -= 2;
-                if(size_ > 100) size_ = 100;
-                else if(size_ < 0) size_ = 0;
+                if(size_ < 0) size_ = 0;
+                else if (size_ > 100) size_ = 100;
                 
                 revEng->setSize(size_); // Set size
 
             }
-                
-
 
 
             if (fabs(mix_ - mix_temp) < mix_treshold)
@@ -208,7 +204,7 @@ const float getMix() { return mix_;};
 private:
     // Variables to be affected by the user interface
     uint8_t state_ = 1;
-    uint8_t size_ = 0;
+    uint8_t size_ = 50;
     float HiFreq_ = 5000;
     float LoFreq_ = 500;
     float HiDecay_ = 5;
@@ -216,11 +212,11 @@ private:
     float RT60_ = 5000;
     float mix_ = 50;
     int8_t inc_ = 0;
-    float RT60_threshold = 100.0f;
-    float HiFreq_threshold = 100.0f;
-    float LoFreq_threshold = 10.0f;
-    float decay_threshold = 0.2f;
-    float mix_treshold = 5.0f;
+    float RT60_threshold = 10000 * PCT_THRESHOLD;
+    float HiFreq_threshold = 10000 * PCT_THRESHOLD;
+    float LoFreq_threshold = 1000 * PCT_THRESHOLD;
+    float decay_threshold = 10 * PCT_THRESHOLD;
+    float mix_treshold = 100 * PCT_THRESHOLD;
 
 
     DaisyPod *hwPod;
