@@ -206,7 +206,7 @@ int main(void)
 
 
 		monitor_counter++;
-		if (monitor_counter >= 20000)
+		if (monitor_counter >= 50000)
 		{
 			#ifdef PRINT_USER_PARAMETERS
 			// Print user parameters
@@ -222,11 +222,11 @@ int main(void)
 			hwPod.seed.PrintLine("High frequency: %.2f\n", contr.getHiFreq());
 			#endif
 			// Print cycle time
-			// hwPod.seed.PrintLine("cb_peak_ns=%lu budget_ns=%lu overruns=%lu",
-			//                      static_cast<unsigned long>(cb_peak_ns),
-			//                      static_cast<unsigned long>(BUFFER_TIME_NS),
-			//                      static_cast<unsigned long>(cb_overruns));
-			//hwPod.seed.PrintLine("Test printout ");
+			hwPod.seed.PrintLine("cb_peak_ns=%lu budget_ns=%lu overruns=%lu",
+			                     static_cast<unsigned long>(cb_peak_ns),
+			                     static_cast<unsigned long>(BUFFER_TIME_NS),
+			                     static_cast<unsigned long>(cb_overruns));
+			hwPod.seed.PrintLine("Test printout ");
 			monitor_counter = 0;
 		}
 	
