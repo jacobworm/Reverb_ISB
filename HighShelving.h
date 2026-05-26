@@ -58,7 +58,7 @@ private:
 SampleType T = 1.0f/48000.0f;
 SampleType K = 0.0f;
 SampleType freq = 2000.0f;
-SampleType hiDecay = 0.2f;
+SampleType hiDecay = 0.4f;
 SampleType feedbackGain = 0.85f;
 SampleType omega = 1200.0f;
 SampleType b0 = 0.0f;

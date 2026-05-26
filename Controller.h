@@ -204,12 +204,12 @@ const float getMix() { return mix_;};
 private:
     // Variables to be affected by the user interface
     uint8_t state_ = 1;
-    uint8_t size_ = 50;
-    float HiFreq_ = 5000;
-    float LoFreq_ = 500;
-    float HiDecay_ = 5;
-    float LoDecay_ = 5;
-    float RT60_ = 5000;
+    uint8_t size_ = 80;
+    float HiFreq_ = 2000;
+    float LoFreq_ = 300;
+    float HiDecay_ = 0.4;
+    float LoDecay_ = 2;
+    float RT60_ = 2500;
     float mix_ = 50;
     int8_t inc_ = 0;
     float RT60_threshold = 10000 * PCT_THRESHOLD;
