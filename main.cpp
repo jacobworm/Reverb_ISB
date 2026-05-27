@@ -87,6 +87,7 @@ void AudioCallback(AudioHandle::InputBuffer in, AudioHandle::OutputBuffer out, s
 
 static Oscillator osc; // Oscillator for testing
 static DaisySeed hwSeed; // Used for testing and logging without hwPod
+#endif
 
 // shuffleHad matrix container. Is manually allocated to DTCM ram
 int main(void)
