@@ -9,8 +9,6 @@
 #include "ReverbEngine.h"
 #include "Matrix_array_v0.0.1.h"
 #include "Controller.h"
-//#include "Equalizer.h"
-//#include "Controller.h"
 
 // In Git Bash compile by:
 // make clean
@@ -55,11 +53,6 @@ static inline void ConfigureFpuForRealtimeAudio()
 ReverbEngine<float>* reverbEngine = nullptr; //Global oprettelse, initialiseres i main efter hardwawre-initialisering for adgang til SDRAM memory
 
 
-//DSY_SDRAM_DATA static ReverbEngine<float> reverbEngine;
-//static Equalizer equalizerLeft;
-//static Equalizer equalizerRight;
-//static Controller controller(&equalizerLeft, &equalizerRight, &hwPod);
-
 void AudioCallback(AudioHandle::InputBuffer in, AudioHandle::OutputBuffer out, size_t size)
 {
 	start = System::GetTick();
@@ -69,11 +62,6 @@ void AudioCallback(AudioHandle::InputBuffer in, AudioHandle::OutputBuffer out, s
 		std::array<float, 2> sample = {in[0][i],in[1][i]};
 		
 		sample = reverbEngine->process(sample);
-
-		//float sample = equalizerLeft.Process(in[0][i]); 
-		//out[0][i] = sample;
-		//out[1][i] = equalizerRight.Process(in[1][i]);
-
 		
 		out[0][i] = sample[0];
 		out[1][i] = sample[1];
@@ -100,62 +88,12 @@ void AudioCallback(AudioHandle::InputBuffer in, AudioHandle::OutputBuffer out, s
 static Oscillator osc; // Oscillator for testing
 static DaisySeed hwSeed; // Used for testing and logging without hwPod
 
-void algoTester(void)
-{
-	// Placeholder for non-realtime testing of algorithms
-	float sample, res, sample_rate; 
-
-    // Below code creates COM4 port and displays log messages
-	// hwSeed and hwPod do not work well together
-	hwSeed.Configure();
-	hwSeed.Init();
-	hwSeed.StartLog();
-    System::Delay(5000); // Wait 5 second
-	hwSeed.PrintLine("Daisy Pod IIR Filter Example");
-
-    hwSeed.SetAudioBlockSize(SAMPLE_BUFFER_SIZE);
-    sample_rate = hwSeed.AudioSampleRate();
-    osc.Init(sample_rate);
-	hwSeed.PrintLine("Sample rate %.6f", sample_rate);	
-
-	// Set parameters for oscillator
-    osc.SetWaveform(osc.WAVE_SIN);
-    osc.SetFreq(785); // Notch frequency Hz
-    osc.SetAmp(0.5);
-	
-	equalizerLeft.setBypass(false);
-	while (1) {
-		//sample = 0.5f;
-		sample = osc.Process();
-		start = System::GetTick();
-		res = equalizerLeft.Process(sample);
-		end = System::GetTick();
-		dur = (end - start) * 5; // ps
-		//dur = (end - start) / 200; // us
-		//hwSeed.PrintLine("IIR filter duration = %u ns start = %u end = %u", dur, start, end);
-		//hwSeed.PrintLine("Sample input %.4f and output %.4f", sample, res);
-		hwSeed.PrintLine("%.6f,%.6f", sample, res);
-		System::Delay(100); // Wait 100 mseconds
-	}
-
-}
-
-#endif
-
 // shuffleHad matrix container. Is manually allocated to DTCM ram
 int main(void)
 {
-	//equalizerLeft.Init(SAMPLE_RATE);
-	//equalizerLeft.setBypass(true);
-	//equalizerRight.Init(SAMPLE_RATE);
-	//equalizerRight.setBypass(true);
+
 
 #ifdef USE_HWPOD // Realtime audio with Daisy Pod and IIR Filter bypass toggle
-
-	//int32_t  inc;
-	//bool eqOn = false;
-	//int counter = 0;
-	//int band = 0;
 
 	my_colors[0].Init(Color::PresetColor::RED);
 	my_colors[1].Init(Color::PresetColor::GOLD);
@@ -229,71 +167,11 @@ int main(void)
 			//hwPod.seed.PrintLine("Test printout ");
 			monitor_counter = 0;
 		}
-	
-		// Debounce the Encoder at a steady, fixed rate.
-		//hwPod.encoder.Debounce();
-		//inc = hwPod.encoder.Increment();
-		/*	
-		if (inc < 0) {
-			controller.adjust(DEC_PARAM_VALUE);
-		}
-		else if (inc > 0) {
-			controller.adjust(INC_PARAM_VALUE);
-		}
-		if (hwPod.encoder.RisingEdge()) {
-    	// Encoder-knap til at vælge param (trigger én gang)
-			controller.incParam();
-		}
-        // using button1 turn EQ on/off
-        if (hwPod.button1.RisingEdge()) {
-			eqOn = !eqOn;
-			controller.setBypass(!eqOn);
-		}
-
-       // using button2 select eq band
- 		if (hwPod.button2.RisingEdge()) {
-			band = (int)controller.adjust(SEL_BAND);
-			hwPod.seed.PrintLine("Equalizer band %d", band);
-			counter = 1;
-		}
-		// 
-		hwPod.ClearLeds();
-
-		// Opdaterer led1 med param eller off
-		PARAMETER param = controller.getParam();
-
-		//int EqOn = eqOn ? 3 : 4; // LED White if on, Off if bypass
-		int led1;
-		if (eqOn && (param == PM_GAIN)){
-			hwPod.led1.SetColor(my_colors[0]);
-		}
-		else if (eqOn && (param == PM_FREQ)){
-			hwPod.led1.SetColor(my_colors[2]);
-		}
-		// off-case
-		else{
-			hwPod.led1.SetColor(my_colors[6]);
-		}
-		hwPod.led2.SetColor(my_colors[band]);
-		hwPod.UpdateLeds();
-		
-		if (counter % 200000 == 0) { // Print every ~1 seconds
-			//hwPod.seed.PrintLine("Daisy Pod IIR Filter Example");
-			//hwPod.seed.PrintLine("Equalizer duration = %u ns start = %u end = %u", dur, start, end);
-			
-			//controller.printState(dur, SAMPLE_TIME_NS);
-			controller.printParam();
-		}
-			*/
 		hwPod.UpdateLeds();
 
 		//counter++;
 		//System::Delay(1); // Wait 0.1 ms
     }
-
-#else // Non-realtime test with Daisy Seed testing and logging
-
-	algoTester();
 
 #endif
 
