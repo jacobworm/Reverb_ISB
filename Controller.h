@@ -14,7 +14,7 @@
 
 using namespace daisy;
 #define NUM_STATES 3 // Max number of states
-#define PCT_THRESHOLD 0.01 // Percent of max value used as threshold value in decimal
+#define PCT_THRESHOLD 0.02 // Percent of max value used as threshold value in decimal
 
 class controller
 {
