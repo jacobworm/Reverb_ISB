@@ -204,7 +204,7 @@ const float getMix() { return mix_;};
 private:
     // Variables to be affected by the user interface
     uint8_t state_ = 1;
-    uint8_t size_ = 80;
+    int8_t size_ = 80;
     float HiFreq_ = 2000;
     float LoFreq_ = 300;
     float HiDecay_ = 0.4;
